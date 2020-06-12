@@ -2,11 +2,30 @@ const mysql = require('mysql')
 const config = {
   host: 'localhost',
   port: '3306',
-  username: 'root',
-  password: 'root',
-  connectLimit: 20
+  user: 'root',
+  password: '123123',
+  database: 'douguo',
+  connectionLimit: 20
 }
 
 const pool = mysql.createPool(config)
 
-console.log(pool)
+function getConn (options) {
+  return new Promise((resolve, reject) => {
+      pool.getConnection((error, connection)=>{
+          if(!error) {
+             connection.query(options.sql, options.data, (err, result)=>{
+                 if(!err){
+                     resolve(result)
+                 }else{
+                     reject(err)
+                 }
+             })
+             connection.release()
+          }else{
+            error.release()
+          }
+      })
+  })
+}
+module.exports = getConn
