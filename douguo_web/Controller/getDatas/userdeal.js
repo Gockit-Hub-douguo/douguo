@@ -2,7 +2,7 @@ const query = require('../mysql/getConn')
 const { add } = require('./public')
 
 // 查询接口
-function viewadmin (options){
+function viewuser (options){
     add(options)
     query({
         sql: 'select adindex,adminId,adminPhone,adminSex,adminGrade from admin_tab'
@@ -13,7 +13,7 @@ function viewadmin (options){
     })
 }
 // 添加接口
-function addAdmin (options){
+function adduser (options){
     add(options)
     query({
         sql: 'insert into admin_tab(adminId,adminPhone,adminSex,adminGrade) values(?,?,?,?)',
@@ -26,7 +26,7 @@ function addAdmin (options){
 }
 
 // 删除数据
-function deleteAdmin (options){
+function deleteuser (options){
     add(options)
     query({
         sql: 'delete from admin_tab where adminId = ?',
@@ -39,7 +39,7 @@ function deleteAdmin (options){
 }
 
 // 修改数据
-function updateAdmin (options){
+function updateuser (options){
     add(options)
     query({
         sql: 'update admin_tab set setadminId=?,adminPhone=?,adminSex=?,adminGrade=? where setadminId = ?',
@@ -51,15 +51,10 @@ function updateAdmin (options){
     })
 }
 
-viewadmin({
-    success: (res)=>{
-        console.log(res)
-    }
-})
 
 module.exports = {
-    viewadmin,
-    addAdmin,
-    deleteAdmin,
-    updateAdmin
+    viewuser,
+    adduser,
+    deleteuser,
+    updateuser
 }
