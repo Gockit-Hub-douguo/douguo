@@ -1,0 +1,124 @@
+// 引入重置样式
+@import './reset.css';
+// 封装公共样式
+
+// 字体
+@mincolor:#000;
+@font-maincolor:#FFB31A;
+@colorfff:#fff;
+
+// 全局样式
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body {
+    font-family: Open Sans, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+    background: #ffffff;
+  }
+
+// 统一盒子模型
+.border-box(){
+  *, *:after, *:before{
+    box-sizing: border-box;
+  }  
+}
+.border-box();
+
+// 盒子宽高
+.size(@w,@h){
+    width: @w;
+    height: @h;
+}
+.line-height(@h){
+    line-height: @h;
+}
+// 字体大小
+.font-size(@fz){
+    font-size: @fz;
+}
+// 字体大小与行高
+.font-size(@fz,@lh){
+    font-size: @fz;
+    line-height: @lh;
+}
+// 字体颜色 + 自身 Hover
+.hover(){
+    &:hover{
+        color:@font-maincolor;
+        .cursor();
+    }
+}
+
+
+// 内联块级元素
+.inline-block(){
+    display: inline-block;
+}
+// 固定定位
+.fiexd(){
+    position: fixed;
+    position: absolute;
+    *zoom: 1;
+}
+
+// 文字图片居中
+.center(text-x){
+    text-align: center;
+}
+.center(img-y){
+    display: table-cell;
+    vertical-align: middle;
+}
+
+// 块级元素水平居中
+.center(auto-x){
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// 多个子项布局
+.list(float,@w){
+    float: left;
+    width: @w;
+}
+.list(inline-block, @w){
+    .inline-block();
+    width: @w;
+}
+
+// 遮罩层
+.over-screen(fixed){
+    .fiexd();
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// 移上鼠标小手
+.cursor(){
+    cursor: pointer;
+}
+
+// 按钮
+.border-radius(@px){
+    border-radius: @px;
+}
+.btn(){
+    .border-radius(@px); //圆角
+    background: @font-maincolor; //背景颜色为橙色
+    color:@colorfff; //字体颜色白色
+}
+
+// margin and padding
+.margin(@top:0, @left:0 ,@right:0,@bootom:0){
+    margin:@top @left @right @bootom;
+}
+.padding(@top:0, @left:0 ,@right:0,@bootom:0){
+    padding: @top @left @right @bootom;
+}
+
+
