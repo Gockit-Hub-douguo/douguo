@@ -20,6 +20,10 @@ module.exports = {
     'space-before-blocks':'off',
     'no-unused-vars':'warn',
     'eol-last':'off',
-    'no-multiple-empty-lines':'off'
+    'no-multiple-empty-lines':'off',
+    'quotes':'off',
+    'space-before-function-paren':'off',
+    'comma-spacing':'off',
+    'semi':'off'
   }
 }
