@@ -3,9 +3,9 @@ const { add } = require('./public')
 
 // 查询接口
 function viewuser (options){
-    add(options)
+    options = add(options)
     query({
-        sql: 'select adindex,adminId,adminPhone,adminSex,adminGrade from admin_tab'
+        sql: 'select phonenumber,password,username,userSex,userFans,userClass from user_tab'
     }).then((result)=>{
         options.success(result)
     }).catch((error)=>{
@@ -14,9 +14,11 @@ function viewuser (options){
 }
 // 添加接口
 function adduser (options){
-    add(options)
+    console.log(options)
+    options = add(options)
+    console.log(options)
     query({
-        sql: 'insert into admin_tab(adminId,adminPhone,adminSex,adminGrade) values(?,?,?,?)',
+        sql: 'insert into user_tab(phonenumber,username,password,userSex) values(?,?,?,?)',
         data: options.data
     }).then((result)=>{
         options.success(result)
@@ -27,9 +29,9 @@ function adduser (options){
 
 // 删除数据
 function deleteuser (options){
-    add(options)
+    options = add(options)
     query({
-        sql: 'delete from admin_tab where adminId = ?',
+        sql: 'delete from user_tab where phonenumber = ?',
         data: options.data
     }).then((result)=>{
         options.success(result)
@@ -40,9 +42,9 @@ function deleteuser (options){
 
 // 修改数据
 function updateuser (options){
-    add(options)
+    options = add(options)
     query({
-        sql: 'update admin_tab set setadminId=?,adminPhone=?,adminSex=?,adminGrade=? where setadminId = ?',
+        sql: 'update user_tab set phonenumber=?,password=?,username=?,userSex=?,userFans=?,userClass=? where phonenumber = ?',
         data: options.data
     }).then((result)=>{
         options.success(result)
@@ -50,8 +52,12 @@ function updateuser (options){
         options.Error(error)
     })
 }
-
-
+adduser({
+    data: ['129', '1237@werr', '警察', 0],
+    success: (res)=>{
+        console.log(res)
+    }
+})
 module.exports = {
     viewuser,
     adduser,

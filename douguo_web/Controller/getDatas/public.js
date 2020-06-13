@@ -1,5 +1,5 @@
 function add (options){
-    if(options.Error){
+    if(!options.Error){
         options.Error = function (error){
                 console.log(error)
         }

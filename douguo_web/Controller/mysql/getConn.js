@@ -18,7 +18,7 @@ function getConn (options) {
                  if(!err){
                      resolve(result)
                  }else{
-                     reject(err)
+                     reject(err.sqlMessage)
                  }
              })
              connection.release()

@@ -2,10 +2,10 @@ const query = require('../mysql/getConn')
 const { add } = require('./public')
 
 // 查询接口
-function viewadmin (options){
+function viewworks (options){
     options = add(options)
     query({
-        sql: 'select adindex,adminId,adminPhone,adminSex,adminGrade from admin_tab'
+        sql: 'select * from works_tab'
     }).then((result)=>{
         options.success(result)
     }).catch((error)=>{
@@ -13,10 +13,12 @@ function viewadmin (options){
     })
 }
 // 添加接口
-function addAdmin (options){
+function addworks (options){
+    console.log(options)
     options = add(options)
+    console.log(options)
     query({
-        sql: 'insert into admin_tab(adminId,adminPhone,adminSex,adminGrade) values(?,?,?,?)',
+        sql: 'insert into works_tab(works_imgId,works_title,works_title,creatTime) values(?,?,?,?)',
         data: options.data
     }).then((result)=>{
         options.success(result)
@@ -26,10 +28,10 @@ function addAdmin (options){
 }
 
 // 删除数据
-function deleteAdmin (options){
-    add(options)
+function deleteworks (options){
+    options = add(options)
     query({
-        sql: 'delete from admin_tab where adminId = ?',
+        sql: 'delete from user_tab where phonenumber = ?',
         data: options.data
     }).then((result)=>{
         options.success(result)
@@ -39,10 +41,10 @@ function deleteAdmin (options){
 }
 
 // 修改数据
-function updateAdmin (options){
+function updateworks (options){
     options = add(options)
     query({
-        sql: 'update admin_tab set setadminId=?,adminPhone=?,adminSex=?,adminGrade=? where setadminId = ?',
+        sql: 'update user_tab set phonenumber=?,password=?,username=?,userSex=?,userFans=?,userClass=? where phonenumber = ?',
         data: options.data
     }).then((result)=>{
         options.success(result)
@@ -52,8 +54,8 @@ function updateAdmin (options){
 }
 
 module.exports = {
-    viewadmin,
-    addAdmin,
-    deleteAdmin,
-    updateAdmin
+    viewworks,
+    addworks,
+    deleteworks,
+    updateworks
 }
