@@ -7,7 +7,7 @@
             <ul class="lym-header-nav fl inline-block">
                 <router-link to="/" class="fl">首页</router-link>
                 <li>
-                    <a class="lym-caipu">菜谱 <i class="el-icon-arrow-down"></i></a>
+                    <router-link to="Caipu" class="lym-caipu">菜谱 <i class="el-icon-arrow-down"></i></router-link>
                     <div class="lym-menu">
                         <div class="lym-menu-nav">
                             <a><img src="https://cp1.douguo.com/static/nweb/images/jx3.png"><span>精选</span></a>
@@ -47,8 +47,8 @@
                         <div class="lym-lookAll">查看全部分类<i class="el-icon-arrow-right"></i></div>
                     </div>
                 </li>
-                <li>笔记</li>
-                <li>商城</li>
+                <li><router-link to="">笔记</router-link></li>
+                <li><router-link to="/shop">商城</router-link></li>
             </ul>
             <div action="" class="lym-search fl">
                 <el-autocomplete
@@ -165,6 +165,8 @@ export default {
 @import '~css/public.less';
     .lym-header{
         .size(100%,60px);
+        top: 0;
+        left: 0;
         .fiexd();
         .center(text-x);
         z-index: 99;
@@ -366,5 +368,6 @@ export default {
             border-top: 1px solid #E5E3DF;
             padding: 10px;
         }
+        position: fixed;
     }
 </style>
