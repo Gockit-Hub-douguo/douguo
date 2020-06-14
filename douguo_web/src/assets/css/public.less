@@ -14,7 +14,7 @@
     list-style: none;
 }
 body {
-    font-family: Open Sans, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+    font:12px Tahoma,Geneva,"Microsoft Yahei";
     background: #ffffff;
   }
 
@@ -104,11 +104,11 @@ body {
 }
 
 // 按钮
-.border-radius(@px){
+.border-radius(@px:4px){
     border-radius: @px;
 }
 .btn(){
-    .border-radius(@px); //圆角
+    .border-radius(); //圆角
     background: @font-maincolor; //背景颜色为橙色
     color:@colorfff; //字体颜色白色
 }
@@ -122,3 +122,16 @@ body {
 }
 
 
+// 浮动
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clear-both{
+    clear: both;
+}
+.overflow{
+    overflow: hidden;
+}

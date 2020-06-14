@@ -14,5 +14,8 @@ module.exports = {
     },
     chainWebpack: (config) => {
         config.resolve.alias.set('bk', resolve(__dirname, 'src/backstoreView/views'))
+        .set('css',resolve(__dirname,'src/assets/css'))
+        .set('img',resolve(__dirname,'src/assets/img'))
+        .set('comp',resolve(__dirname,'src/components'))
     }
 }
