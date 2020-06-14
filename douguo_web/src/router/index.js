@@ -2,13 +2,24 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from 'comp/home'
 import admin from 'bk/backstoreApp'
+import qianduan from '@/qianduan'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     // 首页
     path: '/',
-    component: home
+    component: qianduan,
+    redirect: (to)=>{
+        return 'static/home'
+    },
+    children: [
+      {
+        path: 'static/home',
+        component: home
+      }
+    ]
   },
   {
     path: '/admin',

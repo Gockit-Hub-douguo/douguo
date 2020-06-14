@@ -6,6 +6,7 @@ import router from './router'
 import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'css/public.less'
+import 'css/common.less'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
