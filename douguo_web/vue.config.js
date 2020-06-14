@@ -17,5 +17,6 @@ module.exports = {
         .set('css',resolve(__dirname,'src/assets/css'))
         .set('img',resolve(__dirname,'src/assets/img'))
         .set('comp',resolve(__dirname,'src/components'))
+        .set('privatecss', resolve(__dirname, 'src/privatecss'))
     }
 }

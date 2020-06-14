@@ -1,0 +1,141 @@
+/* css常用公共样式封装 */
+
+// 清除默认样式
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,li {
+  list-style: none;
+}
+a,a:hover {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+body {
+  font-size: 14px;
+  color: #333;
+  background: #ccc;
+}
+
+
+/* 字体，字体颜色，行高，高度，对齐方式，超出隐藏*/
+
+.ftSize (@size: 14px) { // 字体大小，默认14px
+  font-size: @size;
+}
+
+.SizeColor (@size: 14px, @color: #333) { // 字体大小，字体颜色
+  font-size: @size;
+  color: @color;
+}
+
+.HSizeColor (@size: 14px, @color: #333, @hovercolor: pink) { // 字体大小，字体颜色，hover移入改变颜色
+  font-size: @size;
+  color: @color;
+  &:hover{
+    color: @hovercolor;
+  }
+}
+.HColor (@color: #333, @hovercolor: pink) { // 字体颜色，hover移入改变颜色
+  color: @color;
+  &:hover{
+    color: @hovercolor !important;
+  }
+}
+
+.sizeLh (@size: 14px, @color:#333, @lheight: 14px) { // 字体大小，颜色，行高
+  font-size: @size;
+  color: @color;
+  line-height: @lheight;
+}
+.sizeLh (@size: 14px, @color:#333, @lheight: 14px, @height: 14px) { // 字体大小，颜色，行高,高度
+  font-size: @size;
+  color: @color;
+  line-height: @lheight;
+  height: @height;
+}
+
+.text (@center: center){  // 文本对齐方式
+  text-align: @center;
+}
+
+.texthidden () { // 文本超出当前行隐藏
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 宽，高，行高 */
+.sizeWt (@width){ // 宽
+  width: @width;
+}
+.sizeHt (@height){ // 高
+  height: @height;
+}
+.sizewht (@width, @height){ // 宽 、高
+  width: @width;
+  height: @height;
+}
+.sizewhtn (@width, @height){ // 宽 、高、行高 行高默认为高度一致
+  width: @width;
+  height: @height;
+  line-height: @height;
+}
+.sizewhts (@width, @height, @lheight){ // 宽 、高、行高
+  width: @width;
+  height: @height;
+  line-height: @lheight;
+}
+
+.sizeLht (@lheight) { // 行高
+  line-height: @lheight;
+}
+
+/* position 定位 */
+
+.pst (@bodys: relative) { // 定为 默认相对定位
+  position: @bodys;
+}
+
+// 位置调整
+
+.p-top (@top) {
+  top: @top;
+}
+.p-left (@left) {
+  left: @left;
+}
+.p-right (@right) {
+  right: @right;
+}
+.p-button (@bottom) {
+  bottom: @bottom;
+}
+
+.p-center () { // 居中，要求父级为相对定位，且该方法存在兼容性问题
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
+
+/* margin 外边距设置 */
+
+.m-paramse (@top:0px, @buttom:0px, @left:0px, @right:0px) {// 整体设置 上下左右
+  margin:@top @left @buttom @right;
+}
+
+.m-auto { // 左右居中
+  margin: auto;
+}
+
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
