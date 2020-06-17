@@ -1,0 +1,115 @@
+@import '~css/public_Css.less';
+
+.pages {
+    text-align: center;
+    margin: 20px auto;
+    a {
+        padding: 2px 6px 3px;
+    }
+}
+a:hover{
+  color: orange;
+}
+.conter{
+  overflow: hidden;
+}
+.Firstlevelnavigation{
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.navbars{
+  a.active{
+    border-bottom: 2px solid #000;
+    color: #000000;
+    font-weight: 600;
+  }
+  height: 130px;
+  overflow: hidden;
+  h3{
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .Firstlevelnavigation a{
+    float: left;
+    padding:5px 12px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 30px;
+  }
+  .Secondarynavigation a{
+    padding:5px 12px;
+    &.active{
+      border-bottom: 0px;
+    }
+    &:nth-child(1){
+      padding-left: 0px;
+    }
+  }
+}
+.LeftInfo{
+  width: 690px;
+  overflow: hidden;
+  ul li{
+    overflow: hidden;
+    margin: 20px 0px;
+    img{
+      .sizewht(183px, 122px);
+      float: left;
+      border-radius: 7px;
+      margin-right: 10px;
+    }
+    div{
+      h3{
+        font-weight: 400;
+        font-size: 18px;
+        font-weight: 600;
+        color: #333333;
+        padding-top: 5px;
+        margin-bottom: 12px;
+      }
+      p{
+        margin-top: 10px;
+        font-size: 12px;
+        &.author{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        &.time{
+          color: #999;
+        }
+        &.linkurl{
+          a{
+            font-size: 12px;
+            img{
+              width: 21px;
+              height: 21px;
+              border-radius: 50%;
+              float: left;
+            }
+            em{
+              margin-top: 3px;
+              margin-right: 5px;
+            }
+            span.iconx{
+              margin-top: 3px;
+              background: url('https://i1.douguo.com/upload/note/d/a/a/da84247847aebe48d9dd0fcdac88862a.png');
+              background-size: 100% 100%;
+              display: block;
+              width: 16px;
+              height: 16px;
+              float: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.Right{
+  padding-top: 20px;
+}

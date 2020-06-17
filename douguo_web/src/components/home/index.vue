@@ -11,22 +11,7 @@
     </div>
     <div class="BayBox">
       <!-- 每日精选菜谱 -->
-      <div class="Selectedrecipes">
-        <!-- 标题 -->
-        <div class="menuTitle">
-          <h3 class="fl">每日精选菜谱</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
-        </div>
-        <!-- 内容层 -->
-        <ul class="menuList">
-          <li v-for="item in 8" :key="item" :class="{clearMR: item == 4 || item == 8}">
-            <div class="menuOne">
-              <a><img src="https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg" alt=""></a>
-              <p class="Mtitle"><a>无敌美味的卫生卤味</a></p>
-              <p class="Mauthor">by <a>小豆芽__</a></p>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <menuRendering :datalists='imgMenu'></menuRendering>
       <!-- 笔记标题 -->
       <div class="btitle">
         <!-- 笔记标题 -->
@@ -83,14 +68,7 @@
           <h3 class="fl">豆果达人</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
         </div>
         <ul>
-          <li v-for="its in 5" :key="its">
-            <el-link :underline="false"  class="fl"><img src="https://cp1.douguo.com/upload/photo/b/d/a/u6158987842928806271321.png" alt=""></el-link>
-            <div class="fl">
-              <i><el-link :underline="false" class="h-orange fl">颖涵的快厨房</el-link><span class="fl" :style="{background:'url(https://i1.douguo.com/upload/note/d/a/a/da84247847aebe48d9dd0fcdac88862a.png)', backgroundSize:'16px 16px'}"></span></i>
-              <p>144734粉丝</p>
-            </div>
-            <el-button plain class="fr" @click="follow($event)">+ 关注</el-button>
-          </li>
+          <Sage v-for="(item, index) in 4" :key="index"></Sage>
         </ul>
       </div>
       <!-- 精彩主题文章 -->
@@ -190,6 +168,8 @@
 </template>
 
 <script>
+import menuRendering from '@/components/home/menuRendering'
+import Sage from '@/components/home/sage'
 export default {
   data () {
     return {
@@ -251,15 +231,60 @@ export default {
       }, {
         lab: '凉菜',
         link_url: '#'
+      }],
+      imgMenu: [{
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
+      }, {
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
+      }, {
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
+      }, {
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
+      }, {
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
+      }, {
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
+      }, {
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
+      }, {
+        url: 'https://cp1.douguo.com/upload/caiku/3/6/4/220x220_36106587c0b02d546014ad6cc0a98374.jpg',
+        link_url: '#',
+        menutitle: '无敌美味的卫生卤味',
+        menuauthor: '小豆芽__'
       }]
     }
   },
   methods: {
+  },
+  components: {
+    menuRendering,
+    Sage
   }
 }
 </script>
 
 <style lang="less" scoped>
-  @import '~privatecss/zby_home.less';
+  @import '~privatecss/home.less';
   // @import '~css/public_Css.less';
 </style>

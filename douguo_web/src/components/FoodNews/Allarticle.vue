@@ -1,0 +1,170 @@
+<template>
+  <!-- 全部文章 -->
+  <div class="Bbox">
+    <div class="navbers">
+      <router-link to='/FoodNews' :class="{active: 1}" >全部文章</router-link>
+      <router-link to='/Foodartheme' :class="{active: 0}">全部主题站</router-link>
+    </div>
+    <div class="conter">
+      <!-- 左则区域 -->
+      <div class="LeftInfo fl">
+        <ul>
+          <li v-for="it in 9" :key="it">
+            <img src="https://cp1.douguo.com/upload/post/1/6/9/16fd3c040f34c60d4f2f35a21bd73b89.jpg" alt="">
+            <div>
+              <h3>健康专家郑育龙教您如何用橄榄油吃出健康</h3>
+              <p class="author">来自：<a>食界大咖秀</a> 主题站</p>
+              <p class="time">2020-06-03</p>
+              <p class="linkurl"><el-link type="primary" :underline="false">查看全文</el-link></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="Rightinfo">
+        <h2>主题站</h2>
+        <ul>
+          <li v-for="itm in 6" :key="itm">
+            <router-link class="fl" to='#'><img src="https://cp1.douguo.com/upload/post/1357368720.png" alt=""></router-link>
+            <div class="conterx">
+              <h4>生活小窍门</h4>
+              <p>分享生活智慧的结晶</p>
+            </div>
+          </li>
+        </ul>
+        <!-- 欢迎来稿 -->
+        <div class="laigao">
+          <h3>欢迎来稿</h3>
+          <p>
+          豆果美食主题站提供了一个温暖的平台，如果你是个资深吃货，爱好写作，并且乐于分享，那么我们找的就是你啦！
+          </p>
+          <p>文章一经录用，奖2000积分！投稿要求：原创文章，语言流畅，思路清晰，主题与“美食”相关，文章至少2000字，图片精美。</p>
+          <p>投稿邮箱：bj@douguo.com 我们期待您的来稿（来稿请注明您的豆果ID）。</p>
+        </div>
+      </div>
+    </div>
+    <!-- 翻页 -->
+    <div class="pages">
+      <a></a>
+      <el-pagination
+      background
+      layout="prev, pager, next"
+      :total="1000">
+      </el-pagination>
+    </div>
+    <!-- 定位 -->
+    <el-breadcrumb separator-class="el-icon-arrow-right">
+      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item>豆果美食</el-breadcrumb-item>
+      <el-breadcrumb-item>全部文章</el-breadcrumb-item>
+    </el-breadcrumb>
+  </div>
+</template>
+
+<style lang="less" scoped>
+@import '~css/public_Css.less';
+  .conter{
+    overflow: hidden;
+  }
+  .LeftInfo{
+    width: 690px;
+    overflow: hidden;
+    ul li{
+      overflow: hidden;
+      margin: 20px 0px;
+      img{
+        .sizewht(183px, 122px);
+        float: left;
+        border-radius: 7px;
+        margin-right: 10px;
+      }
+      div{
+        h3{
+          font-weight: 400;
+          font-size: 15px;
+          padding-top: 5px;
+        }
+        p{
+          margin-top: 13px;
+          font-size: 12px;
+          &.time{
+            color: #999;
+          }
+          a{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .Rightinfo{
+    width: 280px;
+    float: right;
+    overflow: hidden;
+    h2{
+      font-weight: 400;
+    }
+    li{
+      margin: 15px 0px;
+      overflow: hidden;
+      &>a{
+        margin-right: 10px;
+      }
+      img{
+        width: 70px;
+        height: 70px;
+        border-radius: 7px;
+      }
+      div{
+        h4{
+          font-size: 15px;
+          font-weight: 400;
+          color: #333;
+        }
+        p{
+          font-size: 13px;
+          color: #999;
+          margin-top: 8px;
+        }
+        font-weight: normal;
+      }
+    }
+    div.laigao{
+      margin-top: 50px;
+      h3{
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      p{
+        font-size: 13px;
+        line-height: 24px;
+      }
+    }
+  }
+  .pages {
+      text-align: center;
+      margin: 20px auto;
+      a {
+          padding: 2px 6px 3px;
+      }
+  }
+  div.navbers{
+    height: 40px;
+    overflow: hidden;
+    a{
+      display: block;
+      float: left;
+      width: 77px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 14px;
+      margin-right: 30px;
+      &.active{
+        border-bottom: 2px solid #000;
+        color: #000000;
+        font-weight: 600;
+      }
+    }
+  }
+</style>
