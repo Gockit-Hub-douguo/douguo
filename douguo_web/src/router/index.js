@@ -7,7 +7,15 @@ import Shop from '@/components/Shop'
 import Caipu from '@/components/Caipu'
 import innn from '@/components/CaipuList/index-jx'
 import demo from '@/components/CaipuList/demo'
+import fenlei from '@/components/CaipuList/fenlei'
 import goods from '@/components/Shop/goods'
+import zuir from '@/components/CaipuList/zuir'
+import zuixin from '@/components/CaipuList/zuixin'
+import caidanzxzr from '@/components/CaipuList/caidanzxzr'
+import caipinxianqi from '@/components/Caipu/caipinxianqi'
+// import { component } from 'vue/types/umd'
+import cscp from '@/components/Caipu/cscp'
+import mofu from '@/components/menu/zuixin'
 import FoodNews from '@/components/FoodNews'
 import Foodarticle from '@/components/FoodNews/Allarticle'
 import Foodartheme from '@/components/FoodNews/theme'
@@ -16,6 +24,13 @@ import Menusive from '@/components/menu/comprehensive'
 import Menuuser from '@/components/menu/user'
 import Menumost from '@/components/menu/most'
 import Menumaxmoust from '@/components/menu/maxmost'
+import login from 'comp/loginAndRegister/login'
+import register from 'comp/loginAndRegister/register'
+import start from 'comp/start/drink'
+import biji from '@/components/yth/biji'
+import bijixq from '@/components/yth/bijixq'
+import cuangj from '@/components/yth/cuangj'
+import fabu from '@/components/yth/fabu'
 
 Vue.use(VueRouter)
 
@@ -33,7 +48,7 @@ const routes = [
         component: home
       }, 
       {
-        path: '/shop',
+        path: '/shop', // 商城
         component: Shop
       },
       {
@@ -44,18 +59,73 @@ const routes = [
         },
         children: [
           {
-            path: '/jx',
+            path: '/jx', // 菜谱=》精选
             component: demo
           },
           {
-            path: '/ijx',
+            path: '/ijx', // 菜谱=》最新
             component: innn
+          },
+          {
+            path: '/fenlei', // 分类
+            component: fenlei
+          },
+          {
+            path: '/caidanzxzr',// 采单
+            component: caidanzxzr,
+            redirect: '/zuixin',
+            children: [
+              {
+                path: '/zuixin', // 最新
+                component: zuixin
+              },
+              {
+                path: '/zuir', // 最热
+                component: zuir
+              }
+            ]
           }
         ]
       },
       {
-        path: '/goods',
+        path: '/goods', // 商品详情
         component: goods
+      },
+      {
+        path: '/caipinxianqi', // 菜品详情
+        component: caipinxianqi
+      },
+      {
+        path: '/cscp', // 上传菜品
+        component: cscp
+      },
+      {
+        path: '/login', // 登录
+        component: login
+      },
+      {
+        path: '/register', // 注册
+        component: register
+      },
+      {
+        path: '/start', // 星巴克
+        component: start
+      },
+      {
+        path: '/biji',
+        component: biji
+      },
+      {
+        path: '/bijixq',
+        component: bijixq
+      },
+      {
+        path: '/cuangj',
+        component: cuangj
+      },
+      {
+        path: '/fabu',
+        component: fabu
       },
       {
         path: '/FoodNews',
@@ -68,8 +138,7 @@ const routes = [
           path: '/Foodartheme',
           component: Foodartheme
         }]
-      },
-      {
+      },{
         path: '/Menu',
         component: Menu,
         redirect: '/Menusive',
@@ -85,6 +154,10 @@ const routes = [
         }, {
           path: '/Menumaxmoust',
           component: Menumaxmoust
+        },
+        {
+          path: '/mofu',
+          component: mofu
         }]
       }
     ]
@@ -106,3 +179,9 @@ const router = new VueRouter({
 })
 
 export default router
+
+// 解决elementui中重复点击事件的问题
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}

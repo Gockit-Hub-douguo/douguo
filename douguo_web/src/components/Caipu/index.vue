@@ -5,9 +5,8 @@
                 <div class="type-head">
                     <router-link to="/jx">精选</router-link>
                     <router-link to="/ijx">最新</router-link>
-                    <router-link to="/cjcp">分类</router-link>
-                    <a>食材</a>
-                    <a>采单</a>
+                    <router-link to="/fenlei">分类</router-link>
+                    <router-link to="/caidanzxzr">采单</router-link>
                 </div>
             </div>
         </div>

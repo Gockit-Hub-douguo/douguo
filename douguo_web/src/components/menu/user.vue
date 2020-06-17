@@ -3,7 +3,7 @@
     <!-- 导航层 -->
     <div class="Firstlevelnavigation">
       <router-link to='/Menu'>菜谱</router-link>
-      <router-link to='#'>菜单</router-link>
+      <router-link to='/mofu'>菜单</router-link>
       <router-link to='#' class="active">用户</router-link>
     </div>
     <!-- 用户信息表 -->

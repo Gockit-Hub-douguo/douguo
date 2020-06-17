@@ -1,8 +1,8 @@
 <template>
     <div id="qianduan">
-      <Top></Top>
+       <Top v-if="aa"></Top>
       <router-view></router-view>
-      <Bootom></Bootom>
+      <Bootom v-if="aa"></Bootom>
     </div>
 </template>
 
@@ -13,6 +13,11 @@ export default {
   components: {
     Top,
     Bootom
+  },
+  computed: {
+    aa () {
+      return this.$store.state.a
+    }
   }
 }
 </script>

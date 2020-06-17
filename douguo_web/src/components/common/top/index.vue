@@ -1,34 +1,34 @@
 <template>
     <div class="lym-header">
         <div class="lym-header-cont">
-            <a class="lym-logo fl">
+            <router-link to="/" class="lym-logo fl">
                 <img src="https://cp1.douguo.com/static/nweb/images/logo3.png?20191218">
-            </a>
+            </router-link>
             <ul class="lym-header-nav fl inline-block">
                 <router-link to="/" class="fl">首页</router-link>
                 <li>
-                    <router-link to="Caipu" class="lym-caipu">菜谱 <i class="el-icon-arrow-down"></i></router-link>
+                    <router-link to="/jx" class="lym-caipu">菜谱 <i class="el-icon-arrow-down"></i></router-link>
                     <div class="lym-menu">
                         <div class="lym-menu-nav">
-                            <a><img src="https://cp1.douguo.com/static/nweb/images/jx3.png"><span>精选</span></a>
-                            <a><img src="https://i1.douguo.com/upload/banner/1585648022.png" alt=""> <span>最新</span></a>
-                            <a><img src="https://cp1.douguo.com/static/nweb/images/menu3.png" alt=""> <span>菜单</span></a>
+                            <router-link to="/jx"><img src="https://cp1.douguo.com/static/nweb/images/jx3.png"><span>精选</span></router-link>
+                            <router-link to="Caipu"><img src="https://i1.douguo.com/upload/banner/1585648022.png" alt=""> <span>最新</span></router-link>
+                            <router-link to="caidanzxzr"><img src="https://cp1.douguo.com/static/nweb/images/menu3.png" alt=""> <span>菜单</span></router-link>
                         </div>
                         <div class="lym-menu-cont">
                             <div class="lym-menu-item"  :key="index" v-for="(item,index) in menulist">
                                 <span class="lym-menuCommon fl" >{{item.title}}</span>
                                 <div class="lym-menu-itemCont fl">
                                 <!-- {{menulist[index].list}} -->
-                                    <a :key="i" v-for="(menu,i) in item.list">{{menu}}</a>
+                                    <router-link to="/Menu" :key="i" v-for="(menu,i) in item.list">{{menu}}</router-link>
                                 </div>
                             </div>
                         </div>
-                        <div class="lym-lookAll">查看全部分类<i class="el-icon-arrow-right"></i></div>
+                        <div class="lym-lookAll"><router-link to="/fenlei">查看全部分类<i class="el-icon-arrow-right"></i></router-link></div>
                     </div>
                 </li>
-                <li><a>饮食新闻</a></li>
+                <li><router-link to="/FoodNews">饮食新闻</router-link></li>
                 <li>
-                    <a class="lym-Starbucks">星巴克饮品<i class="el-icon-arrow-down"></i></a>
+                    <router-link to="/start" class="lym-Starbucks">星巴克饮品<i class="el-icon-arrow-down"></i></router-link>
                     <div class="lym-menu">
                         <div class="lym-menu-nav">
                             <a><img src="https://cp1.douguo.com/static/nweb/images/jx3.png"><span>精选</span></a>
@@ -47,7 +47,7 @@
                         <div class="lym-lookAll">查看全部分类<i class="el-icon-arrow-right"></i></div>
                     </div>
                 </li>
-                <li><router-link to="">笔记</router-link></li>
+                <li><router-link to="/biji">笔记</router-link></li>
                 <li><router-link to="/shop">商城</router-link></li>
             </ul>
             <div action="" class="lym-search fl">
@@ -66,13 +66,14 @@
             <div class="lym-fabu">
                 <span class="fl lym-fabu-btn">发布</span>
                 <div class="lym-fabu-cont">
-                    <a>发布菜谱</a>
-                    <a>创建菜单</a>
+                    <router-link to="fabu">发布菜谱</router-link>
+                    <router-link to="/cuangj">创建菜单</router-link>
                 </div>
             </div>
             <div class="lym-perinfo fl">
-                <a class="lym-login">登录</a> |
-                <a class="lym-register">注册</a>
+                <!-- to="./login" -->
+                <a class="lym-login" @click="login(1)">登录</a> |
+                <a class="lym-register" @click="register(1)">注册</a>
             </div>
         </div>
     </div>
@@ -153,6 +154,17 @@ export default {
     },
     handleIconClick (ev) {
       console.log(ev)
+    },
+    // 登录跳转
+    login (c) {
+      console.log(c)
+      this.$store.commit('clik', 0)
+      this.$router.push({ path: './login' })
+    },
+    // 注册跳转
+    register (c) {
+      this.$store.commit('clik', 0)
+      this.$router.push({ path: './register' })
     }
   },
   mounted () {

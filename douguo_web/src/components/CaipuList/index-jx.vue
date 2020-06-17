@@ -11,8 +11,8 @@
                         <a class="title">拉丝肉松烤肠酥</a>
                         <div>
                             <a class="cover">
-                                <img width="20px" src="https://tx1.douguo.com/upload/photo/6/2/8/70_u66631823200625014715.jpg" alt="">
-                                <span class="cover-name">欧鹏举</span>
+                                <img style="border-radius: 50%" width="20px" src="https://tx1.douguo.com/upload/photo/6/2/8/70_u66631823200625014715.jpg" alt="">
+                                <span style="margin-left: 10px" class="cover-name">欧鹏举</span>
                                 <span class="fr"><i class="el-icon-view"></i> 1111<i class="el-icon-star-off">222</i></span>
                             </a>
                         </div>

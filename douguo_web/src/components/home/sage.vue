@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     follow () {
-      this.btnvalue = this.btnvalue === '+ 关注' ? '以关注' : '+ 关注'
+      this.btnvalue = this.btnvalue === '+ 关注' ? '已关注' : '+ 关注'
     }
   }
 }

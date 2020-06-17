@@ -5,11 +5,23 @@
   list-style: none;
 }
 body {
-  font-family: Open Sans, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  font: 12px Tahoma, Geneva, "Microsoft Yahei";
   background: #ffffff;
 }
 *,
 *:after,
 *:before {
   box-sizing: border-box;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear-both {
+  clear: both;
+}
+.overflow {
+  overflow: hidden;
 }

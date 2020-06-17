@@ -1,0 +1,133 @@
+<template>
+    <div class="content">
+        <div class="menu-list">
+            <ul>
+                <li>
+                    <router-link class="cover" to="">
+                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
+                        <div class="menuinfo absolute">
+                            <p class="name text-lips">快手春食记  复工so easy！</p>
+                            <p class="rnum">10道菜谱</p>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="cover" to="">
+                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
+                        <div class="menuinfo absolute">
+                            <p class="name text-lips">快手春食记  复工so easy！</p>
+                            <p class="rnum">10道菜谱</p>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="cover" to="">
+                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
+                        <div class="menuinfo absolute">
+                            <p class="name text-lips">快手春食记  复工so easy！</p>
+                            <p class="rnum">10道菜谱</p>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="cover" to="">
+                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
+                        <div class="menuinfo absolute">
+                            <p class="name text-lips">快手春食记  复工so easy！</p>
+                            <p class="rnum">10道菜谱</p>
+                        </div>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link class="cover" to="">
+                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
+                        <div class="menuinfo absolute">
+                            <p class="name text-lips">快手春食记  复工so easy！</p>
+                            <p class="rnum">10道菜谱</p>
+                        </div>
+                    </router-link>
+                </li>
+            </ul>
+            <div class="pages">
+                <el-pagination
+                background
+                layout="prev, pager, next"
+                :total="1000">
+                </el-pagination>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="less" scoped>
+    .content {
+        width: 1000px;
+        margin: 0 auto;
+        .new-hot {
+            position: relative;
+            line-height: 14px;
+            margin-bottom: 25px;
+            a {
+                font-size: 14px;
+                color: #999;
+                padding: 0 10px;
+            };
+            .active {
+                color: #333;
+                font-weight: bold;
+            }
+        };
+        .menu-list{
+            ul {
+                overflow: hidden;
+                li {
+                    width: 306px;
+                    height: 172px;
+                    float: left;
+                    position: relative;
+                    margin-right: 27px;
+                    margin-bottom: 30px;
+                    overflow: hidden;
+                    .cover {
+                        display: block;
+                        width: 306px;
+                        height: 172px;
+                        overflow: hidden;
+                        .wb100 {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                };
+                .menuinfo {
+                    // position: relative;
+                    top: 0;
+                    left: 0;
+                    padding-top: 50px;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,.14);
+                    text-align: center;
+                };
+                .name {
+                    font-weight: bold;
+                    padding-top: 16px;
+                    font-size: 16px;
+                };
+                p {
+                    width: 290px;
+                    color: #fff;
+                    margin: 0 auto;
+                    padding-top: 10px;    
+                }
+            }
+            .pages {
+                text-align: center;
+                margin: 20px auto;
+            }
+        }
+    }
+    .absolute {
+        position: absolute;
+    }
+</style>

@@ -4,15 +4,15 @@
             <!-- <div>111</div> -->
             <ul class="list">
                 <li :key="key" v-for="(item, key) in caipulist" class="item">
-                    <a>
+                    <router-link to="/caipinxianqi">
                         <img width="300px" height="199px" src="https://cp1.douguo.com/upload/caiku/f/0/e/400x266_f0d31b9548f1b29ec996f3b11a25051e.jpg" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
-                    </a>
+                    </router-link>
                     <div class="relative">
-                        <a class="title">拉丝肉松烤肠酥</a>
+                        <router-link to="/caipinxianqi" class="title">拉丝肉松烤肠酥</router-link>
                         <div>
                             <a class="cover">
-                                <img width="20px" src="https://tx1.douguo.com/upload/photo/6/2/8/70_u66631823200625014715.jpg" alt="">
-                                <span class="cover-name">开票【可分配</span>
+                                <img style="border-radius: 50%" width="20px" src="https://tx1.douguo.com/upload/photo/6/2/8/70_u66631823200625014715.jpg" alt="">
+                                <span  style="margin-left: 10px" class="cover-name">开票【可分配</span>
                                 <span class="fr"><i class="el-icon-view"></i> 1111<i class="el-icon-star-off">222</i></span>
                             </a>
                         </div>

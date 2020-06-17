@@ -5,7 +5,7 @@
     <div class="navbars">
       <div class="Firstlevelnavigation">
         <router-link to='/Menu' class="active">菜谱</router-link>
-        <router-link to='#'>菜单</router-link>
+        <router-link to='/mofu'>菜单</router-link>
         <router-link to='/Menuuser'>用户</router-link>
       </div>
       <h3>做过最多</h3>
