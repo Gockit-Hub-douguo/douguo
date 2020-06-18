@@ -37,6 +37,7 @@ import person from '@/components/Personer/w-post'
 import suggest from '@/components/Suggest'
 import dis from '@/components/Discuss/dis'
 import shoucang from '@/components/Discuss/shoucang'
+import caogao from '@/components/Discuss/caogao'
 
 
 Vue.use(VueRouter)
@@ -177,6 +178,10 @@ const routes = [
       {
         path: '/Personer', // 账号设置
         component: Personer
+      },
+      {
+        path: '/caogao', // 草稿箱
+        component: caogao
       },
       {
         path: '/person',
