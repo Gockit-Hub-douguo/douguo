@@ -33,9 +33,10 @@ import bijixq from '@/components/yth/bijixq'
 import cuangj from '@/components/yth/cuangj'
 import fabu from '@/components/yth/fabu'
 import Personer from '@/components/Personer/w-login'
+import person from '@/components/Personer/w-post'
 import suggest from '@/components/Suggest'
 import dis from '@/components/Discuss/dis'
-import shou from '@/components/Discuss/shoucang'
+import shoucang from '@/components/Discuss/shoucang'
 
 
 Vue.use(VueRouter)
@@ -178,12 +179,16 @@ const routes = [
         component: Personer
       },
       {
+        path: '/person',
+        component: person
+      },
+      {
         path: '/discuss', // 评论及回复
         component: dis
       },
       {
-        path: '/Discuss', // 评论及回复
-        component: shou
+        path: '/shoucang', // 评论及回复
+        component: shoucang
       }
     ]
   },

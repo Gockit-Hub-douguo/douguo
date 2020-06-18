@@ -4,7 +4,7 @@
             <div class="content-title">
                 <div class="content-head">
                     <a class="active">基本资料</a>
-                    <a>密码修改</a>
+                    <router-link to="/person">密码修改</router-link>
                 </div>
                 <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
                    <el-form-item label="昵称" prop="name">
@@ -98,6 +98,7 @@ export default {
 .main-content {
     width: 1000px;
     margin: 0 auto;
+    padding-top: 60px;
     overflow: hidden;
 }
 .content-left {

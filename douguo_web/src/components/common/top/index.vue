@@ -81,22 +81,22 @@
                     <el-button size="small"></el-button>
                 </el-badge>
                 <ul class="personlist">
-                    <el-dropdown-item class="clearfix">
+                    <router-link to="/discuss" class="clearfix">
                         消息提醒
                         <el-badge is-dot class="item" />
-                    </el-dropdown-item>
-                    <el-dropdown-item class="clearfix">
+                    </router-link>
+                    <router-link to="/shoucang" class="clearfix">
                         我的收藏
                         <el-badge is-dot class="item" />
-                    </el-dropdown-item>
+                    </router-link>
                     <el-dropdown-item class="clearfix">
                         草稿箱
                         <el-badge is-dot class="item" />
                     </el-dropdown-item>
-                    <el-dropdown-item class="clearfix">
+                    <router-link to="/personer" class="clearfix">
                         账户设置
                         <el-badge class="mark" />
-                    </el-dropdown-item>
+                    </router-link>
                     <el-dropdown-item class="clearfix">
                         退出
                         <el-badge class="mark"  />
