@@ -39,12 +39,12 @@
             </div>
         </div>
         <div class="lym-foot">
-            <div class="lym-foot-click">
+            <router-link to="/suggest" class="lym-foot-click">
                 <a>关于豆果</a>.
                 <a>在豆果工作</a>.
                 <a>意见反馈</a>.
                 <a>菜谱大全</a>.
-            </div>
+            </router-link>
             <div class="lym-footContone">
                 <p>
                     <a href="">北京豆果信息技术有限公司</a>

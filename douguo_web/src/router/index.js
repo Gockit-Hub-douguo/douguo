@@ -31,6 +31,10 @@ import biji from '@/components/yth/biji'
 import bijixq from '@/components/yth/bijixq'
 import cuangj from '@/components/yth/cuangj'
 import fabu from '@/components/yth/fabu'
+import Personer from '@/components/Personer/w-login'
+import suggest from '@/components/Suggest'
+import dis from '@/components/Discuss/dis'
+import shou from '@/components/Discuss/shoucang'
 
 Vue.use(VueRouter)
 
@@ -159,6 +163,22 @@ const routes = [
           path: '/mofu',
           component: mofu
         }]
+      },
+      {
+        path: '/suggest',// 关于豆果
+        component: suggest
+      },
+      {
+        path: '/Personer', // 账号设置
+        component: Personer
+      },
+      {
+        path: '/discuss', // 评论及回复
+        component: dis
+      },
+      {
+        path: '/Discuss', // 评论及回复
+        component: shou
       }
     ]
   },
