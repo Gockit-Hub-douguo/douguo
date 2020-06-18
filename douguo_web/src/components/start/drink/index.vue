@@ -6,7 +6,7 @@
                <span class="stitle">{{item.name}}</span>
                <ul>
                  <li :key="index" v-for="(for2,index) in item.list1">
-                    <div class="img" :style= "{background:'url('+for2.url+') center/contain no-repeat' }"></div>
+                    <router-link to="/detail" class="img" :style= "{background:'url('+for2.url+') center/contain no-repeat' }"></router-link>
                     <span>{{for2.title}}</span>
                 </li>
                </ul>
@@ -35,6 +35,13 @@ export default {
             { url: 'https://www.starbucks.com.cn/images/products/cold-brew.jpg', title: '美式咖啡' },
             { url: 'https://www.starbucks.com.cn/images/products/cold-foam-cold-brew.jpg', title: '美式咖啡' },
             { url: 'https://www.starbucks.com.cn/images/products/vanilla-flavor-sweet-cream-cold-brew.jpg', title: '美式咖啡' }
+          ]
+        }, {
+          name: '烘焙',
+          list1: [
+            { url: 'https://www.starbucks.com.cn/images/products/american-style-pancakes.jpg', title: '美式烘焙' },
+            { url: 'https://www.starbucks.com.cn/images/products/blueberry-muffin.jpg', title: '蓝莓麦芬' },
+            { url: 'https://www.starbucks.com.cn/images/products/hazelnut-croissant.jpg', title: '层层榛子果仁酥' }
           ]
         }
       ]
@@ -76,6 +83,14 @@ export default {
           text-align: center;
           float: left;
           margin-right: 10px;
+          &:hover{
+            color: inherit;
+            transform: translate3d(0, -4px, 0);
+            transition: .5s;
+          }
+          &:hover .img{
+            box-shadow: 0 1px 3px 2px rgba(0, 0, 0,0.12);
+          }
           .img{
               width: 150px;
               height: 150px;
@@ -85,6 +100,7 @@ export default {
               background-repeat: no-repeat;
               background-position: center;
               background-size: contain;
+              display: inline-block;
             }
           }
           span{

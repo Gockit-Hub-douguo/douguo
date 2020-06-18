@@ -81,7 +81,7 @@
         overflow: hidden;
         .size(100%,auto);
         .center(text-x);
-        margin-top: 30px;
+        // margin-top: 30px;
         background: #f8f8f8;
         .lym-footer-top{
             background: #f2f2f2;

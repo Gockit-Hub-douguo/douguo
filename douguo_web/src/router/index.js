@@ -27,6 +27,7 @@ import Menumaxmoust from '@/components/menu/maxmost'
 import login from 'comp/loginAndRegister/login'
 import register from 'comp/loginAndRegister/register'
 import start from 'comp/start/drink'
+import detail from 'comp/start/detail'
 import biji from '@/components/yth/biji'
 import bijixq from '@/components/yth/bijixq'
 import cuangj from '@/components/yth/cuangj'
@@ -35,6 +36,7 @@ import Personer from '@/components/Personer/w-login'
 import suggest from '@/components/Suggest'
 import dis from '@/components/Discuss/dis'
 import shou from '@/components/Discuss/shoucang'
+
 
 Vue.use(VueRouter)
 
@@ -112,8 +114,11 @@ const routes = [
         component: register
       },
       {
-        path: '/start', // 星巴克
+        path: '/start',// 星巴克
         component: start
+      }, {
+        path: '/detail', // 星巴克商品详情
+        component: detail
       },
       {
         path: '/biji',
