@@ -6,7 +6,7 @@
         <router-link to='/mofu' class="active">菜单</router-link>
         <router-link to='/Menuuser'>用户</router-link>
       </div>
-      <h3>"热菜"的相关菜谱</h3>
+      <h3>"{{title}}"的相关菜谱</h3>
       
     </div>
         <div class="menu-list">
@@ -67,6 +67,25 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      title: '热菜'
+    }
+  },
+  methods: {
+    fu () {
+      this.title = window.localStorage.getItem('menuName') || '热菜'
+      // this.title = this.$route.query.menu || '热菜'
+    }
+  },
+  mounted () {
+    this.fu()
+  }
+}
+</script>
 
 <style lang="less" scoped>
 @import '~privatecss/menu.less';

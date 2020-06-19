@@ -19,9 +19,11 @@
                                 <span class="lym-menuCommon fl" >{{item.title}}</span>
                                 <div class="lym-menu-itemCont fl">
                                 <!-- {{menulist[index].list}} -->
-                                    <router-link to="/Menu" :key="i" v-for="(menu,i) in item.list">{{menu}}</router-link>
+                                    <!-- <router-link to="{name: 'Menu', params:{userId: 123 }}" :key="i" v-for="(menu,i) in item.list">{{menu}}</router-link> -->
+                                    <!-- <router-link :to="{path: '/Menu', query: {menu: menu}}" :key="i" v-for="(menu,i) in item.list">{{menu}}</router-link> -->
+                                    <a @click="localhref(menu)" :key="i" v-for="(menu,i) in item.list">{{menu}}</a>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div class="lym-lookAll"><router-link to="/fenlei">查看全部分类<i class="el-icon-arrow-right"></i></router-link></div>
                     </div>
@@ -74,34 +76,6 @@
                 <!-- to="./login" -->
                 <a class="lym-login" @click="login(1)">登录</a> |
                 <a class="lym-register" @click="register(1)">注册</a>
-            </div>
-            <!-- 个人中心 -->
-            <div class="person">
-                <el-badge :value="12" class="item">
-                    <el-button size="small"></el-button>
-                </el-badge>
-                <ul class="personlist">
-                    <router-link to="/discuss" class="clearfix">
-                        消息提醒
-                        <el-badge is-dot class="item" />
-                    </router-link>
-                    <router-link to="/shoucang" class="clearfix">
-                        我的收藏
-                        <el-badge is-dot class="item" />
-                    </router-link>
-                    <router-link to="/caogao" class="clearfix">
-                        草稿箱
-                        <el-badge is-dot class="item" />
-                    </router-link>
-                    <router-link to="/personer" class="clearfix">
-                        账户设置
-                        <el-badge class="mark" />
-                    </router-link>
-                    <el-dropdown-item class="clearfix">
-                        退出
-                        <el-badge class="mark"  />
-                    </el-dropdown-item>
-                </ul>
             </div>
         </div>
     </div>
@@ -193,6 +167,10 @@ export default {
     register (c) {
       this.$store.commit('clik', 0)
       this.$router.push({ path: './register' })
+    },
+    localhref (value) {
+      window.localStorage.setItem('menuName', value || '热菜')
+      this.$router.push({ path: '/Menu' })
     }
   },
   mounted () {
@@ -400,41 +378,6 @@ export default {
                 margin-left: 20px;
                 line-height: 30px;
                 height: 30px;
-            }
-            .person{
-                position: relative;
-                display: inline-block;
-                /deep/ .el-button--small{
-                    .size(24px,32px);
-                    border-radius: 50%;
-                    background: url('https://www.starbucks.com.cn/images/products/sparkling-espresso-tonic.jpg');
-                    background-size: contain;
-                    &:focus,
-                    &:active{
-                       outline: none;
-                       border-color: transparent;
-                    }
-                }
-                .personlist{
-                    position: absolute;
-                    width: 150px;
-                    background: #ffffff;
-                    padding: 8px;
-                    line-height: 34px;
-                    display: none;
-                    right: -53px;
-                    li:hover,a:hover{
-                        color: #FFB31A;
-                        cursor: pointer;
-                    }
-                }
-                /deep/ .el-badge__content{
-                    line-height: 16px;
-                    padding: 0 3px;
-                }
-                &:hover .personlist{
-                    display: block;
-                }
             }
         }
         .lym-lookAll{

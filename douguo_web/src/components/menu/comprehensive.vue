@@ -8,7 +8,7 @@
         <router-link to='/mofu'>菜单</router-link>
         <router-link to='/Menuuser'>用户</router-link>
       </div>
-      <h3>"热菜"的相关菜谱</h3>
+      <h3>"{{title}}"的相关菜谱</h3>
       <div class="Secondarynavigation">
         <router-link to='/Menu' class="active">综合最佳</router-link>
         <span>|</span>
@@ -51,9 +51,23 @@
   import adsense from '@/components/FoodNews/slidergg'
   import shopping from './ShoppingRendering'
   export default {
+    data () {
+      return {
+        title: '热菜'
+      }
+    },
     components: {
       adsense,
       shopping
+    },
+    methods: {
+      fu () {
+        this.title = window.localStorage.getItem('menuName') || '热菜'
+        // this.title = this.$route.query.menu || '热菜'
+      }
+    },
+    mounted () {
+      this.fu()
     }
   }
 </script>

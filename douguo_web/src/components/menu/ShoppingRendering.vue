@@ -3,10 +3,10 @@
   <div class="LeftInfo fl">
     <ul>
       <li v-for="it in 9" :key="it">
-        <img src="https://cp1.douguo.com/upload/caiku/e/f/9/400x266_ef1b8a39fa93c683e9328ae0d82bf289.jpg" alt="">
+        <img src="https://cp1.douguo.com/upload/caiku/b/1/5/400x266_b180f00d384474e7007a90cc686de155.jpeg" alt="">
         <div>
-          <h3>鱼香肉丝</h3>
-          <p class="author">猪里脊肉,冬笋,胡萝卜,黑木耳,葱末,姜末,蒜末,剁椒,水淀粉</p>
+          <h3>【轻乳酪蛋糕】用心打造完美奶酪蛋糕</h3>
+          <p class="author">鸡蛋,奶油奶酪,低筋面粉,牛奶 </p>
           <p class="time">
             <el-rate
               v-model="value"

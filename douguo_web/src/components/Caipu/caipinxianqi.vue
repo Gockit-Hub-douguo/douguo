@@ -349,7 +349,7 @@ export default {
                         font-size: 15px;
                         text-align: center;
                         line-height: 32px;
-                        background: #ffb31a url();
+                        // background: #ffb31a url();
                         // padding-left: 20px;
                     }
                 }

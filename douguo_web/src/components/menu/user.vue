@@ -8,7 +8,7 @@
     </div>
     <!-- 用户信息表 -->
     <div class="userinfo">
-      <h3>"热菜的相关用户"</h3>
+      <h3>"{{title}}"的相关用户"</h3>
       <ul>
         <li v-for="item in 20" :key="item" class="fl">
           <div class="userphoto">
@@ -110,6 +110,19 @@ export default {
   components: {
     btn,
     adsense
+  },
+  data () {
+    return {
+      title: '热菜'
+    }
+  },
+  methods: {
+    fu () {
+      this.title = window.localStorage.getItem('menuName')
+    }
+  },
+  mounted () {
+    this.fu()
   }
 }
 </script>

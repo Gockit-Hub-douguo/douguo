@@ -8,7 +8,7 @@
         <router-link to='/mofu'>菜单</router-link>
         <router-link to='/Menuuser'>用户</router-link>
       </div>
-      <h3>"热菜"的相关菜谱</h3>
+      <h3>"{{title}}"的相关菜谱</h3>
       <div class="Secondarynavigation">
         <router-link to='/Menu'>综合最佳</router-link>
         <span>|</span>
@@ -72,11 +72,21 @@
   export default {
     data() {
       return {
-        value: 4.7
+        value: 4.7,
+        title: '热菜'
       }
     },
     components: {
       adsense
+    },
+    methods: {
+      fu () {
+        this.title = window.localStorage.getItem('menuName') || '热菜'
+        // this.title = this.$route.query.menu || '热菜'
+      }
+    },
+    mounted () {
+      this.fu()
     }
   }
 </script>
