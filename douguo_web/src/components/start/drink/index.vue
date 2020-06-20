@@ -2,12 +2,12 @@
 <div>
     <div class="scomon">
         <ul class="scomonLists">
-            <li class="SList" :key="index" v-for="(item,index) in list">
-               <span class="stitle">{{item.name}}</span>
+            <li class="SList">
+               <span class="stitle">{{drink.title}}</span>
                <ul>
-                 <li :key="index" v-for="(for2,index) in item.list1">
-                    <router-link to="/detail" class="img" :style= "{background:'url('+for2.url+') center/contain no-repeat' }"></router-link>
-                    <span>{{for2.title}}</span>
+                 <li :key="index" v-for="(for2,index) in drink.list">
+                    <router-link to="/detail" class="img" :style= "{background:'url(http://topyun.qicp.vip/'+for2.imgurl+') center/contain no-repeat' }"></router-link>
+                    <span>{{for2.name}}</span>
                 </li>
                </ul>
             </li>
@@ -20,6 +20,7 @@
 export default {
   data () {
     return {
+      drink: '',
       list: [
         {
           name: '咖啡融合冰激凌',
@@ -46,6 +47,11 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    const a = this.$store.state.data
+    console.log(a)
+    this.drink = a
   }
 }
 </script>
@@ -100,7 +106,8 @@ export default {
               background-repeat: no-repeat;
               background-position: center;
               background-size: contain;
-              display: inline-block;
+              display: block;
+             margin-bottom: 8px;
             }
           }
           span{

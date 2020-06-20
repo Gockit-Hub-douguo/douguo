@@ -26,8 +26,9 @@ import Menumost from '@/components/menu/most'
 import Menumaxmoust from '@/components/menu/maxmost'
 import login from 'comp/loginAndRegister/login'
 import register from 'comp/loginAndRegister/register'
-import start from 'comp/start/drink'
+import drink from 'comp/start/drink'
 import detail from 'comp/start/detail'
+import kafei from 'comp/start/kafei'
 import biji from '@/components/yth/biji'
 import bijixq from '@/components/yth/bijixq'
 import cuangj from '@/components/yth/cuangj'
@@ -116,11 +117,14 @@ const routes = [
         component: register
       },
       {
-        path: '/start',// 星巴克
-        component: start
+        path: '/drink',// 星巴克
+        component: drink
       }, {
         path: '/detail', // 星巴克商品详情
         component: detail
+      }, {
+        path: '/kafei', // 咖啡详情
+        component: kafei
       },
       {
         path: '/biji',

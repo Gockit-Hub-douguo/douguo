@@ -3,7 +3,7 @@
     <!-- 登录头部 -->
     <div class="login">
         <div class="login-logo">
-            <div class="logoBox">
+            <div class="logoBox"  @click="index(1)">
             </div>
         </div>
     </div>
@@ -43,8 +43,31 @@
 <script>
 import reform from './form'
 export default {
+  data () {
+    return {
+      hz: ''// 后缀名初始化
+    }
+  },
   components: {
     reform
+  },
+  mounted () {
+    this.houzui()
+  },
+  methods: {
+    // 刷新注册页面隐藏首页的头部底部
+    houzui () {
+      this.hz = this.$route.path || '/register'
+      if (this.hz === '/register') {
+        this.$store.commit('clik', 0)
+      } else {
+        this.$store.commit('clik', 1)
+      }
+    },
+    index () {
+      this.$store.commit('clik', 1)
+      this.$router.push({ path: '/' })
+    }
   }
 }
 </script>

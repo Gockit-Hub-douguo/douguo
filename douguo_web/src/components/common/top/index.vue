@@ -30,7 +30,7 @@
                 </li>
                 <li><router-link to="/FoodNews">饮食新闻</router-link></li>
                 <li>
-                    <router-link to="/start" class="lym-Starbucks">星巴克饮品<i class="el-icon-arrow-down"></i></router-link>
+                    <a @click="clikmenu()" class="lym-Starbucks">星巴克饮品<i class="el-icon-arrow-down"></i></a>
                     <div class="lym-menu">
                         <div class="lym-menu-nav">
                             <a><img src="https://cp1.douguo.com/static/nweb/images/jx3.png"><span>精选</span></a>
@@ -42,7 +42,8 @@
                                 <span class="lym-menuCommon fl" >{{item.title}}</span>
                                 <div class="lym-menu-itemCont fl">
                                 <!-- {{menulist[index].list}} -->
-                                    <a :key="i" v-for="(menu,i) in item.list">{{menu}}</a>
+                                    <a @click="clikmenu()" :key="i" v-for="(menu,i) in item.list" :to="{path:'/start', query:{menu:menu}}">{{menu}}
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +83,11 @@
 </template>
 
 <script>
+import axios from 'axios'
+// import { api } from '../apiConfig'
+import md5 from '@/assets/js/md5.js'
 export default {
+  inject: ['reload'],
   data () {
     return {
       select: '',
@@ -167,6 +172,39 @@ export default {
     register (c) {
       this.$store.commit('clik', 0)
       this.$router.push({ path: './register' })
+    },
+    // 星巴克菜单点击渲染
+    clikmenu (a) {
+      // window.localStorage.setItem('')
+      var timestamp = new Date().getTime()
+      var publicwords = md5((timestamp + 1000) * 2)
+      console.log(publicwords)
+      // axios.defaults.baseURL = api
+      axios({
+        method: 'get',
+        url: 'GetSetIcetune',
+        params: {
+          uid: '1',
+          publicwords: publicwords,
+          timegtime: timestamp
+        }
+      }).then(back => {
+        if (back.status === 200) {
+          //  将back数据存入list
+          this.list = back
+          console.log(back)
+          this.reload();
+          console.log(this.reload())
+          // 将vuex里面的data方法
+          this.$store.commit('data',back.data)
+        } else {
+          console.log(back.message)
+          // this.$router.push('/drink')
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+      this.$router.push('/drink')
     },
     localhref (value) {
       window.localStorage.setItem('menuName', value || '热菜')

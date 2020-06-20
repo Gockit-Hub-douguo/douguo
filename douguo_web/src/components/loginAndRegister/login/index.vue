@@ -3,7 +3,7 @@
     <!-- 登录头部 -->
     <div class="login">
         <div class="login-logo">
-            <div class="logoBox">
+            <div class="logoBox" @click="index(1)">
             </div>
         </div>
     </div>
@@ -60,9 +60,13 @@ export default {
   data () {
     return {
       i: 0,
+      hz: '', // 后缀名初始化
       tabView: 'f',
       tabs: [{ name: '免密登录' }, { name: '密码登录' }]
     }
+  },
+  mounted () {
+    this.houzui()
   },
   components: {
     free,
@@ -72,6 +76,19 @@ export default {
     tabChange: function (tab) {
       this.tabView = tab
       console.log(this.tabView)
+    },
+    // 刷新登录页面隐藏首页的头部底部
+    houzui () {
+      this.hz = this.$route.path || '/login'
+      if (this.hz === '/login') {
+        this.$store.commit('clik', 0)
+      } else {
+        this.$store.commit('clik', 1)
+      }
+    },
+    index () {
+      this.$store.commit('clik', 1)
+      this.$router.push({ path: '/' })
     }
   }
 }
