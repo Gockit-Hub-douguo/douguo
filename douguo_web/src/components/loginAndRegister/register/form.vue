@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { regist } from 'ax/regiest.js'
 export default {
   data () {
     // 密码验证
@@ -63,10 +64,10 @@ export default {
       },
       rules: {
         num: [
-          { type: 'number', require: true, message: '请输入电话号码', trigger: 'change' }
+          { required: true, message: '请输入电话号码', trigger: 'blur' }
         ],
         name: [
-          { require: true, message: '请输入昵称', trigger: 'blur' },
+          { required: true, message: '请输入昵称', trigger: 'blur' },
           { min: 3, max: 5, message: '长度在3到5个字符之间', trigger: 'blur' }
         ],
         pass: [
@@ -82,8 +83,22 @@ export default {
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
+        const phonenumber = this.ruleForm.num
+        const password = this.ruleForm.pass
+        const username = this.ruleForm.name
         if (valid) {
-          alert('submit!')
+          regist({
+            data: {
+              phonenumber,
+              password,
+              username
+            }
+          }).then((data)=>{
+            console.log(data)
+          }).catch((err)=>{
+            console.log(err)
+          })
+          console.log('验证通过')
         } else {
           console.log('error submit!!')
           return false
@@ -132,7 +147,7 @@ export default {
         }
       }
       /deep/ .el-button--primary{
-            width: 100%;
+          width: 100%;
           margin-top: 30px;
           background: #ffb31a;
           border-color:#ffb31a ;

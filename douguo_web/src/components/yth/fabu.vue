@@ -23,57 +23,37 @@
           <div class="yth-fenlei">
             <div class="yth-shicai">食材</div>
             <div class="yth-yongliang">用量</div>
-            <div>
+            <div >
               <input class="input" placeholder="如:五花肉"/>
               <input class="input1" placeholder="如: 250g"/>
               <ul class=" yth-tubiao">
-                <li class="el-icon-plus yth-tubiao-a"></li>
+                <li @click='i++' class="el-icon-plus yth-tubiao-a"></li>
                 <li class="el-icon-top yth-tubiao-a"></li>
                 <li class="el-icon-bottom yth-tubiao-a"></li>
-                <li class="el-icon-minus yth-tubiao-b"></li>
+                <li class="el-icon-minus yth-tubiao-b" @click="i--"></li>
               </ul>
             </div>
-            <div class="yth-qingdan-a">
+            <div v-for="item in i" :key="item">
               <input class="input" />
               <input class="input1"/>
               <ul class=" yth-tubiao">
-                <li @click="getdate()" class="el-icon-plus yth-tubiao-a"></li>
+                <li @click='i++' class="el-icon-plus yth-tubiao-a"></li>
                 <li class="el-icon-top yth-tubiao-a"></li>
                 <li class="el-icon-bottom yth-tubiao-a"></li>
-                <li class="el-icon-minus yth-tubiao-b"></li>
-              </ul>
-            </div>
-            <div>
-              <input class="input" />
-              <input class="input1" />
-              <ul class=" yth-tubiao">
-                <li class="el-icon-plus yth-tubiao-a"></li>
-                <li class="el-icon-top yth-tubiao-a"></li>
-                <li class="el-icon-bottom yth-tubiao-a"></li>
-                <li class="el-icon-minus yth-tubiao-b"></li>
-              </ul>
-            </div>
-            <div>
-              <input class="input" />
-              <input class="input1" />
-              <ul class=" yth-tubiao">
-                <li class="el-icon-plus yth-tubiao-a"></li>
-                <li class="el-icon-top yth-tubiao-a"></li>
-                <li class="el-icon-bottom yth-tubiao-a"></li>
-                <li class="el-icon-minus yth-tubiao-b"></li>
+                <li class="el-icon-minus yth-tubiao-b" @click="i--"></li>
               </ul>
             </div>
           </div>
-          <div class="yth-zenjia">增加一栏</div>
+          <div @click='i++' class="yth-zenjia">增加一栏</div>
       </div>
-      <div class="yth-qingdan">步骤
+      <div class="yth-qingdan-a">步骤
           <span class="yth-buzhou">（支持上传图片格式有jpg、jpeg、png、gif、webp）</span>
       </div>
-      <div class=" yth-qingdan">
-          <el-button size="small" type="primary " class="yth-shangchuan yth-qingdan">批量上传</el-button>
+      <div class=" yth-qingdan-a">
+          <el-button size="small" type="primary " style="line-height:0" class="yth-shangchuan yth-qingdan">批量上传</el-button>
           <span class="yth-buzhou">按住Ctrl键可多选，为保证您的使用体验，请单次上传图片不要超过6张</span>
       </div>
-        <div style="width:690px; overflow: hidden; ">
+        <div  v-for="item in j" :key="item" style="width:690px; overflow: hidden; ">
           <div class="yth-buzou">
             <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/">
               <i class="el-icon-plus avatar-uploader-icon yth-buzou-tu"></i>
@@ -83,10 +63,10 @@
           <el-input class="yth-buzou-shuru" type="textarea" v-model="textarea"></el-input>
           <div class="el-icon-top yth-buzou-a"></div>
           <div class="el-icon-bottom yth-buzou-b"></div>
-          <div class="el-icon-plus yth-buzou-c"></div>
-          <div class="el-icon-minus yth-buzou-d"></div>
+          <div  @click='j++' class="el-icon-plus yth-buzou-c"></div>
+          <div class="el-icon-minus yth-buzou-d"  @click='j--'></div>
         </div>
-      <div class="yth-zj">增加一栏</div>
+      <div  @click='j++' class="yth-zj">增加一栏</div>
       <div class="yth-xts">
         <div style="margin-top:20px; margin-bottom:20px">小贴士</div>
         <el-input class="yth-xts-shuru" type="textarea" v-model="textarea"></el-input>
@@ -98,11 +78,11 @@
         </div>
         <div class="yth-yizhengm">
           <div class="yth-yzm">验证码:</div>
-          <input style="width:200px; height:42px;" class="input1"/>
+          <input style="width:200px; height:42px; margin-left:20px;" class="input1"/>
         </div>
         <div class="yth-cuangj">
-          <el-button type="warning">发布</el-button>
-          <el-button class="yth-cuncg" type="warning">存草稿</el-button>
+          <el-button type="warning" @click="open">发布</el-button>
+          <el-button @click="open1" class="yth-cuncg" type="warning">存草稿</el-button>
         </div>
     </div>
   </div>
@@ -112,6 +92,8 @@
 export default {
   data () {
     return {
+      i: 1,
+      j: 1,
       options: [{
         value: '选项1',
         label1: '烹饪难度',
@@ -133,9 +115,7 @@ export default {
       }],
       value1: [],
       value2: [],
-      checked: true,
-      message: 'father',
-      show: 'true'
+      checked: true
     }
   },
   methods: {
@@ -153,7 +133,11 @@ export default {
       }
       return isJPG && isLt2M
     },
-    getdate () {
+    open () {
+      this.$message('请选择封面')
+    },
+    open1 () {
+      this.$message('保存成功')
     }
   }
 }
@@ -165,66 +149,70 @@ export default {
   .size(1000px, 100%);
   margin: 0 auto;
   margin-top: 85px;
-}
-.yth-app {
-  margin: 0 auto;
-  .margin(0, 0, 0, 20px);
-}
-.yth-top {
-  .size(130px, 37px);
-  .margin(20px, 0 ,0, 0);
-  text-align: center;
-  .line-height(37px);
-  background: rgba(51, 51, 51, 0.3);
-  border-radius:50px;
-  color: #fff;
-}
-.avatar-uploader {
-  .size(690px, 390px);
-  background: #eee;
-  .margin(20px, 0, 0, 0);
-  padding-top: 225px;
-  text-align: center;
-  color:#999;
-}
-.yth-top-tu{
-  .font-size(60px);
-}
-.input {
-  .margin(20px, 0, 0, 0);
-  .padding(0, 0, 0, 20px);
-  .size(690px, 42px);
-}
-.yth-select {
-  overflow: hidden;
-}
-.el-select {
-    color: #000;
+  .yth-app {
+    margin: 0 auto;
+    .margin(0, 0, 0, 20px);
+  }
+  .yth-top {
+    .size(130px, 37px);
+    .margin(20px, 0 ,0, 0);
+    text-align: center;
+    .line-height(37px);
+    background: rgba(51, 51, 51, 0.3);
+    border-radius:50px;
+    color: #fff;
+  }
+  .avatar-uploader {
+    .size(690px, 390px);
+    background: #eee;
+    .margin(20px, 0, 0, 0);
+    padding-top: 160px;
+    text-align: center;
+    color:#999;
+    .yth-top-tu{
+     .font-size(80px);
+    }
+  }
+  .input {
     .margin(20px, 0, 0, 0);
     .padding(0, 0, 0, 20px);
-    float: left;
+    .size(690px, 42px);
+  }
+  .yth-select {
+    overflow: hidden;
+    .el-select {
+      color: #000;
+      .margin(20px, 0, 0, 0);
+      .padding(0, 0, 0, 20px);
+      float: left;
+    }
+  }
+  .el-textarea {
+    .margin(20px, 0, 0, 0);
+    .size(690px, 100%)
+  }
 }
-.el-textarea {
-  .margin(20px, 0, 0, 0);
-  .padding(0, 0, 20px, 0);
-  border-bottom: 1px solid #ccc;
-  .size(690px, 100%)
-}
-
 /deep/ .yth-input textarea {
     .size(690px, 170px);
 }
 .yth-qingdan {
-    .font-size(20px);
-    .size(690px, 100%);
-    .margin(20px, 0, 0, 0) ;
-    color:#000;
+  border-top:1px solid #ccc;
+  .padding(20px, 0, 20px, 0);
+  .font-size(20px);
+  .size(690px, 100%);
+  .margin(20px, 0, 0, 0) ;
+  color:#000;
+}
+.yth-qingdan-a{
+  .font-size(20px);
+  .size(690px, 100%);
+  color:#000;
 }
 .yth-fenlei {
   background: #F1F7FA;
   .size(690px, 100%);
   .margin(20px, 0, 20px, 0) ;
-  .padding(0, 0, 0, 20px);
+  .padding(0, 0, 20px, 10px);
   overflow: hidden;
 }
 .yth-shicai{
@@ -274,14 +262,15 @@ export default {
   .font-size(12px);
 }
 .yth-buzou-tu{
-  .font-size(40px);
-  margin-top: 100px;
+  .font-size(80px);
+  margin-top: 40px;
 }
 .yth-shangchuan {
   .size(100px, 30px);
   background: goldenrod;
   border-radius: 5px;
   .margin(0, 0, 0, 0) ;
+  border-bottom:0;
 }
 .yth-buzou{
   .size(200px, 200px)
@@ -292,16 +281,13 @@ export default {
     .margin( 20px);
     border-radius: 8px;
 }
-.yth-kuang {
-  border:1px solid #ccc;
-}
-.yth-buzou-shuru {
+.zou-shuru {
   .margin(0);
   .size(0, 0);
 }
 /deep/.yth-buzou-shuru textarea {
     .size(400px, 200px);
-    .margin(-210px, 0, 0, 220px)
+    .margin(-220px, 0, 0, 220px)
 }
 .yth-buzou-a {
   .margin(-180px, 30px, 0, 0);
@@ -358,14 +344,13 @@ export default {
 }
 /deep/.yth-xts-shuru textarea {
   .size(690px, 170px);
-  border-bottom:0;
-  .padding(0, 0, 20px, 0)
+  .padding(0, 0, 20px, 0);
 }
 .yth-xts-shuru {
-  .margin(0, 0, 20px, 0)
+  .margin(0, 0, 20px, 0);
 }
 .el-textarea{
-  .padding(0)
+  .padding(0);
 }
 /deep/.yth-xts-du{
   .margin(20px, 0, 0, 0);
@@ -377,7 +362,7 @@ export default {
   .size(690px, 100%);
 }
 .el-button {
-  .margin(30px, 0, 0, 0);
+  .margin(10px, 0, 0, 0);
   .size(168px, 42px);
   background: #FFB31A;
   color:#fff;
@@ -395,7 +380,7 @@ export default {
   line-height: 42px;
 }
 .yth-yizhengm-input {
-   border-bottom:0;
+  //  border-bottom:0;
    .margin(0);
 }
 /deep/.yth-yizhengm-input textarea {

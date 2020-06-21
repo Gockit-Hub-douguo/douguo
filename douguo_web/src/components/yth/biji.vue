@@ -9,84 +9,106 @@
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
             <a class="yth-biji-toux">
-              <el-avatar style=" margin-top: 20px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
-              <i style=" margin-top: 30px; float:left">芳芳园地</i>
-              <i style=" margin-top: 45px; float:right" class="el-icon-star-off">0</i>
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
             </a>
           </div>
         </div>
-      </div>
-      <div class="yth-biji-flex">
         <div>
-          <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/><router-link to='/'></router-link>
+          <div class="yth-biji-comtent " style="float:right">
+            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/><router-link to='/'></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
             <a class="yth-biji-toux">
-              <el-avatar style=" margin-top: 20px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
-              <i style=" margin-top: 30px; float:left">芳芳园地</i>
-              <i style=" margin-top: 45px; float:right" class="el-icon-star-off">0</i>
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
             </a>
           </div>
         </div>
       </div>
-      <div class="yth-biji-flex">
+       <div class="yth-biji-flex">
         <div>
           <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/><router-link to='/'></router-link>
+            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
             <a class="yth-biji-toux">
-              <el-avatar style=" margin-top: 20px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
-              <i style=" margin-top: 30px; float:left">芳芳园地</i>
-              <i style=" margin-top: 45px; float:right" class="el-icon-star-off">0</i>
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
             </a>
           </div>
         </div>
-      </div>
-      <div class="yth-biji-flex">
         <div>
-          <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/><router-link to='/'></router-link>
+          <div class="yth-biji-comtent " style="float:right">
+            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/><router-link to='/'></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
             <a class="yth-biji-toux">
-              <el-avatar style=" margin-top: 20px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
-              <i style=" margin-top: 30px; float:left">芳芳园地</i>
-              <i style=" margin-top: 45px; float:right" class="el-icon-star-off">0</i>
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
             </a>
           </div>
         </div>
       </div>
-      <div class="yth-biji-flex">
+       <div class="yth-biji-flex">
         <div>
           <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/><router-link to='/'></router-link>
+            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
             <a class="yth-biji-toux">
-              <el-avatar style=" margin-top: 20px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
-              <i style=" margin-top: 30px; float:left">芳芳园地</i>
-              <i style=" margin-top: 45px; float:right" class="el-icon-star-off">0</i>
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="yth-biji-comtent " style="float:right">
+            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/><router-link to='/'></router-link>
+          </div>
+          <div class="yth-biji-miaoshu">
+            <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
+            <a class="yth-biji-toux">
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
             </a>
           </div>
         </div>
       </div>
-      <div class="yth-biji-flex">
+       <div class="yth-biji-flex">
         <div>
           <div class="yth-biji-comtent">
-            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/></router-link>
+            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/>
           </div>
           <div class="yth-biji-miaoshu">
-            <router-link to="bijixq" class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</router-link>
+            <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
             <a class="yth-biji-toux">
-              <el-avatar style=" margin-top: 20px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
-              <i style=" margin-top: 30px; float:left">芳芳园地</i>
-              <i style=" margin-top: 45px; float:right" class="el-icon-star-off">0</i>
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="yth-biji-comtent " style="float:right">
+            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg"/><router-link to='/'></router-link>
+          </div>
+          <div class="yth-biji-miaoshu">
+            <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
+            <a class="yth-biji-toux">
+              <el-avatar style=" margin-top: 10px; float:left" src="https://tx1.douguo.com/upload/photo/0/8/e/70_u53464658649342225528.jpeg"></el-avatar>
+              <i style=" margin-top: 20px; float:left">芳芳园地</i>
+              <i style=" margin-top: 25px; float:right" class="el-icon-star-off">0</i>
             </a>
           </div>
         </div>
@@ -163,11 +185,11 @@ export default {
   margin: 0 auto;
   margin-top: 85px;
   justify-content: space-between;
+  overflow: hidden;
   .yth-biji-flex{
-    display: inline-block;
+    float:left;
     .size(23%,  100%);
     margin-left: 20px;
-    .center(text-x);
   }
   .yth-biji-comtent{
     .img{
@@ -175,12 +197,11 @@ export default {
     }
   }
   .yth-biji-miaoshu {
-    .padding(20px, 20px, 20px, 0);
     .font-size(15px);
     .yth-biji-toux {
       overflow: hidden;
-      // display:block;
-      .margin(20px, 0, 0, 0) ;
+      display:block;
+      .margin(0, 0, 20px, 0) ;
     }
   }
 }

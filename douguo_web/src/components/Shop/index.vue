@@ -2,15 +2,15 @@
     <div>
         <div class="shop-content">
             <ul class="goods-list">
-                <li :key="key" v-for="(item, key) in goodsList" class="goods">
+                <li :key="key" v-for="(item, key) in xgoodsList" class="goods">
                     <router-link to="/goods">
-                      <img width="240px" src="https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg">
+                      <img width="240px" :src="item.fimgurl">
                     </router-link>
-                    <router-link to="/goods"><h3>贝贝南瓜净重5斤</h3></router-link>
+                    <router-link to="/goods"><h3>{{item.fname}}</h3></router-link>
                     <div class="goodsinfo">
-                        <span class="price">￥25.90</span>
-                        <span class="old-price">￥45.00</span>
-                        <span class="volume">月销500</span>
+                        <span class="price">￥{{item.fnowprice}}</span>
+                        <span class="old-price">￥{{item.foriginPrice}}</span>
+                        <span class="volume">月销{{item.fsaleCount || '5000'}}</span>
                     </div>
                 </li>
             </ul>
@@ -22,31 +22,14 @@
 export default {
   data () {
     return {
-      goodsList: [{
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/6/1/1/448_6156cba3d6977b2caf8d15f7c5762631.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg'
-      }, {
-        img: 'https://cp1.douguo.com/upload/tuan/e/d/a/448_ed828309c5c2ba2fdab713c05fbce87a.jpg'
-      }]
+    }
+  },
+  created(){
+    return this.$store.dispatch('getdggoods')
+  },
+  computed: {
+    xgoodsList(){
+      return this.$store.state.goodslist
     }
   }
 }

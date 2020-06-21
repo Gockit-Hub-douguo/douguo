@@ -3,10 +3,10 @@
         <div class="content">
             <div class="type-tab">
                 <div class="type-head">
-                    <router-link to="/jx">精选</router-link>
-                    <router-link to="/ijx">最新</router-link>
-                    <router-link to="/fenlei">分类</router-link>
-                    <router-link to="/caidanzxzr">采单</router-link>
+                    <router-link active-class="active" to="/jx">精选</router-link>
+                    <router-link active-class="active" to="/ijx">最新</router-link>
+                    <router-link active-class="active" to="/fenlei">分类</router-link>
+                    <router-link active-class="active" to="/caidanzxzr">采单</router-link>
                 </div>
             </div>
         </div>
@@ -93,5 +93,8 @@ export default {
 }
 .wrap {
     padding-top: 60px;
+}
+.active {
+    border-bottom: 2px solid #000;
 }
 </style>

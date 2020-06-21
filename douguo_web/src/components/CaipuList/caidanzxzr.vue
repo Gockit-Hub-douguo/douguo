@@ -2,9 +2,9 @@
     <div class="content">
         <div id="zxzr">
         <div class="new-hot">
-            <router-link class="active" to="/caidanzxzr">最新</router-link>
+            <router-link active-class="active" to="/caidanzxzr">最新</router-link>
             |
-            <router-link to="/zuir">最热</router-link>
+            <router-link active-class="active" to="/zuir">最热</router-link>
         </div>
         <router-view></router-view>
     </div>

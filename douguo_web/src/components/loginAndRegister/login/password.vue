@@ -18,7 +18,7 @@
             <p class="fl input2">
                <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
             </p>
-            <span class="method">
+            <span class="method" @click="loginbtn">
               <a style="margin-left:5px;">登录</a>
             </span>
             <div class="agreement">
@@ -50,6 +50,7 @@
 </template>
 <script>
 // import Axios from 'axios'
+import { login } from 'ax/login.js'
 export default {
   data () {
     return {
@@ -105,8 +106,6 @@ export default {
       state: ''
     }
   },
-  mounted: function () {
-  },
   methods: {
     // 验证手机号码部分
     sendcode () {
@@ -130,6 +129,24 @@ export default {
       } else if (!regEmail.test(this.email)) {
         alert('邮箱格式不正确')
       }
+    },
+// 登录
+    loginbtn(){
+      login({
+          data: {
+            phonenumber: this.phone,
+            password: this.input
+          }
+        }).then((data)=>{
+          if(data.data.status === 0){
+            this.$router.push('/')
+            alert('登录成功！')
+          }else{
+            alert('账号或密码错误')
+          }
+        }).catch((err)=>{
+          console.log(err)
+        })
     }
     // 各国电话号码前缀
   }

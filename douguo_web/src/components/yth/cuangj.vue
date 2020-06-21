@@ -1,26 +1,26 @@
 <template>
     <div class="yth-ccuangj">
         <div class="yth-cuangj">创建菜单
-            <el-input class="yth-cuangj-input" type="textarea" placeholder="菜单名称(必填，30字以上)" ></el-input>
+            <el-input class="yth-cuangj-input" type="textarea" placeholder="菜单名称(必填，30字以上)" v-model="textarea" ></el-input>
             <el-input class="yth-cuangj-shuru" type="textarea" placeholder="菜单介绍(选填)" v-model="textarea"></el-input>
         </div>
         <div class="yth-cuangj">添加菜谱
             <span class="yth-tijia">(填入豆果美食的食谱地址或食谱ID来添加菜谱，如https://www.douguo.com/cookbook/64339.html或者64339)</span>
-            <el-input class="yth-cuangj-input" type="textarea" ></el-input>
-            <el-input class="yth-cuangj-input" type="textarea" ></el-input>
-            <el-input class="yth-cuangj-input" type="textarea" ></el-input>
-            <el-input class="yth-cuangj-input" type="textarea" ></el-input>
-            <el-input class="yth-cuangj-input" type="textarea" ></el-input>
+            <input style="width:690px; height:42px; margin-top:20px;" class="input2" v-model="textarea"/>
+            <input style="width:690px; height:42px; margin-top:20px;" class="input3" v-model="textarea"/>
+            <input style="width:690px; height:42px; margin-top:20px;" class="input4" v-model="textarea"/>
+            <input style="width:690px; height:42px; margin-top:20px;" class="input5" v-model="textarea"/>
             <el-button type="warning">添加</el-button>
         </div>
         <div class="yth-caidanbj">
           <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
+            <i class="el-icon-plus avatar-uploader-icon yth-caidanbj-tu"></i>
             <div class="yth-caidanbj-clor">添加菜单背景图<span class="yth-caidanbj-clor-a">(可选)</span></div>
           </el-upload>
         </div>
         <div class="yth-yizhengm">
           <div class="yth-yzm">验证码:</div>
-          <el-input class="yth-yizhengm-input" type="textarea" ></el-input>
+          <input style="width:200px; height:42px; margin-left:20px;" class="input1" v-model="textarea"/>
         </div>
         <div class="yth-cuangj">
           <el-button type="warning" @click= "open">提交</el-button>
@@ -28,27 +28,39 @@
     </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      textarea: '',
+      input1: ''
+    }
+  }
+}
+</script>
+
 <style scoped lang="less">
 @import "~@/assets/css/public.less";
 .yth-ccuangj{
   .size(1000px, 100%);
   margin: 0 auto;
-  margin-top: 85px;
+  margin-top: 85px
 }
 .yth-cuangj {
+  .size(690px, 100%);
   margin: 0 auto;
   .margin(20px, 0, 20px, 20px);
   .font-size(18px);
   color:#000;
   /deep/.yth-cuangj-input textarea {
-    .margin(30px, 0, 0, 0);
+    .margin(20px, 0, 0, 0);
     .size(690px, 42px);
     .padding(0, 0, 0, 20px);
     line-height: 42px;
     .font-size(15px);
   }
   /deep/.yth-cuangj-shuru textarea {
-    .margin(30px, 0, 0, 0);
+    .margin(20px, 0, 0, 0);
     .padding(20px, 0, 0, 20px);
     .size(690px, 170px);
     .font-size(15px);
@@ -57,7 +69,7 @@
     .font-size(12px);
   }
   .el-button {
-    .margin(30px, 0, 0, 0);
+    .margin(20px, 0, 0, 0);
     .size(90px, 42px);
     background: goldenrod;
     color:#fff;
@@ -69,6 +81,10 @@
     .margin(0, 0, 0, 20px);
     background: #ccc;
     text-align: center;
+}
+.yth-caidanbj-tu{
+  .font-size(80px);
+  margin-top: 40px;
 }
 .yth-caidanbj-clor {
   .font-size(15px);
