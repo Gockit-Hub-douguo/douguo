@@ -18,6 +18,7 @@
             <p class="fl input2">
                <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
             </p>
+            <router-link to="/forget" class="fr">忘记密码 》</router-link>
             <span class="method" @click="loginbtn">
               <a style="margin-left:5px;">登录</a>
             </span>

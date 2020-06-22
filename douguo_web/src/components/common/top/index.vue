@@ -42,7 +42,7 @@
                                 <span class="lym-menuCommon fl" >{{item.title}}</span>
                                 <div class="lym-menu-itemCont fl">
                                 <!-- {{menulist[index].list}} -->
-                                    <a @click="clikmenu()" :key="i" v-for="(menu,i) in item.list" :to="{path:'/start', query:{menu:menu}}">{{menu}}
+                                    <a @click="clikmenu(menu)" :key="i" v-for="(menu,i) in item.list">{{menu}}
                                     </a>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ export default {
       startlist: [
         {
           title: '饮料',
-          list: [' 星巴克玩味冰调™', '手工调制浓缩咖啡', '星冰乐®', ' 茶瓦纳™', '经典巧克力饮品', '咖啡融合冰淇淋', '星巴克冷萃咖啡系列', '海鲜', '气致™冷萃咖啡']
+          list: ['星巴克玩味冰调™', '手工调制浓缩咖啡', '星冰乐®', '茶瓦纳™', '经典巧克力饮品', '咖啡融合冰淇淋', '星巴克冷萃咖啡系列', '海鲜', '气致™冷萃咖啡']
         },
         {
           title: '美食',
@@ -173,16 +173,33 @@ export default {
       this.$store.commit('clik', 0)
       this.$router.push({ path: './register' })
     },
-    // 星巴克菜单点击渲染
-    clikmenu (a) {
+     // 星巴克菜单点击渲染
+    clikmenu (values) {
+      // var jiekouurl = ''
       // window.localStorage.setItem('')
+      // axios.defaults.baseURL = api
+      var demo = [{
+        name: '星巴克玩味冰调™',
+        eng: 'xing'
+      },{
+        name: '星冰乐®',
+        eng: 'ice'
+      }]
+      var eng = demo.map(item => { return { eng: item.eng } })
+       console.log(eng)
+      var arr = ['0','星冰乐®','茶瓦纳™','手工调制浓缩咖啡','烘焙','蛋糕&甜品','三明治、帕尼尼、卷','中度咖啡豆','深度咖啡豆','常规产品']
+      var arr1 = ['GetSetIcetune','GetSetStar','GetSetTea','GetSetEspresso','GetSetBaking','GetSetCake','GetSetSandwich','GetSetModerate','GetSetDepth','GetSetShoppingcg']
+      var duankou = arr1[arr.indexOf(values)]
+      console.log(duankou)
+      this.axiosquest(duankou)
+      this.$router.push({ path: '/drink' , query: { menu: values } })
+    },
+    axiosquest (duankou) {
       var timestamp = new Date().getTime()
       var publicwords = md5((timestamp + 1000) * 2)
-      console.log(publicwords)
-      // axios.defaults.baseURL = api
       axios({
         method: 'get',
-        url: 'GetSetIcetune',
+        url: `http://topyun.qicp.vip/${duankou}`,
         params: {
           uid: '1',
           publicwords: publicwords,
@@ -192,9 +209,6 @@ export default {
         if (back.status === 200) {
           //  将back数据存入list
           this.list = back
-          console.log(back)
-          this.reload();
-          console.log(this.reload())
           // 将vuex里面的data方法
           this.$store.commit('data',back.data)
         } else {
@@ -204,7 +218,6 @@ export default {
       }).catch(err => {
         console.log(err)
       })
-      this.$router.push('/drink')
     },
     localhref (value) {
       window.localStorage.setItem('menuName', value || '热菜')

@@ -48,6 +48,18 @@ export default {
       ]
     }
   },
+   computed: {
+    // 监听vuex里面的data数据是否发生变化
+    ff () {
+      return this.$store.state.data
+    }
+  },
+  // 当ff数据发生变化即立刻执行该方法，更新drink数据
+  watch: {
+    ff (newValue) {
+      this.drink = newValue
+    }
+  },
   mounted () {
     const a = this.$store.state.data
     console.log(a)
