@@ -5,7 +5,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api': {
-                target: 'http://192.168.85.248:3000/',
+                target: 'http://192.168.0.106:3000/',
                 ws: true,
                 changeOrigin: true,
                 pathRewrite: {

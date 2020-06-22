@@ -93,11 +93,11 @@
           <h3 class="fl">商城精选</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
         </div>
         <ul>
-          <li v-for="its in 3" :key="its">
-            <el-link :underline="false"  class="fl"><img src="https://cp1.douguo.com/upload/tuan/6/1/1/448_6156cba3d6977b2caf8d15f7c5762631.jpg" alt=""></el-link>
-            <h3><el-link :underline="false" class="h-orange">阳山水蜜桃【正宗】无锡当季时令水果新鲜整箱应季超甜</el-link></h3>
-            <p class="price">￥49.90</p>
-            <p class="xssalesvolume">月售15</p>
+          <li v-for="its in homegoods" :key="its">
+            <el-link :underline="false"  class="fl"><img :src="its.fimgurl" alt=""></el-link>
+            <h3><el-link :underline="false" class="h-orange">{{its.fname}}</el-link></h3>
+            <p class="price">￥{{its.fnowprice}}</p>
+            <p class="xssalesvolume">月售{{its.fsaleCount || 0}}</p>
           </li>
         </ul>
       </div>
@@ -275,11 +275,23 @@ export default {
       }]
     }
   },
+  computed: {
+    homegoods () {
+      const list = []
+      for(var i = 0; i < 3; i++){
+        list.push(this.$store.state.goodslist[i])
+      }
+      return list
+    }
+  },
   methods: {
   },
   components: {
     menuRendering,
     Sage
+  },
+  created(){
+    return this.$store.dispatch("getdggoods")
   }
 }
 </script>
