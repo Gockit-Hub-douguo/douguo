@@ -78,6 +78,18 @@
                 <a class="lym-login" @click="login(1)">登录</a> |
                 <a class="lym-register" @click="register(1)">注册</a>
             </div>
+            <div class="person fr">
+              <el-badge :value="12" class="item">
+                <el-avatar :size="50" :src="circleUrl"></el-avatar>
+              </el-badge>
+              <div class="person-list">
+                <el-badge is-dot class="item">消息提醒</el-badge>
+                <el-badge is-dot class="item">我的收藏</el-badge>
+                <el-badge is-dot class="item">草稿箱</el-badge>
+                <el-badge  class="item">账号设置</el-badge>
+                <el-badge  class="item">退出</el-badge>
+              </div>
+            </div>
         </div>
     </div>
 </template>
@@ -93,6 +105,7 @@ export default {
       select: '',
       restaurants: [],
       state: '',
+       circleUrl: "http://topyun.qicp.vip/VP_2020620175538.jpg",
       menulist: [
         {
           title: '常见菜式',
@@ -429,6 +442,37 @@ export default {
                 margin-left: 20px;
                 line-height: 30px;
                 height: 30px;
+            }
+            .person{
+              position: relative;
+              height: 46px;
+              &:hover .person-list{
+                  display: block;
+                }
+              /deep/ .el-avatar{
+                width: 30px !important;
+                height: 30px !important;
+                border: 1px solid gainsboro;
+                line-height: 45px;
+              }
+              .person-list{
+                position: absolute;
+                top: 46px;
+                right: -5px;
+                background: #fff;
+                width: 108px;
+                border-radius: 5px;
+                line-height: 28px;
+                display: none;
+                text-align: center;
+                .el-badge{
+                  display: block !important;
+                  &:hover{
+                    cursor: pointer;
+                    background: lavender;
+                  }
+                }
+              }
             }
         }
         .lym-lookAll{

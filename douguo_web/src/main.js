@@ -8,9 +8,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'css/public.less'
 import 'css/common.less'
 import SlideVerify from 'vue-monoplasty-slide-verify'
+import { api1 } from '../api'
 import { api } from '../apiConfig'
 import axios from 'axios'
-
+// import { from } from 'core-js/fn/array'
+axios.defaults.baseURL = api1
 axios.defaults.baseURL = api
 Vue.config.productionTip = false
 Vue.use(VueRouter)
