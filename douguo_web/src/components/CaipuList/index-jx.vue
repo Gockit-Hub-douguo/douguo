@@ -3,7 +3,7 @@
          <h2 class="title">最新推荐菜谱</h2>
             <!-- <div>111</div> -->
             <ul class="list">
-                <li :key="key" v-for="(item, key) in worksList" class="item">
+                <li :key="key" v-for="(item, key) in indexwoks" class="item">
                     <a>
                         <img width="300px" height="199px" :src="item.wimgUrl" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
                     </a>
@@ -42,9 +42,13 @@ export default {
     }
   },
   computed: {
-      worksList () {
-          return this.$store.state.worksList
+    indexwoks(){
+      const list = []
+      for(var i = 0; i < 6; i++){
+        list.push(this.$store.state.worksList[i])
       }
+      return list
+    }
   }
 }
 </script>

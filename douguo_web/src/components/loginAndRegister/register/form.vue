@@ -99,6 +99,7 @@ export default {
             console.log(err)
           })
           console.log('验证通过')
+          alert('注册成功！')
         } else {
           console.log('error submit!!')
           return false

@@ -2,10 +2,10 @@
   <!-- 商品数据渲染组件 -->
   <div class="LeftInfo fl">
     <ul>
-      <li v-for="it in 9" :key="it">
-        <img src="https://cp1.douguo.com/upload/caiku/b/1/5/400x266_b180f00d384474e7007a90cc686de155.jpeg" alt="">
+      <li v-for="it in indexwoks" :key="it">
+        <img :src="it.wimgUrl" alt="">
         <div>
-          <h3>【轻乳酪蛋糕】用心打造完美奶酪蛋糕</h3>
+          <h3>{{it.works_title}}</h3>
           <p class="author">鸡蛋,奶油奶酪,低筋面粉,牛奶 </p>
           <p class="time">
             <el-rate
@@ -18,8 +18,8 @@
           </p>
           <p class="linkurl">
             <router-link to='#'>
-              <img src="https://tx1.douguo.com/upload/photo/4/9/7/70_u99657481.jpg" alt="">
-              <em class="fl">月亮晶晶</em>
+              <img :src="it.userphoto" alt="">
+              <em class="fl">{{it.username}}</em>
               <span class="fl iconx"></span>
             </router-link>
           </p>
@@ -35,9 +35,21 @@
 
 <script>
 export default {
+  created(){
+        this.$store.dispatch('getworkslist')
+      },
   data() {
     return {
       value: 4.7
+    }
+  },
+  computed: {
+    indexwoks(){
+      const list = []
+      for(var i = 0; i < 6; i++){
+        list.push(this.$store.state.worksList[i])
+      }
+      return list
     }
   }
 }
