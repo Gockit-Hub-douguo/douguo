@@ -7,28 +7,28 @@
                     <router-link to="/person">密码修改</router-link>
                 </div>
                 <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-                   <el-form-item label="昵称" prop="name">
-                     <el-input class="w-lable" v-model="ruleForm.name" value="前端小白"></el-input>
+                   <el-form-item label="昵称" prop="username">
+                     <el-input class="w-lable" v-model="ruleForm.username" value="前端小白"></el-input>
                    </el-form-item>
-                    <el-form-item label="性别" prop="sex">
-                        <el-radio v-model="ruleForm.radio" label="1">男</el-radio>
-                        <el-radio v-model="ruleForm.radio" label="2">女</el-radio>
+                    <el-form-item label="性别" prop="ruleForm.userSex">
+                        <el-radio v-model="ruleForm.userSex" label="1">男</el-radio>
+                        <el-radio v-model="ruleForm.userSex" label="2">女</el-radio>
                    </el-form-item>
-                   <el-form-item label="生日" prop="timeget">
+                   <el-form-item label="生日" prop="ruleForm.birthday">
                         <el-date-picker
-                            v-model="ruleForm.time"
+                            v-model="ruleForm.birthday"
                             type="date"
                             placeholder="选择日期">
                        </el-date-picker>
                      </el-form-item>
                      <el-form-item label= "地址">
-                         <el-select v-model="ruleForm.value"  placeholder="请选择">
-                            <!-- <el-option
-                            v-for="item in options"
-                            :key="item.value"
+                         <el-select v-model="ruleForm.addr"  placeholder="请选择">
+                            <el-option
+                            v-for="(item,index) in options"
+                            :key="index"
                             :label="item.label"
                             :value="item.value">
-                            </el-option> -->
+                            </el-option>
                          </el-select>
                          <el-select class="address" v-model="ruleForm.value"  placeholder="请选择">
                             <!-- <el-option
@@ -40,7 +40,7 @@
                          </el-select>
                     </el-form-item>
                     <el-form-item label= "口味">
-                         <el-select v-model="ruleForm.value"  placeholder="请选择">
+                         <el-select v-model="ruleForm.myfav"  placeholder="请选择">
                             <!-- <el-option
                             v-for="item in options"
                             :key="item.value">
@@ -48,13 +48,13 @@
                          </el-select>
                     </el-form-item>
                     <el-form-item label= "自我介绍">
-                        <el-input class="text-title" v-model="ruleForm.aaa"
+                        <el-input class="text-title" v-model="ruleForm.decorations"
                          placeholder="介绍下自己，填写你认为自己称得上美食达人的理由。"
                             @input="changes($event)">
                         </el-input>
                     </el-form-item>
                     <el-form-item>
-                     <el-button type="warning">保存</el-button>
+                     <el-button type="warning" @click="update">保存</el-button>
                      </el-form-item>
                 </el-form>
             </div>
@@ -62,28 +62,72 @@
         <!-- 右边头像 -->
         <div class="content-right">
             <div class="content-img">
-                <div><img src="https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg"/></div>
-                <div class="upload-img">更换头像</div>
+                <div><img :src="ruleForm.imgurl"/></div>
+                <!-- <div class="upload-img">更换头像</div> -->
+                <el-upload
+                    class="avatar-uploader"
+                    action="api/upload"
+                    :show-file-list="false"
+                    :auto-upload="true"
+                    :on-success="handleAvatarSuccess">
+                    <div class="upload-img">更换头像</div>
+                </el-upload>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { userupload } from 'ax/regiest'
 export default {
   data () {
     return {
+      options: [
+          {
+              value: '重庆'
+          },
+          {
+              value: '四川'
+          },
+          {
+              value: '湖北'
+          },
+          {
+              value: '湖南'
+          },
+          {
+              value: '陕西'
+          },
+          {
+              value: '贵州'
+          }
+        ],
       ruleForm: {
-        name: '',
-        sex: '1',
-        time: '',
-        aaa: '1'
+        username: '',
+        userSex: '',
+        addr: '',
+        birthday: '',
+        decorations: '',
+        imgurl: 'http://image.yy.com/yywebalbumbs2bucket/144152f8680f421599233c6ffcfcef49_1476265267104.jpeg'
       }
     }
   },
   methods: {
     changes (e) {
       this.$forceUpdate()
+    },
+    handleAvatarSuccess(file){
+        this.ruleForm.imgurl = file.imgurl
+        console.log(this.ruleForm)
+    },
+    update(){
+        userupload({
+            data: this.ruleForm
+        }).then((data)=>{
+            console.log(data)
+        }).catch((err)=>{
+            console.log(err)
+        })
     }
   }
 }
