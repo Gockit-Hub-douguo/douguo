@@ -2,45 +2,9 @@
     <div class="content">
         <div class="menu-list">
             <ul>
-                <li>
+                <li :key="key" v-for="(item, key) in indexwoks" class="item">
                     <router-link class="cover" to="">
-                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
-                        <div class="menuinfo absolute">
-                            <p class="name text-lips">快手春食记  复工so easy！</p>
-                            <p class="rnum">10道菜谱</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="cover" to="">
-                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
-                        <div class="menuinfo absolute">
-                            <p class="name text-lips">快手春食记  复工so easy！</p>
-                            <p class="rnum">10道菜谱</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="cover" to="">
-                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
-                        <div class="menuinfo absolute">
-                            <p class="name text-lips">快手春食记  复工so easy！</p>
-                            <p class="rnum">10道菜谱</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="cover" to="">
-                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
-                        <div class="menuinfo absolute">
-                            <p class="name text-lips">快手春食记  复工so easy！</p>
-                            <p class="rnum">10道菜谱</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="cover" to="">
-                        <img class="wb100" src="https://cp1.douguo.com/upload/caiku/7/2/9/400x266_72662e42f50f7cb5759ca47b324b58e9.jpg" alt="">
+                        <img class="wb100" :src="item.wimgUrl" alt="">
                         <div class="menuinfo absolute">
                             <p class="name text-lips">快手春食记  复工so easy！</p>
                             <p class="rnum">10道菜谱</p>
@@ -58,6 +22,28 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    created(){
+        this.$store.dispatch('getworkslist')
+      },
+  data () {
+    return {
+      caipulist: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }
+  },
+  computed: {
+    indexwoks(){
+      const list = []
+      for(var i = 0; i < 7; i++){
+        list.push(this.$store.state.worksList[i])
+      }
+      return list
+    }
+  }
+}
+</script>
 
 <style lang="less" scoped>
     .content {

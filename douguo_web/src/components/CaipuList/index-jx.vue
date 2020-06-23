@@ -3,16 +3,16 @@
          <h2 class="title">最新推荐菜谱</h2>
             <!-- <div>111</div> -->
             <ul class="list">
-                <li :key="key" v-for="(item, key) in caipulist" class="item">
+                <li :key="key" v-for="(item, key) in worksList" class="item">
                     <a>
-                        <img width="300px" height="199px" src="https://cp1.douguo.com/upload/caiku/1/0/b/400x266_10e81d1f61dde89f0bcb1061612552cb.jpg" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
+                        <img width="300px" height="199px" :src="item.wimgUrl" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
                     </a>
                     <div class="relative">
-                        <a class="title">拉丝肉松烤肠酥</a>
+                        <a class="title">{{item.works_title}}</a>
                         <div>
                             <a class="cover">
-                                <img style="border-radius: 50%" width="20px" src="https://tx1.douguo.com/upload/photo/6/2/8/70_u66631823200625014715.jpg" alt="">
-                                <span style="margin-left: 10px" class="cover-name">欧鹏举</span>
+                                <img style="border-radius: 50%" width="20px" :src="item.userphoto" alt="">
+                                <span style="margin-left: 10px" class="cover-name">{{item.username}}</span>
                                 <span class="fr"><i class="el-icon-view"></i> 1111<i class="el-icon-star-off">222</i></span>
                             </a>
                         </div>
@@ -33,10 +33,18 @@
 
 <script>
 export default {
+   created(){
+       this.$store.dispatch('getworkslist')
+   },
   data () {
     return {
       caipulist: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     }
+  },
+  computed: {
+      worksList () {
+          return this.$store.state.worksList
+      }
   }
 }
 </script>

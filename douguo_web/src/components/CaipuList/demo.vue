@@ -3,16 +3,16 @@
          <h2 class="title">精选推荐菜谱</h2>
             <!-- <div>111</div> -->
             <ul class="list">
-                <li :key="key" v-for="(item, key) in caipulist" class="item">
+                <li :key="key" v-for="(item, key) in indexwoks" class="item">
                     <router-link to="/caipinxianqi">
-                        <img width="300px" height="199px" src="https://cp1.douguo.com/upload/caiku/f/0/e/400x266_f0d31b9548f1b29ec996f3b11a25051e.jpg" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
+                        <img width="300px" height="199px" :src="item.wimgUrl" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
                     </router-link>
                     <div class="relative">
-                        <router-link to="/caipinxianqi" class="title">拉丝肉松烤肠酥</router-link>
+                        <router-link to="/caipinxianqi" class="title">{{item.works_title}}</router-link>
                         <div>
                             <a class="cover">
-                                <img style="border-radius: 50%" width="20px" src="https://tx1.douguo.com/upload/photo/6/2/8/70_u66631823200625014715.jpg" alt="">
-                                <span  style="margin-left: 10px" class="cover-name">开票【可分配</span>
+                                <img style="border-radius: 50%" width="20px" :src="item.userphoto" alt="">
+                                <span  style="margin-left: 10px" class="cover-name">{{item.username}}</span>
                                 <span class="fr"><i class="el-icon-view"></i> 1111<i class="el-icon-star-off">222</i></span>
                             </a>
                         </div>
@@ -33,9 +33,21 @@
 
 <script>
 export default {
+    created(){
+        this.$store.dispatch('getworkslist')
+      },
   data () {
     return {
       caipulist: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }
+  },
+  computed: {
+    indexwoks(){
+      const list = []
+      for(var i = 0; i < 9; i++){
+        list.push(this.$store.state.worksList[i])
+      }
+      return list
     }
   }
 }

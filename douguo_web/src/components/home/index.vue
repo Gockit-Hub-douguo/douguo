@@ -20,11 +20,11 @@
         </div>
         <!-- 内容层 -->
         <ul class="menuList muil">
-          <li v-for="(item, index) in BannerList" :key="index" :class="{clearMR: index == 3}">
+          <li v-for="(item, index) in indexwoks" :key="index" :class="{clearMR: index == 3}">
             <div class="menuOne">
-              <a><img :src="item.imgUrl" alt=""></a>
-              <p class="Mtitle"><a>无敌美味的卫生卤味</a></p>
-              <p class="Mauthor">by <a>小豆芽__</a></p>
+              <a><img :src="item.wimgUrl" alt=""></a>
+              <p class="Mtitle"><a>{{item.works_title}}</a></p>
+              <p class="Mauthor">by <a>{{item.username}}</a></p>
             </div>
           </li>
         </ul>
@@ -93,12 +93,14 @@
           <h3 class="fl">商城精选</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
         </div>
         <ul>
-          <li v-for="its in homegoods" :key="its">
-            <el-link :underline="false"  class="fl"><img :src="its.fimgurl" alt=""></el-link>
-            <h3><el-link :underline="false" class="h-orange">{{its.fname}}</el-link></h3>
-            <p class="price">￥{{its.fnowprice}}</p>
-            <p class="xssalesvolume">月售{{its.fsaleCount || 0}}</p>
-          </li>
+          <router-link to="/goods">
+            <li v-for="its in homegoods" :key="its">
+              <el-link :underline="false"  class="fl"><img :src="its.fimgurl" alt=""></el-link>
+              <h3><el-link :underline="false" class="h-orange">{{its.fname}}</el-link></h3>
+              <p class="price">￥{{its.fnowprice}}</p>
+              <p class="xssalesvolume">月售{{its.fsaleCount || 0}}</p>
+            </li>
+          </router-link>
         </ul>
       </div>
       <!-- 作品推荐 -->
@@ -171,6 +173,9 @@
 import menuRendering from '@/components/home/menuRendering'
 import Sage from '@/components/home/sage'
 export default {
+  created(){
+        this.$store.dispatch('getworkslist')
+      },
   data () {
     return {
       BannerList: [{
@@ -282,16 +287,20 @@ export default {
         list.push(this.$store.state.goodslist[i])
       }
       return list
+    },
+    indexwoks(){
+      const list = []
+      for(var i = 0; i < 4; i++){
+        list.push(this.$store.state.worksList[i])
+      }
+      return list
     }
   },
   methods: {
-  },
+  }, // 渲染页面商品的数据
   components: {
     menuRendering,
     Sage
-  },
-  created(){
-    return this.$store.dispatch("getdggoods")
   }
 }
 </script>

@@ -8,11 +8,11 @@
       </div>
       <!-- 内容层 -->
       <ul class="menuList">
-        <li v-for="(item, index) in datalists" :key="index" :class="{clearMR: index == 3 || index == 7}">
+        <li v-for="(item, index) in indexwoks" :key="index" :class="{clearMR: index == 3 || index == 7}">
           <div class="menuOne">
-            <a><img :src="item.url" alt=""></a>
-            <p class="Mtitle"><a>{{item.menutitle}}</a></p>
-            <p class="Mauthor">by <a>{{item.menuauthor + index}}</a></p>
+            <a><img :src="item.wimgUrl" alt=""></a>
+            <p class="Mtitle"><a>{{item. works_title}}</a></p>
+            <p class="Mauthor">by <a>{{item. username + index}}</a></p>
           </div>
         </li>
       </ul>
@@ -27,9 +27,21 @@
 
 <script>
 export default {
+  created(){
+        this.$store.dispatch('getworkslist')
+      },
   // 接收传递的参数
   props: {
     datalists: Array
+  },
+  computed: {
+    indexwoks(){
+      const list = []
+      for(var i = 0; i < 8; i++){
+        list.push(this.$store.state.worksList[i])
+      }
+      return list
+    }
   }
 }
 </script>
