@@ -140,6 +140,7 @@ export default {
           }
         }).then((data)=>{
           if(data.data.status === 0){
+            document.cookie = 'phonenumber=' + this.phone
             this.$router.push('/')
             alert('登录成功！')
           }else{
