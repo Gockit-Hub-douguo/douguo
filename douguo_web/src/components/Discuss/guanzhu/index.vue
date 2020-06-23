@@ -11,52 +11,38 @@
             </div>
             <div class="show-right">
                 <div class="rightFans">
-                    <router-link to="/guanzhu" class="floF">
-                    <div>
+                    <div class="floF">
                         <p>3</p>
                         <p>关注</p>
                     </div>
-                    </router-link>
-                     <router-link to="/guanzhu" class="floF">
-                     <div>
+                     <div class="floF">
                         <p>0</p>
                         <p>粉丝</p>
                     </div>
-                     </router-link>
-                    <div class="floF">
+                 <router-link to="/shoucang" class="floF">
+                    <div>
                         <p>0</p>
                         <p>菜谱</p>
                     </div>
-                    <div class="floF">
+                 </router-link>
+                 <router-link to="/shoucang" class="floF">
+                    <div>
                         <p>0</p>
                         <p>笔记</p>
                     </div>
-                </div>
+                </router-link>
             </div>
          </div>
-         <div class="acter">
-            <el-tabs v-model="activeName" @tab-click="handleClick">
-                <el-tab-pane label="概览" name="first">
-                    <div class="box">暂无数据~</div>
-                </el-tab-pane>
-                <el-tab-pane label="菜谱" name="second">
-                    <div class="box">暂无数据~</div></el-tab-pane>
-                <el-tab-pane label="菜单" name="third">
-                    <div class="box">暂无数据~</div></el-tab-pane>
-                <el-tab-pane label="笔记" name="fourth">
-                    <div class="box">暂无数据~</div></el-tab-pane>
-                <el-tab-pane label="收藏" name="five">
-                    <div class="box">暂无数据~</div></el-tab-pane>
-                <el-tab-pane label="美食日记" name="six">
-                    <div class="box">暂无数据~</div></el-tab-pane>
-            </el-tabs>
-         </div>
-         <div>你的当前位置: 豆果美食> 个人中心 </div>
+    </div>
+         <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tab-pane label="关注我的人" name="first"></el-tab-pane>
+            <el-tab-pane label="我关注的人" name="second">配置管理</el-tab-pane>
+        </el-tabs>
     </div>
 </template>
 
 <script>
-  export default {
+export default {
     data() {
       return {
         activeName: 'first'
@@ -67,9 +53,8 @@
         console.log(tab, event);
       }
     }
-  };
+  }
 </script>
-
 <style lang="less" scoped>
 .showMain {
     width: 1000px;
@@ -83,7 +68,7 @@
     overflow: hidden;
 }
 .show-img img {
-    display: inline-block;
+    display: block;
     width: 120px;
     height: 120px;
     margin-right: 12px;
@@ -130,19 +115,21 @@
     text-align: center;
     overflow: hidden;
     div {
-        width: 80px;
+    width: 80px;
     border-right: 1px solid #D1DFE6;
+    }
+    p {
+        cursor: pointer;
     }
 }
 .floF {
     float: left;
-}
-.acter {
-    margin-top: 30px;
-}
-.box {
-    height: 330px;
-    line-height: 330px;
-    text-align: center;
+    &:hover {
+            color: orange;
+        }
+    a {
+            color: #333;
+    text-decoration: none;
+    }
 }
 </style>

@@ -83,10 +83,10 @@
                 <el-avatar :size="50" :src="circleUrl"></el-avatar>
               </el-badge>
               <div class="person-list">
-                <el-badge is-dot class="item">消息提醒</el-badge>
-                <el-badge is-dot class="item">我的收藏</el-badge>
-                <el-badge is-dot class="item">草稿箱</el-badge>
-                <el-badge  class="item">账号设置</el-badge>
+                <router-link to="/discuss" is-dot class="item">消息提醒</router-link>
+                <router-link to="/shoucang" is-dot class="item">我的收藏</router-link>
+                <router-link to="/caogao" is-dot class="item">草稿箱</router-link>
+                <router-link to="/Personer"  class="item">账号设置</router-link>
                 <el-badge  class="item">退出</el-badge>
               </div>
             </div>
@@ -465,7 +465,7 @@ export default {
                 line-height: 28px;
                 display: none;
                 text-align: center;
-                .el-badge{
+                a{
                   display: block !important;
                   &:hover{
                     cursor: pointer;

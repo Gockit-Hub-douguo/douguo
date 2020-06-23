@@ -40,6 +40,7 @@ import suggest from '@/components/Suggest'
 import dis from '@/components/Discuss/dis'
 import shoucang from '@/components/Discuss/shoucang'
 import caogao from '@/components/Discuss/caogao'
+import guanzhu from '@/components/Discuss/guanzhu'
 
 
 Vue.use(VueRouter)
@@ -202,6 +203,10 @@ const routes = [
       {
         path: '/shoucang', // 评论及回复
         component: shoucang
+      },
+      {
+        path: '/guanzhu',
+        component: guanzhu
       }
     ]
   },
