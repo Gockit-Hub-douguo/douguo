@@ -175,22 +175,23 @@ import Sage from '@/components/home/sage'
 export default {
   created(){
         this.$store.dispatch('getworkslist')
+        this.$store.dispatch('getdggoods')
       },
   data () {
     return {
-      BannerList: [{
-        imgUrl: 'https://cp1.douguo.com/upload/caiku/d/0/1/220x220_d0a9f944b8b4cd7a5dcccc39c76f31a1.jpg',
-        link_url: '#'
-      }, {
-        imgUrl: 'https://cp1.douguo.com/upload/caiku/c/8/7/220x220_c845971ec7964248c6f2c6a4df7cf8d7.jpg',
-        link_url: '#'
-      }, {
-        imgUrl: 'https://cp1.douguo.com/upload/caiku/2/2/3/220x220_22370e2e4779fccc3f13df22523c6e13.jpg',
-        link_url: '#'
-      }, {
-        imgUrl: 'https://cp1.douguo.com/upload/caiku/4/b/2/220x220_4b085773cc874cd53955688defc3c4c2.jpeg',
-        link_url: '#'
-      }],
+      // BannerList: [{
+      //   imgUrl: 'https://cp1.douguo.com/upload/caiku/d/0/1/220x220_d0a9f944b8b4cd7a5dcccc39c76f31a1.jpg',
+      //   link_url: '#'
+      // }, {
+      //   imgUrl: 'https://cp1.douguo.com/upload/caiku/c/8/7/220x220_c845971ec7964248c6f2c6a4df7cf8d7.jpg',
+      //   link_url: '#'
+      // }, {
+      //   imgUrl: 'https://cp1.douguo.com/upload/caiku/2/2/3/220x220_22370e2e4779fccc3f13df22523c6e13.jpg',
+      //   link_url: '#'
+      // }, {
+      //   imgUrl: 'https://cp1.douguo.com/upload/caiku/4/b/2/220x220_4b085773cc874cd53955688defc3c4c2.jpeg',
+      //   link_url: '#'
+      // }],
       btnserch: [{
         lab: '家常菜',
         link_url: '#'  

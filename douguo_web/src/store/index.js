@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { getgoodslist } from 'ax/goodsdeal.js'
 import { getworkslist } from 'ax/jingxuan.js'
+import { getgoodscomtianer } from 'ax/getgoodscomtianer.js'
 
 Vue.use(Vuex)
 
@@ -10,9 +11,14 @@ export default new Vuex.Store({
     a: 1,
     data: {},
     goodslist: [],
-    worksList: []
+    worksList: [],
+    getgoodscomtianer: []
   },
   mutations: {
+    // 商品详情的数据
+    sp(xiangqing, list){
+      xiangqing.getgoodscomtianer = list
+    },
     // 登录跳转传值
     clik (h, b) {
       // var a= this.state.a
@@ -34,6 +40,13 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    sgetgoodscomtianer({ commit }){
+      getgoodscomtianer().then((data)=>{
+        commit('sp',data)
+      }).catch((err)=>{
+        console.log(err)
+      })
+    },
     getdggoods({ commit }){
       getgoodslist().then((data)=>{
         commit('changdggoods',data)

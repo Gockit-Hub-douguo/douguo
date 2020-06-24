@@ -1,24 +1,24 @@
 <template>
     <div>
-        <div class="content">
+        <div :key="index" v-for="(item, index) in goodsxq" class="content">
             <div class="goods-info">
                 <div class="goods-simg" style="overflow-y: hidden">
                     <div class="img-box img-border">
-                        <img style="width: 56px" src="https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg" alt="">
+                        <img style="width: 56px" :src="item.fimgurl" alt="">
                     </div>
                 </div>
                 <div class="goods-bimg">
-                    <img style="width: 320px" src="https://cp1.douguo.com/upload/tuan/a/a/9/448_aa8d00ce4df570c890ce3372fb721b09.jpg" alt="">
+                    <img style="width: 320px" :src="item.fimgurl" alt="">
                 </div>
                 <div class="info">
-                    <h3 class="goods-name">贝贝南瓜净重5斤</h3>
-                    <p class="description">宝宝辅食 粉香甜糯</p>
+                    <h3 class="goods-name">{{item.fname}}</h3>
+                    <p class="description">{{item.nexttitle}}</p>
                     <div class="sell-info">
-                        <span class="price">￥25.90</span>
-                        <s class="old-price">￥45.00</s>
+                        <span class="price">￥{{item.fnowprice}}</span>
+                        <s class="old-price">￥{{item.fnowprice}}</s>
                         <div class="other">
-                            <span>月售: 900件</span>
-                            <span>发货地: 上海</span>
+                            <span>月售: {{item.ammount}}</span>
+                            <span>发货地: {{item.originadrr}}</span>
                         </div>
                     </div>
                     <div class="buymod">
@@ -69,16 +69,25 @@
                 > 商城
             </p>
         </div>
+        {{goodsxq}}
     </div>
 </template>
 
 <script>
   export default {
+    created(){
+        this.$store.dispatch('sgetgoodscomtianer')
+    },
     data() {
       return {
         dialogVisible: false,
         num: 1
       };
+    },
+    computed: {
+        goodsxq(){
+            return this.$store.state.getgoodscomtianer
+        }
     },
     methods: {
       handleClose(done) {
