@@ -19,6 +19,7 @@ import mofu from '@/components/menu/zuixin'
 import FoodNews from '@/components/FoodNews'
 import Foodarticle from '@/components/FoodNews/Allarticle'
 import Foodartheme from '@/components/FoodNews/theme'
+import foodardetail from '@/components/FoodNews/detial'
 import Menu from '@/components/menu'
 import Menusive from '@/components/menu/comprehensive'
 import Menuuser from '@/components/menu/user'
@@ -157,6 +158,9 @@ const routes = [
         }, {
           path: '/Foodartheme',
           component: Foodartheme
+        }, {
+          path: '/foodardetail',
+          component: foodardetail
         }]
       },{
         path: '/Menu',

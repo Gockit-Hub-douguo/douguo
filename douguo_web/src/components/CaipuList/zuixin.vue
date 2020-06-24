@@ -2,7 +2,7 @@
     <div class="content">
         <div class="menu-list">
             <ul>
-                <li :key="key" v-for="(item, key) in indexwoks" class="item">
+                <li :key="key" v-for="(item, key) in indexwokss" class="item">
                     <router-link class="cover" to="">
                         <img class="wb100" :src="item.wimgUrl" alt="">
                         <div class="menuinfo absolute">
@@ -30,7 +30,7 @@ export default {
       },
   data () {
     return {
-      caipulist: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      indexwokss: [{ wimgUrl: '' }]
     }
   },
   computed: {
@@ -40,6 +40,11 @@ export default {
         list.push(this.$store.state.worksList[i])
       }
       return list
+    }
+  },
+  watch: {
+    indexwoks (newlist) {
+      this.indexwokss = newlist
     }
   }
 }

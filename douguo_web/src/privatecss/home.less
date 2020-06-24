@@ -56,8 +56,25 @@
     p{
       text-indent: 10px;
       margin-top: 5px;
+      img.photouser{
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        float: left;
+        margin-left: 10px;
+      }
       &.Mtitle>a,&.Mauthor>a{
+        &.now{
+          width: 220px;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
         .HSizeColor(15px, #333, orange)
+      }
+      &.Mauthor>a{
+        line-height: 20px;
       }
       &.Mauthor, &.Mauthor>a{
       color: #333;
@@ -230,7 +247,7 @@
 .articleList{
   width: 100%;
   li{
-    width: 46%;
+    width: 42%;
     overflow: hidden;
     margin: 5px 0px;
     font-weight: 400;

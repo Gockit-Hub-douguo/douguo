@@ -4,7 +4,7 @@
             <!-- <div>111</div> -->
             <ul class="list">
                 <router-link to="/caipinxianqi">
-                    <li :key="key" v-for="(item, key) in indexwoks" class="item">
+                    <li :key="key" v-for="(item, key) in indexwokss" class="item">
                         <router-link to="/caipinxianqi">
                             <img width="300px" height="199px" :src="item.wimgUrl" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
                         </router-link>
@@ -40,7 +40,7 @@ export default {
       },
   data () {
     return {
-      caipulist: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      indexwokss: [{ wimgUrl: '' }]
     }
   },
   computed: {
@@ -50,6 +50,11 @@ export default {
         list.push(this.$store.state.worksList[i])
       }
       return list
+    }
+  },
+  watch: {
+    indexwoks (newlist) {
+      this.indexwokss = newlist
     }
   }
 }

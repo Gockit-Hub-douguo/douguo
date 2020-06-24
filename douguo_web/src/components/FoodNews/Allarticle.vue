@@ -9,13 +9,13 @@
       <!-- 左则区域 -->
       <div class="LeftInfo fl">
         <ul>
-          <li v-for="it in 9" :key="it">
-            <img src="https://cp1.douguo.com/upload/post/1/6/9/16fd3c040f34c60d4f2f35a21bd73b89.jpg" alt="">
+          <li v-for="(it, ke) in activeAll" :key="ke">
+            <img :src="'http://topyun.qicp.vip/' + it.imgurl" alt="">
             <div>
-              <h3>健康专家郑育龙教您如何用橄榄油吃出健康</h3>
-              <p class="author">来自：<a>食界大咖秀</a> 主题站</p>
-              <p class="time">2020-06-03</p>
-              <p class="linkurl"><el-link type="primary" :underline="false">查看全文</el-link></p>
+              <h3>{{it.title}}</h3>
+              <p class="author">来自：<a>{{it.source}}</a></p>
+              <p class="time">{{it.times | times}}</p>
+              <p class="linkurl"><router-link :to="{path: '/foodardetail', query:{id: it.id}}" type="primary" :underline="false">查看全文</router-link></p>
             </div>
           </li>
         </ul>
@@ -149,6 +149,7 @@
       }
   }
   div.navbers{
+    margin-top: 20px;
     height: 40px;
     overflow: hidden;
     a{
@@ -168,3 +169,53 @@
     }
   }
 </style>
+
+<script>
+import axios from 'axios'
+import md5 from '@/assets/js/md5.js'
+export default {
+  data () {
+    return {
+      activeAll: []
+    }
+  },
+  methods: {
+    // 获取文章
+    axi () {
+      var timegtime = new Date().getTime()
+      var publicwords = md5((timegtime + 1000) * 2)
+      axios({
+        url: 'http://topyun.qicp.vip/getarticle',
+        method: 'get',
+        params: {
+          uid: '1',
+          publicwords,
+          timegtime
+        }
+      }).then((rtn) =>{
+        this.$store.commit('axupload', rtn.data.list)
+      }).catch(er => {
+        console.log(er)
+      })
+    }
+  },
+  computed: {
+    activeALl () {
+      return this.$store.state.active.activeAll
+    }
+  },
+  watch: {
+    activeALl (newValue) {
+      this.activeAll = newValue
+    }
+  },
+  created () {
+    this.axi()
+  },
+  filters: {
+    times (val) {
+      return val.split('T')[0]
+    }
+  }
+}
+</script>

@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import { getgoodslist } from 'ax/goodsdeal.js'
 import { getworkslist } from 'ax/jingxuan.js'
 import { getgoodscomtianer } from 'ax/getgoodscomtianer.js'
+import active from './active'
 
 Vue.use(Vuex)
 
@@ -63,5 +64,6 @@ export default new Vuex.Store({
     }
   },
   modules: {
+    active: active
   }
 })
