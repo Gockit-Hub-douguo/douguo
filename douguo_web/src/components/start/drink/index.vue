@@ -6,7 +6,7 @@
                <span class="stitle">{{drink.title}}</span>
                <ul>
                  <li :key="index" v-for="(for2,index) in drink.list">
-                    <router-link to="/detail" class="img" :style= "{background:'url(http://topyun.qicp.vip/'+for2.imgurl+') center/contain no-repeat' }"></router-link>
+                    <router-link  :to="{ path: '/detail', query:{ id:for2.Shoppingkey } } " class="img" :style= "{background:'url(http://topyun.qicp.vip/'+for2.imgurl+') center/contain no-repeat' }"></router-link>
                     <span>{{for2.name}}</span>
                 </li>
                </ul>
@@ -64,6 +64,7 @@ export default {
     const a = this.$store.state.data
     console.log(a)
     this.drink = a
+    const imgid = this.$route.query.imgid
   }
 }
 </script>

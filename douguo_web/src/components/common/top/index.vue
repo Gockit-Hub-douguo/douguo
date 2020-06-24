@@ -30,7 +30,7 @@
                 </li>
                 <li><router-link to="/FoodNews">饮食新闻</router-link></li>
                 <li>
-                    <a @click="clikmenu()" class="lym-Starbucks">星巴克饮品<i class="el-icon-arrow-down"></i></a>
+                    <router-link to="/start" class="lym-Starbucks">星巴克饮品<i class="el-icon-arrow-down"></i></router-link>
                     <div class="lym-menu">
                         <div class="lym-menu-nav">
                             <a><img src="https://cp1.douguo.com/static/nweb/images/jx3.png"><span>精选</span></a>
@@ -73,21 +73,21 @@
                     <router-link to="/cuangj">创建菜单</router-link>
                 </div>
             </div>
-            <div class="lym-perinfo fl">
+            <div class="lym-perinfo fl" v-if="keywords == 0 ">
                 <!-- to="./login" -->
                 <a class="lym-login" @click="login(1)">登录</a> |
                 <a class="lym-register" @click="register(1)">注册</a>
             </div>
-            <div class="person fr">
+            <div class="person fl" v-if="keywords != 0 ">
               <el-badge :value="12" class="item">
-                <el-avatar :size="50" :src="circleUrl"></el-avatar>
+                 <el-avatar :size="50" :src="circleUrl"></el-avatar>
               </el-badge>
               <div class="person-list">
                 <router-link to="/discuss" is-dot class="item">消息提醒</router-link>
                 <router-link to="/shoucang" is-dot class="item">我的收藏</router-link>
                 <router-link to="/caogao" is-dot class="item">草稿箱</router-link>
                 <router-link to="/Personer"  class="item">账号设置</router-link>
-                <el-badge  class="item">退出</el-badge>
+                <a @click="clearkey()"  class="item">退出</a>
               </div>
             </div>
         </div>
@@ -99,12 +99,12 @@ import axios from 'axios'
 // import { api } from '../apiConfig'
 import md5 from '@/assets/js/md5.js'
 export default {
-  inject: ['reload'],
   data () {
     return {
       select: '',
       restaurants: [],
       state: '',
+      keywords: 0,
        circleUrl: "http://topyun.qicp.vip/VP_2020620175538.jpg",
       menulist: [
         {
@@ -235,10 +235,17 @@ export default {
     localhref (value) {
       window.localStorage.setItem('menuName', value || '热菜')
       this.$router.push({ path: '/Menu' })
+    },
+    // 退出
+    clearkey () {
+      window.localStorage.setItem('user',0)
+      this.keywords = 0
+      console.log(111)
     }
   },
   mounted () {
     this.restaurants = this.loadAll()
+    this.keywords = window.localStorage.getItem('user') || 0
   }
 }
 </script>
@@ -446,8 +453,10 @@ export default {
             .person{
               position: relative;
               height: 46px;
+              margin-left: 50px;
               &:hover .person-list{
                   display: block;
+                  cursor: pointer;
                 }
               /deep/ .el-avatar{
                 width: 30px !important;

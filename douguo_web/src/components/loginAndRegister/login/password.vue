@@ -141,8 +141,9 @@ export default {
         }).then((data)=>{
           if(data.data.status === 0){
             document.cookie = 'phonenumber=' + this.phone
+            this.$store.commit('clik', 1)
+            window.localStorage.setItem('user',this.phone)
             this.$router.push('/')
-            alert('登录成功！')
           }else{
             alert('账号或密码错误')
           }

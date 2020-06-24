@@ -28,6 +28,7 @@ import Menumaxmoust from '@/components/menu/maxmost'
 import login from 'comp/loginAndRegister/login'
 import register from 'comp/loginAndRegister/register'
 import forget from 'comp/loginAndRegister/forget'
+import start from 'comp/start'
 import drink from 'comp/start/drink'
 import detail from 'comp/start/detail'
 import kafei from 'comp/start/kafei'
@@ -123,7 +124,11 @@ const routes = [
         component: forget
       },
       {
-        path: '/drink',// 星巴克
+        path: '/start',
+        component: start
+      },
+      {
+        path: '/drink',// 星巴克饮料
         component: drink
       }, {
         path: '/detail', // 星巴克商品详情
