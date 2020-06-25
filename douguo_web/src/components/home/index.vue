@@ -79,14 +79,14 @@
           <h3 class="fl">商城精选</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
         </div>
         <ul>
-          <router-link to="/goods">
             <li v-for="(its, words) in homegoodsf" :key="words">
-              <el-link :underline="false"  class="fl"><img :src="its.fimgurl" alt=""></el-link>
-              <h3><el-link :underline="false" class="h-orange">{{its.fname}}</el-link></h3>
-              <p class="price">￥{{its.fnowprice}}</p>
-              <p class="xssalesvolume">月售{{its.fsaleCount || 0}}</p>
+              <router-link :to="{path: '/goods', query:{id: its.fid}}">
+                <el-link :underline="false"  class="fl"><img :src="its.fimgurl" alt=""></el-link>
+                <h3><el-link :underline="false" class="h-orange">{{its.fname}}</el-link></h3>
+                <p class="price">￥{{its.fnowprice}}</p>
+                <p class="xssalesvolume">月售{{its.fsaleCount || 0}}</p>
+              </router-link>
             </li>
-          </router-link>
         </ul>
       </div>
       <!-- 作品推荐 -->
