@@ -4,7 +4,7 @@
       <div class="yth-biji-flex">
         <div>
           <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
@@ -17,7 +17,7 @@
         </div>
         <div>
           <div class="yth-biji-comtent " style="float:right">
-            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/><router-link to='/'></router-link>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
@@ -32,7 +32,7 @@
        <div class="yth-biji-flex">
         <div>
           <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
@@ -45,7 +45,7 @@
         </div>
         <div>
           <div class="yth-biji-comtent " style="float:right">
-            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/><router-link to='/'></router-link>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
@@ -60,7 +60,7 @@
        <div class="yth-biji-flex">
         <div>
           <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
@@ -73,7 +73,7 @@
         </div>
         <div>
           <div class="yth-biji-comtent " style="float:right">
-            <img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/><router-link to='/'></router-link>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/3/a/1/320_3a83b86acfcfea970afc86390afbfab1.jpg "/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
@@ -88,7 +88,7 @@
        <div class="yth-biji-flex">
         <div>
           <div class="yth-biji-comtent">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg "/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
@@ -101,7 +101,7 @@
         </div>
         <div>
           <div class="yth-biji-comtent " style="float:right">
-            <img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg"/><router-link to='/'></router-link>
+            <router-link to='/bijixq'><img class="img" src="https://cp1.douguo.com/upload/note/b/0/a/320_b073efe14cab48a1082d1bc5aa76968a.jpg"/></router-link>
           </div>
           <div class="yth-biji-miaoshu">
             <a class="yth-biji-zit">放点蒜米油再淋上酱油，不抢走鱼肉的鲜美。</a>
