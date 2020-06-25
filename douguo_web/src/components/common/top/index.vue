@@ -187,25 +187,17 @@ export default {
       this.$router.push({ path: './register' })
     },
      // 星巴克菜单点击渲染
-    clikmenu (values) {
-      // var jiekouurl = ''
-      // window.localStorage.setItem('')
-      // axios.defaults.baseURL = api
-      var demo = [{
-        name: '星巴克玩味冰调™',
-        eng: 'xing'
-      },{
-        name: '星冰乐®',
-        eng: 'ice'
-      }]
-      var eng = demo.map(item => { return { eng: item.eng } })
-       console.log(eng)
-      var arr = ['0','星冰乐®','茶瓦纳™','手工调制浓缩咖啡','烘焙','蛋糕&甜品','三明治、帕尼尼、卷','中度咖啡豆','深度咖啡豆','常规产品']
-      var arr1 = ['GetSetIcetune','GetSetStar','GetSetTea','GetSetEspresso','GetSetBaking','GetSetCake','GetSetSandwich','GetSetModerate','GetSetDepth','GetSetShoppingcg']
+     clikmenu (values) {
+      var arr = ['星巴克玩味冰调™','星冰乐®','茶瓦纳™','手工调制浓缩咖啡','烘焙','蛋糕&甜品','三明治、帕尼尼、卷','中度咖啡豆','深度咖啡豆','常规产品','臻选产品']
+      var arr2 = ['xing','ice','tea','Espresso','bake','SandWich','coffeeBean','DepathCoffe','Conventional','Choose']
+      var arr1 = ['GetSetIcetune','GetSetStar','GetSetTea','GetSetEspresso','GetSetBaking','GetSetCake','GetSetSandwich','GetSetModerate','GetSetDepth','GetSetShoppingcg','GetSetShoppingcg']
       var duankou = arr1[arr.indexOf(values)]
-      console.log(duankou)
-      this.axiosquest(duankou)
-      this.$router.push({ path: '/drink' , query: { menu: values } })
+      var changgui = 1
+      if(values === '常规产品' || values === '臻选产品') {
+       changgui = values === '常规产品' ? 1 : 2
+      } 
+      this.axiosquest(duankou, changgui)
+      this.$router.push({ path: '/drink' , query: { menu: arr2[arr.indexOf(values)] } })
     },
     axiosquest (duankou) {
       var timestamp = new Date().getTime()
