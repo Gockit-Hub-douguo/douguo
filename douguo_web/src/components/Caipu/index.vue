@@ -6,7 +6,7 @@
                     <router-link active-class="active" to="/jx">精选</router-link>
                     <router-link active-class="active" to="/ijx">最新</router-link>
                     <router-link active-class="active" to="/fenlei">分类</router-link>
-                    <router-link active-class="active" to="/caidanzxzr">采单</router-link>
+                    <router-link active-class="active" to="/caidanzxzr">菜单</router-link>
                 </div>
             </div>
         </div>

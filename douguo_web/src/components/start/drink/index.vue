@@ -62,9 +62,8 @@ export default {
   },
   mounted () {
     const a = this.$store.state.data
-    console.log(a)
     this.drink = a
-    const imgid = this.$route.query.imgid
+    // const imgid = this.$route.query.imgid
   }
 }
 </script>

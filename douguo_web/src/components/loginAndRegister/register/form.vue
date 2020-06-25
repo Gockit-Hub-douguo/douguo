@@ -99,9 +99,9 @@ export default {
             console.log(err)
           })
           console.log('验证通过')
-          alert('注册成功！')
+          this.$router.push('/login')
         } else {
-          console.log('error submit!!')
+          alert('error submit!!')
           return false
         }
       })

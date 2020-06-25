@@ -1,13 +1,7 @@
 <template>
   <div class="indexbox">
     <!-- 顶部轮播 -->
-    <div class="slider_box">
-      <el-carousel :interval="4000" type="card" height="300px">
-        <el-carousel-item v-for="index in 4" :key="index">
-          <h3 class="medium" :style="{background: 'url(https://i3.meishichina.com/attachment/magic/2020/05/15/2020051515895360932208197577.jpg)',backgroundSize: '100% 100%'}"></h3>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
+    <banner></banner>
     <div class="BayBox">
       <!-- 每日精选菜谱 -->
       <menuRendering></menuRendering>
@@ -36,7 +30,7 @@
             <h3 class="fl">大家都在搜</h3>
           </div>          
           <!-- 标签层 -->
-          <el-link :underline='false' v-for="(ite, index) in btnserch" :key="index">{{ite.lab}}</el-link>
+          <el-link :underline='false' v-for="(ite, index) in btnserch" :key="index">{{ite}}</el-link>
         </div>
         <!-- 右则轮播 -->
         <div class="searchSlider fr">
@@ -165,6 +159,7 @@
 import menuRendering from '@/components/home/menuRendering'
 import Sage from '@/components/home/sage'
 import IngredientsList from './Ingredient'
+import banner from './banner'
 export default {
   created(){
         this.$store.dispatch('getworkslist')
@@ -187,31 +182,7 @@ export default {
         imgUrl: 'https://cp1.douguo.com/upload/caiku/4/b/2/220x220_4b085773cc874cd53955688defc3c4c2.jpeg',
         link_url: '#'
       }],
-      btnserch: [{
-        lab: '家常菜',
-        link_url: '#'  
-      }, {
-        lab: '凉菜',
-        link_url: '#'
-      }, {
-        lab: '荤菜',
-        link_url: '#'
-      }, {
-        lab: '家常菜',
-        link_url: '#'  
-      }, {
-        lab: '下饭菜',
-        link_url: '#'
-      }, {
-        lab: '下饭菜',
-        link_url: '#'
-      }, {
-        lab: '下饭菜',
-        link_url: '#'
-      }, {
-        lab: '下饭菜',
-        link_url: '#'
-      }],
+      btnserch: ['家常菜', '下饭菜', '快手菜', '凉菜', '主食', '素食', '烘焙', '早餐', '小吃', '红烧肉', '可乐鸡翅', '红烧茄子', '南瓜饼', '酸菜鱼'],
       homegoodsf: [{ fimgurl: '' }]
     }
   },
@@ -246,7 +217,8 @@ export default {
   components: {
     menuRendering,
     Sage,
-    IngredientsList
+    IngredientsList,
+    banner
   }
 }
 </script>

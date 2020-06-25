@@ -1,6 +1,7 @@
 <template>
   <div class="yth-fabu">
     <div class="yth-app">
+      <div class="yth-top">已保存到云端</div>
       <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/">
         <i class="el-icon-plus avatar-uploader-icon yth-top-tu"></i>
         <div>添加菜谱成品图</div>
@@ -151,6 +152,15 @@ export default {
   .yth-app {
     margin: 0 auto;
     .margin(0, 0, 0, 20px);
+  }
+  .yth-top {
+    .size(130px, 37px);
+    .margin(20px, 0 ,0, 0);
+    text-align: center;
+    .line-height(37px);
+    background: rgba(51, 51, 51, 0.3);
+    border-radius:50px;
+    color: #fff;
   }
   .avatar-uploader {
     .size(690px, 390px);
@@ -380,7 +390,7 @@ export default {
 }
 .yth-cuncg {
   .size(168px, 42px);
-  .margin(30px, 0, 20px, 20px);
+  .margin(30px, 0, 0, 20px);
   background: #ffffff;
   color: #FFB31A;
   border:1px solid #FFB31A;
