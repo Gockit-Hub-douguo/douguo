@@ -24,7 +24,7 @@
                     <div class="buymod">
                         <div class="buy-num">
                             <template>
-                                <el-input-number size="mini" v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>
+                                <el-input-number size="mini" v-model="num" :min="1" :max="10" label="描述文字"></el-input-number>
                             </template>
                         </div>
                         <el-button @click="dialogVisible = true"  class="buy" size="small" type="warning" onclick="$('.buy-box').show()">立即购买</el-button>
@@ -46,15 +46,16 @@
             </div>
             <div class="goods-img">
                 <h3>商品详情</h3>
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/bddb39679cecfd2a1907732e81b4df38.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/f66941d31b287f69495e4ca8f7db2ea4.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/da97d7a3eed586f7d559793c7e8b1a3b.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/f6a1ead70627d2c35b1123087da25e32.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/d560c6edca9908222634ed82ea5c43cf.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/ab261f812fee1a6085c80aba155033d9.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/5e5ea661bec2183e9a4e552b5e57fbe0.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/9519532f2618b2a7e8cc08d4413f880a.jpg" alt="">
-                <img width="100%" src="http://imgs.douguo.com/upload/tuan/c/f/a/7734b61e07668365e4e017dccd775273.jpg" alt="">
+                <img width="100%" :src="item.fimg1" alt="">
+                <img width="100%" :src="item.fimg2" alt="">
+                <img width="100%" :src="item.fimg3" alt="">
+                <img width="100%" :src="item.fimg4" alt="">
+                <img width="100%" :src="item.fimg5" alt="">
+                <img width="100%" :src="item.fimg6" alt="">
+                <img width="100%" :src="item.fimg7" alt="">
+                <img width="100%" :src="item.fimg8" alt="">
+                <img width="100%" :src="item.fimg9" alt="">
+                <img width="100%" :src="item.fimg10" alt="">
             </div>
             <div class="advis">
                 <h3>购买须知 & 商品咨询</h3>
@@ -69,16 +70,17 @@
                 > 商城
             </p>
         </div>
-        {{goodsxq}}
     </div>
 </template>
 
 <script>
   export default {
     created(){
+        this.$store.commit("changeindex",this.$route.query.id)
         this.$store.dispatch('sgetgoodscomtianer')
     },
     data() {
+        console.log(this.$store.state.id)
       return {
         dialogVisible: false,
         num: 1

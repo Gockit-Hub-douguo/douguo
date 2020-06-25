@@ -3,7 +3,7 @@
         <div class="shop-content">
             <ul class="goods-list">
                 <li :key="key" v-for="(item, key) in xgoodsList" class="goods">
-                    <router-link to="/goods">
+                    <router-link :to="{path: '/goods', query:{id: item.fid}}">
                       <img width="240px" :src="item.fimgurl">
                     </router-link>
                     <router-link to="/goods"><h3>{{item.fname}}</h3></router-link>
@@ -21,11 +21,12 @@
 <script>
 export default {
   data () {
+    console.log(this.$store.state.id)
     return {
     }
   },
   created(){
-    return this.$store.dispatch('getdggoods')
+    this.$store.dispatch('getdggoods')
   },
   computed: {
     xgoodsList(){

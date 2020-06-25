@@ -10,12 +10,17 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     a: 1,
+    id: '',
     data: {},
     goodslist: [],
     worksList: [],
     getgoodscomtianer: []
   },
   mutations: {
+    changeindex(state,id){
+      state.id = id
+      console.log(state.id)
+    },
     // 商品详情的数据
     sp(xiangqing, list){
       xiangqing.getgoodscomtianer = list
@@ -41,9 +46,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    sgetgoodscomtianer({ commit }){
-      getgoodscomtianer().then((data)=>{
-        commit('sp',data)
+    sgetgoodscomtianer(context){
+      var id = context.state.id
+      console.log(id)
+      getgoodscomtianer(id).then((data)=>{
+        context.commit('sp',data)
       }).catch((err)=>{
         console.log(err)
       })
