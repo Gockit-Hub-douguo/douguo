@@ -135,7 +135,7 @@ export default {
         },
         {
           title: '咖啡',
-          list: ['咖啡豆', '星巴克VIA® 免煮咖啡', '星巴克臻选™咖啡', 'Origami™']
+          list: ['中度咖啡豆', '深度咖啡豆']
         },
         {
           title: '商品',

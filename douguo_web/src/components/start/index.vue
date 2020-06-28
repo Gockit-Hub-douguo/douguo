@@ -22,7 +22,7 @@ export default {
         {
           name: '星巴克玩味冰调™',
           list1: [
-            { url: 'http://topyun.qicp.vip/gP_2020620173631.jpg', title: '橙柚派对' },
+            { url: 'http://topyun.qicp.vip/pk_202062517925.jpg', title: '橙柚派对' },
             { url: 'http://topyun.qicp.vip/Uq_202062017357.jpg', title: '气炫冰山美式' }
           ]
         }, {

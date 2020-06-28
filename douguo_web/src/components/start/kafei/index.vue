@@ -2,71 +2,77 @@
   <div class="d">
     <div class="Sdetail">
         <div class="detailCont">
-            <div class="img">
-                <img src="https://www.starbucks.com.cn/images/sumatra-coffee-beans.png" alt="">
+            <div :class="{ hid : item.Shoppingkey != imgid }" class="img fl"  :key="index+new Date().getTime()"  v-for=" (item,index) in drink.list" >
+                <img v-if="item.Shoppingkey === imgid " :src="'http://topyun.qicp.vip/' +item.imgurl" alt="">
             </div>
             <div class="fl text">
-                <p style="color: #C2A661;font-size:14px; margin-bottom:10px;">深度烘焙</p>
-                <h3 style="font-size:26px; margin-bottom:10px;">星巴克®苏门答腊咖啡豆</h3>
-                <p style="font-size:16px">
-                    带有强烈的泥土芳香，风味异常集中；醇度厚重而浓郁，苏门答腊咖啡是我们非常畅销的其中一款单品咖啡。
-                </p>
-                <div class="grades">
-                    <ul class="gradesList">
+                <p style="color: #C2A661;font-size:14px; margin-bottom:10px;">{{drink.title}}</p>
+                <span :class="{ hid : item.Shoppingkey != imgid }"  :key="index+'#'"  v-for=" (item,index) in drink.list">
+                    <h3 v-if="item.Shoppingkey === imgid " style="font-size:26px; margin-bottom:10px;">{{item.name}}</h3>
+                </span>
+                <span :class="{ hid : item.Shoppingkey != imgid }"  :key="index+''"  v-for=" (item,index) in drink.list">
+                  <p v-if="item.Shoppingkey === imgid " style="font-size:16px">{{item.preset}}</p>
+                </span>
+                <div class="grades"  :class="{ hid : item.Shoppingkey != imgid }"  :key="index+'1'"  v-for=" (item,index) in drink.list">
+                    <ul class="gradesList" v-if="item.Shoppingkey === imgid ">
                         <li>
-                            <p>烘焙程度：深度烘焙</p>
+                            <p>烘焙程度：{{item.num}}</p>
                             <div class="jindu">
-                                <div class="jindugbc jin1"></div>
+                                <div class="jindugbc" :class="item.num === '中度烘焙' ? 'jin1':'jin2' " ></div>
                             </div>
                         </li>
                         <li>
-                            <p>酸度：低</p>
+                            <p>酸度：{{item.acid}}</p>
                             <div class="jindu">
-                                <div class="jindugbc jin2"></div>
+                                <div class="jindugbc" :class ="item.acid === '低' ? 'jin3':item.acid === '中' ? 'jin2' : 'jin1'"></div>
                             </div>
                         </li>
                         <li>
-                            <p>醇度：厚重</p>
+                            <p>醇度：{{item.alcohol}}</p>
                             <div class="jindu">
-                                <div class="jindugbc jin3"></div>
+                                <div class="jindugbc " :class="item.alcohol === '厚重' ? 'jin1':'jin2' "></div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <table style="width:100%;">
-                    <tbody>
+                <table style="width:100%;" :class="{ hid : item.Shoppingkey != imgid }"  :key="index+'d'"  v-for=" (item,index) in drink.list">
+                    <tbody v-if="item.Shoppingkey === imgid ">
                         <tr class="cd">
                             <td class="bold">产地</td>
-                            <td>亚洲/太平洋</td>
+                            <td>{{item.cd}}</td>
                         </tr>
                         <tr class="cd">
                             <td class="bold">加工方法</td>
-                            <td>半水洗法</td>
+                            <td>{{item.function}}</td>
                         </tr>
                         <tr class="cd">
                             <td class="bold">风味</td>
-                            <td>泥土芳香、草本般风味</td>
+                            <td>{{item.fwei}}</td>
                         </tr>
                         <tr class="cd">
                             <td class="bold">食品搭配建议</td>
-                            <td>肉桂，燕麦片，枫糖，黄油，太妃糖。</td>
+                            <td>{{item.spjy}}</td>
                         </tr>
                         <tr class="cd">
                             <td class="bold">类似咖啡</td>
-                            <td>星巴克®低因祥龙综合咖啡</td>
+                            <td>{{item.class}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="guess">
+        <div class="guess" >
             <h2>猜你喜欢</h2>
-            <ul>
-               <li :key="item" v-for="item in list">
-                   <a :style= "{background:'url('+item.url+') center/contain no-repeat' }"></a>
-                   <span>{{item.title}}</span>
-               </li>
-            </ul>
+            <span @click="bannerbtn(0)" class=" swiper-left"><i class="el-icon-arrow-left"></i></span>
+            <div ref="container" style="overflow: hidden; width: 925px;">
+                <ul class="guessList" :style="{width:slidewidth,transform:'translateX('+translate+'px)',transition: 'transform 303ms ease 0s'}">
+                  <li :key="index" v-for="(item,index) in list">
+                      <a :style= "{background:'url('+item.url+') center/contain no-repeat' }"></a>
+                      <p>{{item.title}}</p>
+                  </li>
+                </ul>
+              </div>
+            <span @click="bannerbtn(1)" class=" swiper-right"><i class="el-icon-arrow-right"></i></span>
         </div>
     </div>
   </div>
@@ -76,13 +82,62 @@
 export default {
   data () {
     return {
+    drink: '',
+    imgid: 1,
+    slidewidth: '',
+    translate: 0,
       list: [
         { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' },
         { url: 'https://www.starbucks.com.cn/images/products/cold-brew-lemon-sour.jpg', title: '美式咖啡' },
         { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' },
+        { url: 'https://www.starbucks.com.cn/images/products/peach-shrub-fizz.jpg', title: '美式咖啡' },
+        { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' },
+        { url: 'https://www.starbucks.com.cn/images/products/peach-shrub-fizz.jpg', title: '美式咖啡' },
+        { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' },
         { url: 'https://www.starbucks.com.cn/images/products/peach-shrub-fizz.jpg', title: '美式咖啡' }
       ]
     }
+  },
+  computed: {
+      dd(){
+          return this.$store.state.data
+      },
+     swiper () {
+      return Math.ceil(this.list.length) / 5
+     }
+  },
+  methods: {
+    // 轮播
+    bannerbtn (p) {
+      if (p === 0) {
+        if (this.index > 1) {
+          this.index--
+        }
+         console.log(this.index)
+      } else {
+        if(this.index < this.swiper) {
+          this.index++
+        }
+        console.log(this.index)
+      }
+      this.countbanner()
+    },
+    countbanner () {
+      var width = this.$refs.container.offsetWidth
+      this.translate = -width * (this.index - 1)
+    }
+  },
+  mounted () {
+      this.drink = this.$store.state.data
+      this.imgid = this.$route.query.id
+      console.log(this.drink)
+     // 计算swiper中li（即图片内容）的宽度
+    this.slidewidth = this.list.length * 232 + 'px'
+  },
+  watch: {
+      dd(val){
+          this.drink = val
+      }
   }
 }
 </script>>
@@ -108,6 +163,9 @@ export default {
                 max-width: 100%;
                 max-height: 100%;
             }
+        &.hid{
+            display: none;
+        }
         }
         .text{
             box-sizing: border-box;
@@ -145,13 +203,13 @@ export default {
                                 padding: 4px 0;
                                 overflow: hidden;
                                 &.jin1{
-                                    width: 75%;
+                                    width: 58%;
                                 }
                                 &.jin2{
-                                    width: 30%;
+                                    width:96%;
                                 }
                                 &.jin3{
-                                    width: 49%;
+                                    width: 30%;
                                 }
                             }
                         }
@@ -179,23 +237,47 @@ export default {
         }
     }
     .guess{
-        padding-bottom: 72px;
-        overflow: hidden;
-        padding-left: 75px;
+        height: 315px;
+        position: relative;
+        margin-left: 75px;
         h2{
             font-size: 20px;
             font-weight: bold;
+            margin-bottom: 20px;
+        }
+        span{
+          position: absolute;
+          font-size: 35px;
+          font-weight: bold;
+          &.swiper-left{
+            left: -27px;
+            top: 43%;
+             &:hover{
+                font-size: 45px;
+                top: 43%;
+                transition: .5s;
+              }
+          }
+           &.swiper-right{
+            right: -27px;
+            top: 43%;
+             &:hover{
+                font-size: 45px;
+                top: 43%;
+                transition: .5s;
+              }
+          }
         }
         ul{
-            margin-left: -24px;
-            margin-right: -24px;
+            display: flex;
+            width: 100%;
+            overflow: hidden;
            li{
-            width: 232px;
+            width: 182px;
             height: 221px;
             padding: 16px;
             text-align: center;
             float: left;
-            margin-right: 10px;
              &:hover{
                 color: inherit;
                 transform: translate3d(0, -8px, 0);
@@ -205,8 +287,8 @@ export default {
                 box-shadow: 0 1px 3px 2px rgba(0, 0, 0,0.23);
             }
              a{
-                 width: 150px;
-                height: 150px;
+                 width: 145px;
+                height: 145px;
                 border-radius: 100%;
                 margin: 0 auto;
                 box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -215,7 +297,7 @@ export default {
                 background-size: contain;
                 display: inline-block;
              }
-             span{
+             p{
                  display: block;
                     font-size: 16px;
                     font-weight: bold;
