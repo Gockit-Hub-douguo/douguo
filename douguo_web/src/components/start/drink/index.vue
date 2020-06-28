@@ -6,7 +6,8 @@
                <span class="stitle">{{drink.title}}</span>
                <ul>
                  <li :key="index" v-for="(for2,index) in drink.list">
-                    <router-link  :to="{ path: '/detail', query:{ id:for2.Shoppingkey } } " class="img" :style= "{background:'url(http://topyun.qicp.vip/'+for2.imgurl+') center/contain no-repeat' }"></router-link>
+                    <router-link v-if="menu === 'DepathCoffe' || menu === 'Conventional'" :to="{ path: '/kafei', query:{ id:for2.Shoppingkey } } " class="img" :style= "{background:'url(http://topyun.qicp.vip/'+for2.imgurl+') center/contain no-repeat' }"></router-link>
+                    <router-link v-else  :to="{ path: '/detail', query:{ id:for2.Shoppingkey } } " class="img" :style= "{background:'url(http://topyun.qicp.vip/'+for2.imgurl+') center/contain no-repeat' }"></router-link>
                     <span>{{for2.name}}</span>
                 </li>
                </ul>
@@ -20,6 +21,7 @@
 export default {
   data () {
     return {
+      menu: '',
       drink: '',
       list: [
         {
@@ -63,7 +65,7 @@ export default {
   mounted () {
     const a = this.$store.state.data
     this.drink = a
-    // const imgid = this.$route.query.imgid
+  this.menu = this.$route.query.menu
   }
 }
 </script>
