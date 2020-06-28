@@ -12,12 +12,12 @@
                 </div>
                 <div class="info">
                     <h3 class="goods-name">{{item.fname}}</h3>
-                    <p class="description">{{item.nexttitle}}</p>
+                    <p class="description">{{item.finextname}}</p>
                     <div class="sell-info">
                         <span class="price">￥{{item.fnowprice}}</span>
                         <s class="old-price">￥{{item.fnowprice}}</s>
                         <div class="other">
-                            <span>月售: {{item.ammount}}</span>
+                            <span>月售: {{item.amount}}</span>
                             <span>发货地: {{item.originadrr}}</span>
                         </div>
                     </div>

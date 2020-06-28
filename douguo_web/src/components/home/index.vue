@@ -9,7 +9,7 @@
       <div class="btitle">
         <!-- 笔记标题 -->
         <div class="menuTitle">
-          <h3 class="fl">笔记</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
+          <h3 class="fl">笔记</h3> <el-link type='primary'  :underline="false" class="fr"><router-link to="/biji">更多 ></router-link></el-link>
         </div>
         <!-- 内容层 -->
         <ul class="menuList muil">
@@ -60,7 +60,7 @@
       <!-- 精彩主题文章 -->
       <div class="article fl">
         <div class="menuTitle">
-          <h3 class="fl">精彩主题文章</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
+          <h3 class="fl">精彩主题文章</h3> <el-link type='primary'  :underline="false" class="fr"><router-link to="/FoodNews">更多 ></router-link></el-link>
         </div>
         <div class="articleZ">
           <router-link :to="{path: '/foodardetail', query:{id: '3132204556708279'}}" class="fl"><img src="https://cp1.douguo.com/upload/post/1/6/9/16fd3c040f34c60d4f2f35a21bd73b89.jpg" alt=""></router-link>
@@ -76,7 +76,7 @@
       <!-- 商城精选 -->
       <div class="shopping_cart fr">
         <div class="menuTitle">
-          <h3 class="fl">商城精选</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
+          <h3 class="fl">商城精选</h3> <el-link type='primary'  :underline="false" class="fr"><router-link to="/shop">更多 ></router-link></el-link>
         </div>
         <ul>
             <li v-for="(its, words) in homegoodsf" :key="words">

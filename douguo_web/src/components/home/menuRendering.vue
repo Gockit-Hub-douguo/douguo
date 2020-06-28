@@ -4,7 +4,7 @@
     <div class="Selectedrecipes">
       <!-- 标题 -->
       <div class="menuTitle">
-        <h3 class="fl">每日精选菜谱</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
+        <h3 class="fl">每日精选菜谱</h3> <el-link type='primary'  :underline="false" class="fr"><router-link to="/jx">更多 ></router-link></el-link>
       </div>
       <!-- 内容层 -->
       <ul class="menuList">

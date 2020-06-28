@@ -79,9 +79,10 @@
                 <a class="lym-register" @click="register(1)">注册</a>
             </div>
             <div class="person fl" v-if="keywords != 0 ">
+              <router-link to="/shoucang">
               <el-badge :value="12" class="item">
                  <el-avatar :size="50" :src="circleUrl"></el-avatar>
-              </el-badge>
+              </el-badge></router-link>
               <div class="person-list">
                 <router-link to="/discuss" is-dot class="item">消息提醒</router-link>
                 <router-link to="/shoucang" is-dot class="item">我的收藏</router-link>
