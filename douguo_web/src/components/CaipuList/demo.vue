@@ -3,23 +3,23 @@
          <h2 class="title">精选推荐菜谱</h2>
             <!-- <div>111</div> -->
             <ul class="list">
-                <router-link to="/caipinxianqi">
-                    <li :key="key" v-for="(item, key) in indexwokss" class="item">
-                        <router-link to="/caipinxianqi">
+                 <li :key="key" v-for="(item, key) in indexwokss" class="item">
+                       <router-link :to="{path:'/caipinxianqi',query:{id:key}}">
+                            <a>
                             <img width="300px" height="199px" :src="item.wimgUrl" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
-                        </router-link>
+                        </a>
                         <div class="relative">
-                            <router-link to="/caipinxianqi" class="title">{{item.works_title}}</router-link>
+                            <a class="title">{{item.works_title}}</a>
                             <div>
                                 <a class="cover">
                                     <img style="border-radius: 50%" width="20px" :src="item.userphoto" alt="">
-                                    <span  style="margin-left: 10px" class="cover-name">{{item.username}}</span>
+                                    <span style="margin-left: 10px" class="cover-name">{{item.username}}</span>
                                     <span class="fr"><i class="el-icon-view"></i> 1111<i class="el-icon-star-off">222</i></span>
                                 </a>
                             </div>
                         </div>
+                       </router-link>
                     </li>
-                </router-link>
             </ul>
             <div class="pages">
                 <a></a>

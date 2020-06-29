@@ -3,7 +3,7 @@
         <div class="menu-list">
             <ul>
                 <li :key="key" v-for="(item, key) in indexwokss" class="item">
-                    <router-link class="cover" to="">
+                    <router-link class="cover" to="{path:'/caipinxianqi',query:{id:key}}">
                         <img class="wb100" :src="item.wimgUrl" alt="">
                         <div class="menuinfo absolute">
                             <p class="name text-lips">快手春食记  复工so easy！</p>

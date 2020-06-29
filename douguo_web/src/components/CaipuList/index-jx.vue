@@ -3,9 +3,9 @@
          <h2 class="title">最新推荐菜谱</h2>
             <!-- <div>111</div> -->
             <ul class="list">
-                <router-link to="/caipinxianqi">
-                    <li :key="key" v-for="(item, key) in indexwokss" class="item">
-                        <a>
+                 <li :key="key" v-for="(item, key) in indexwokss" class="item">
+                       <router-link :to="{path:'/caipinxianqi',query:{id:key}}">
+                            <a>
                             <img width="300px" height="199px" :src="item.wimgUrl" alt="#爱乐甜夏日轻脂甜蜜#它啊，不可一世">
                         </a>
                         <div class="relative">
@@ -18,8 +18,8 @@
                                 </a>
                             </div>
                         </div>
+                       </router-link>
                     </li>
-                </router-link>
             </ul>
             <div class="pages">
                 <a></a>

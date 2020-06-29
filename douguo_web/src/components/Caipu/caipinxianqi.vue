@@ -6,7 +6,7 @@
                     <div class="block">
                         <el-carousel height="390px">
                             <el-carousel-item v-for="item in 4" :key="item">
-                            <h3 class="small" :style="{background:'url('+list+')'}">{{item.list}}</h3>
+                            <h3 class="small" :style="{background:'url('+xiq.img3+')'}">{{list}}</h3>
                             </el-carousel-item>
                         </el-carousel>
                     </div>
@@ -29,7 +29,7 @@
                 <div class="aut-info relative">
                     <div class="left">
                         <router-link to="" class="aut-img left">
-                            <img src="https://tx1.douguo.com/upload/photo/4/e/c/70_u06885640939458222838.jpeg" alt="">
+                            <img :src="xiq.img1" alt="">
                         </router-link>
                         <div class="aut-info1 left">
                             <router-link to="" class="nickname text-lips">食客妈妈</router-link>
@@ -101,7 +101,7 @@
                 <h2 class="mini-title">冲蛋豆腐脑的做法</h2>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/a/7/1/200_a7d6c0a3e7b9094ade1d133c0aaf3bf1.JPG" alt="">
+                        <img :src="xiq.img2" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤1</p>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/0/8/3/200_089cb521efa2f442c74cf030858b0353.JPG" alt="">
+                        <img :src="xiq.img3" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤2</p>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/a/7/1/200_a7d6c0a3e7b9094ade1d133c0aaf3bf1.JPG" alt="">
+                        <img :src="xiq.img4" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤3</p>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/a/4/0/200_a43e635849eae399874e38bc4db05810.JPG" alt="">
+                        <img :src="xiq.img5" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤4</p>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/f/e/2/200_fea2dec0a1c3695b5f433136f8304ce2.JPG" alt="">
+                        <img :src="xiq.img6" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤5</p>
@@ -146,7 +146,7 @@
                 </div>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/8/0/a/200_80f7526dd5db5b530a9806d027f1d54a.JPG" alt="">
+                        <img :src="xiq.img7" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤6</p>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/2/8/4/200_2851bdc2172818bfbf0b26f432a381f4.JPG" alt="">
+                        <img :src="xiq.img8" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤7</p>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="stepcont left">
                     <a style="float:left" >
-                        <img src="https://cp1.douguo.com/upload/caiku/f/f/7/200_ff8b49dc3a155c7e7373a64b77ea55c7.JPG" alt="">
+                        <img :src="xiq.img9" alt="">
                     </a>
                     <div class="stepinfo">
                         <p>步骤8</p>
@@ -187,7 +187,7 @@
                 <el-carousel height="200px">
                 <el-carousel-item v-for="item in 4" :key="item">
                     <!-- <h3 class="small"><span class="gg-text">广告位招租</span></h3> -->
-                    <h3 class="small" :style="{background:'url('+list+')'}">{{item.list}}<span class="gg-text">广告位招租</span></h3>
+                    <h3 class="small" :style="{background:'url('+xiq.img10+')'}">{{item.list}}<span class="gg-text">广告位招租</span></h3>
                 </el-carousel-item>
                 </el-carousel>>
             </div>
@@ -203,7 +203,7 @@
                     <h2 class="mini-title">评论</h2>
                     <div class="in-comment">
                         <div class="author-img  left">
-                            <img width="30px" src="https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg" alt="">
+                            <img width="30px" :src="xiq.img2" alt="">
                         </div>
                         <div class="right">
                             <el-input
@@ -226,7 +226,7 @@
                 <el-carousel height="260px">
                 <el-carousel-item v-for="item in 3" :key="item">
                     <!-- <h3 style="text-align: center" class="small"><span class="gg-text1">广告位招租</span></h3> -->
-                    <h3 class="small" :style="{background:'url('+list+')'}">{{item.list}}<span class="gg-text">广告位招租</span></h3>
+                    <h3 class="small" :style="{background:'url('+xiq.img5+')'}">{{item.list}}<span class="gg-text"></span></h3>
                 </el-carousel-item>
                 </el-carousel>
             </div>
@@ -235,7 +235,7 @@
                 <h2>热门文章-烹饪技巧</h2>
                 <div class="hot-art">
                     <router-link to="">
-                        <img width="70px" src="https://cp1.douguo.com/upload/post/0/5/e/05aeea3b60fc913bdd1aca91e8df045e.jpg" alt="">
+                        <img width="70px" :src="xiq.img10" alt="">
                         <span class="hot-title">年夜饭必备技巧之（禽肉篇）</span>
                     </router-link>
                 </div>
@@ -250,7 +250,7 @@
                 <h2>被加入的菜单 <el-button class="right" size="small">加入采单</el-button></h2>
             </div>
             <div>
-                <img width="280px" src="https://i1.douguo.com//upload/banner/1578991492.png" alt="">
+                <img width="280px" :src="xiq.img11" alt="">
             </div>
         </div>
     </div>
@@ -259,12 +259,17 @@
 <script>
 import btn from '@/components/menu/button';
 export default {
+    created(){
+        console.log(this.$route.query.id)
+        this.xiq = this.$store.state.spxiang[this.$route.query.id]
+    },
     data () {
         return {
+            xiq: [],
             dialogImageUrl: '',
             dialogVisible: false,
-            textarea: '',
-            list: 'https://cp1.douguo.com/upload/caiku/5/d/a/690x390_5d7d98fc817c55c18f959585ea4e55fa.JPG'
+            textarea: ''
+            // list: 'https://cp1.douguo.com/upload/caiku/5/d/a/690x390_5d7d98fc817c55c18f959585ea4e55fa.JPG'
             
         }
     },
