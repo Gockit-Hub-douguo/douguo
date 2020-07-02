@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="rinfo">
-                <h1>冲蛋豆腐脑</h1>
+                <h1>{{xiq.name}}</h1>
                 <div class="bout-box">
                     <span class="bout">精品</span>
                 </div>

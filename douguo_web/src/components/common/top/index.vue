@@ -106,7 +106,7 @@ export default {
       restaurants: [],
       state: '',
       keywords: 0,
-       circleUrl: "http://topyun.qicp.vip/VP_2020620175538.jpg",
+       circleUrl: "https://tx1.douguo.com/upload/photo/4/9/4/140_4907e51a2d5676bcd89d7b738cedcbb4.jpg",
       menulist: [
         {
           title: '常见菜式',
@@ -460,7 +460,7 @@ export default {
               .person-list{
                 position: absolute;
                 top: 46px;
-                right: -5px;
+                right: -34px;
                 background: #fff;
                 width: 108px;
                 border-radius: 5px;

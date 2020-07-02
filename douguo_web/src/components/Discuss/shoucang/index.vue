@@ -19,16 +19,16 @@
                     </router-link>
                      <router-link to="/guanzhu" class="floF">
                      <div>
-                        <p>0</p>
+                        <p>3</p>
                         <p>粉丝</p>
                     </div>
                      </router-link>
                     <div class="floF">
-                        <p>0</p>
+                        <p>2</p>
                         <p>菜谱</p>
                     </div>
                     <div class="floF">
-                        <p>0</p>
+                        <p>3</p>
                         <p>笔记</p>
                     </div>
                 </div>
@@ -40,7 +40,15 @@
                     <div class="box">暂无数据~</div>
                 </el-tab-pane>
                 <el-tab-pane label="菜谱" name="second">
-                    <div class="box">暂无数据~</div></el-tab-pane>
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/9/d/750_c92b6ac8bace782da0cf4ed9c302705d.jpg">
+                        <div class="act-t">【雪梨三吃】3个方法吃对梨，春天润肺最给力！</div>
+                    </div>
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/7/c/750_c7f9e1791ba6bc3d942ff35523efc2bc.jpg">
+                        <div class="act-t">【雪媚娘】这个草莓味包子，甜过软妹子！</div>
+                    </div>
+                </el-tab-pane>
                 <el-tab-pane label="菜单" name="third">
                     <div class="box">暂无数据~</div></el-tab-pane>
                 <el-tab-pane label="笔记" name="fourth">
@@ -51,7 +59,7 @@
                     <div class="box">暂无数据~</div></el-tab-pane>
             </el-tabs>
          </div>
-         <div>你的当前位置: 豆果美食> 个人中心 </div>
+         <div style="margin-top:20px;">你的当前位置: 豆果美食> 个人中心 </div>
     </div>
 </template>
 
@@ -145,4 +153,20 @@
     line-height: 330px;
     text-align: center;
 }
+.actr-img {
+    width: 200px;
+    overflow: hidden;
+}
+.actr-img img {
+    width: 200px;
+    height: 200px;
+}
+.act-t {
+    height: 20px;
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+} 
 </style>
