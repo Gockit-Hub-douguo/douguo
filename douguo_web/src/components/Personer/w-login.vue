@@ -81,7 +81,7 @@ export default {
     //   console.log(this.$store.state.phone)
     console.log(this.$store.state.ulist)
     return {
-        list: ['微辣','中辣','麻辣','甜'],
+        list: [{ value: '微辣' }, { value: '中辣' }, { value: '特辣' }, { value: '清淡' }],
       options: [
           {
               value: '重庆'
@@ -113,6 +113,7 @@ export default {
       }
     }
   },
+  // 个人资料
   created(){
       this.$store.dispatch('getsession')
       this.ruleForm.phonenumber = this.$store.state.phone
@@ -123,6 +124,7 @@ export default {
       this.ruleForm.phonenumber = this.$store.state.ulist.phonenumber
       this.ruleForm.userphoto = this.$store.state.ulist.userphoto
       this.ruleForm.username = this.$store.state.ulist.username
+      this.ruleForm.userSex = this.$store.state.ulist.userSex
   },
   computed: {
      getphone(){

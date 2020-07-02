@@ -2,7 +2,7 @@
     <div class="showMain">
         <div class="shows">
             <div class="show-img">
-                <img src="https://tx1.douguo.com/upload/photo/4/9/4/140_4907e51a2d5676bcd89d7b738cedcbb4.jpg"/>
+                <img :src="ctUrl"/>
             </div>
             <div class="showIn">
                 <a class="showname">前端小白</a>
@@ -48,6 +48,22 @@
                         <img src="https://cp1.douguo.com/upload/note/c/7/c/750_c7f9e1791ba6bc3d942ff35523efc2bc.jpg">
                         <div class="act-t">【雪媚娘】这个草莓味包子，甜过软妹子！</div>
                     </div>
+                     <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/9/d/750_c92b6ac8bace782da0cf4ed9c302705d.jpg">
+                        <div class="act-t">【雪梨三吃】3个方法吃对梨，春天润肺最给力！</div>
+                    </div>
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/7/c/750_c7f9e1791ba6bc3d942ff35523efc2bc.jpg">
+                        <div class="act-t">【雪媚娘】这个草莓味包子，甜过软妹子！</div>
+                    </div>
+                     <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/9/d/750_c92b6ac8bace782da0cf4ed9c302705d.jpg">
+                        <div class="act-t">【雪梨三吃】3个方法吃对梨，春天润肺最给力！</div>
+                    </div>
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/7/c/750_c7f9e1791ba6bc3d942ff35523efc2bc.jpg">
+                        <div class="act-t">【雪媚娘】这个草莓味包子，甜过软妹子！</div>
+                    </div>
                 </el-tab-pane>
                 <el-tab-pane label="菜单" name="third">
                     <div class="box">暂无数据~</div></el-tab-pane>
@@ -74,7 +90,12 @@
       handleClick(tab, event) {
         console.log(tab, event);
       }
-    }
+    },
+    computed: {
+       ctUrl(){
+            return this.$store.state.ulist.userphoto
+        }
+      }
   };
 </script>
 
@@ -156,6 +177,8 @@
 .actr-img {
     width: 200px;
     overflow: hidden;
+    float: left;
+    margin: 20px 20px;
 }
 .actr-img img {
     width: 200px;

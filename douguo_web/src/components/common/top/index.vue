@@ -100,13 +100,15 @@ import axios from 'axios'
 // import { api } from '../apiConfig'
 import md5 from '@/assets/js/md5.js'
 export default {
+  created(){
+    this.$store.dispatch('getsession')
+  },
   data () {
     return {
       select: '',
       restaurants: [],
       state: '',
       keywords: 0,
-       circleUrl: "https://tx1.douguo.com/upload/photo/4/9/4/140_4907e51a2d5676bcd89d7b738cedcbb4.jpg",
       menulist: [
         {
           title: '常见菜式',
@@ -239,6 +241,12 @@ export default {
   mounted () {
     this.restaurants = this.loadAll()
     this.keywords = window.localStorage.getItem('user') || 0
+  },
+  // 获取头像
+  computed: {
+    circleUrl(){
+      return this.$store.state.ulist.userphoto
+    }
   }
 }
 </script>

@@ -2,7 +2,7 @@
     <div class="showMain">
         <div class="shows">
             <div class="show-img">
-                <img src="https://tx1.douguo.com/upload/photo/4/9/4/140_4907e51a2d5676bcd89d7b738cedcbb4.jpg"/>
+                <img :src="ctUrl"/>
             </div>
             <div class="showIn">
                 <a class="showname">前端小白</a>
@@ -112,6 +112,8 @@
 <script>
 export default {
     data() {
+        console.log('eeeeeeeeeeeeeee')
+        console.log(this.$store.state.ulist.userphoto)
       return {
         activeName: 'first'
       };
@@ -120,7 +122,12 @@ export default {
       handleClick(tab, event) {
         console.log(tab, event);
       }
-    }
+    },
+    computed: {
+       ctUrl(){
+            return this.$store.state.ulist.userphoto
+        }
+      }
   }
 </script>
 <style lang="less" scoped>
