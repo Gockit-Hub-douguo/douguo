@@ -106,21 +106,27 @@ export default {
     }
   },
   methods: {
+    axi () {
+      var uid = this.$route.query.id
+      var timegtime = new Date().getTime()
+      var publicwords = md5((timegtime + 1000) * 2)
+      axios({
+        url: 'http://topyun.qicp.vip/getarticle',
+        method: 'get',
+        params: {
+          uid: uid,
+          publicwords,
+          timegtime
+        }
+      }).then((rtn) =>{
+        this.active = rtn.data.list
+      }).catch(er => {
+        console.log(er)
+      })
+    }
   },
   created () {
-    var qid = this.$route.query.id
-    // this.axi(qid)
-    this.$store.dispatch('loadAxiosActiv', qid)
-  },
-  computed: {
-    activeALl () {
-      return this.$store.state.active.activeAll
-    }
-  },
-  watch: {
-    activeALl (newv) {
-      this.active = newv
-    }
+    this.axi()
   },
   filters: {
     tims (va) {

@@ -2,13 +2,11 @@
   <!-- 商品数据渲染组件 -->
   <div class="LeftInfo fl">
     <ul>
-      <li v-for="(it, k) in ssslist" :key="k">
-        <router-link :to="{path:'/caipinxianqi',query:{id:k}}">
-          <img :src="it.wimgUrl" alt="">
-        </router-link>
+      <li v-for="it in indexwoks" :key="it">
+        <img :src="it.wimgUrl" alt="">
         <div>
           <h3>{{it.works_title}}</h3>
-          <p class="author">{{it.works_class}}</p>
+          <p class="author">鸡蛋,奶油奶酪,低筋面粉,牛奶 </p>
           <p class="time">
             <el-rate
               v-model="value"
@@ -19,7 +17,7 @@
             </el-rate>
           </p>
           <p class="linkurl">
-            <router-link to="#">
+            <router-link to='#'>
               <img :src="it.userphoto" alt="">
               <em class="fl">{{it.username}}</em>
               <span class="fl iconx"></span>
@@ -42,8 +40,7 @@ export default {
       },
   data() {
     return {
-      value: 4.7,
-      ssslist: []
+      value: 4.7
     }
   },
   computed: {
@@ -53,16 +50,6 @@ export default {
         list.push(this.$store.state.worksList[i])
       }
       return list
-    }
-  },
-  watch: {
-    indexwoks (newval) {
-      for(var i = 0; i < newval.length + 10; i++){
-        var rdm = Math.floor(Math.random() * newval.length)
-        newval.push(newval[rdm])
-        newval.splice(rdm,1)
-      }
-      this.ssslist = newval
     }
   }
 }

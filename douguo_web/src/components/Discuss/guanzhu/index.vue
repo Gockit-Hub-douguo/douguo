@@ -5,44 +5,29 @@
                 <img :src="ctUrl"/>
             </div>
             <div class="showIn">
-                <a class="showname">{{userinfolists.userasname}}}</a>
-                <p class="sex">
-                  <i class="el-icon-male" v-if="userinfolists.sex"></i>
-                  <i class="el-icon-female" v-else></i>
-                  {{userinfolists.adress}}</p>
-                <p>经验值:{{userinfolists.exp}}</p>
+                <a class="showname">前端小白</a>
+                <p class="sex"><i class="el-icon-female"></i>北京 西城区</p>
+                <p>经验值:35</p>
             </div>
             <div class="show-right">
                 <div class="rightFans">
                     <div class="floF">
-                        <p>{{userinfolists.gz}}</p>
+                        <p>3</p>
                         <p>关注</p>
                     </div>
                      <div class="floF">
-<<<<<<< HEAD
-                        <p>{{userinfolists.fans}}</p>
-=======
                         <p>3</p>
->>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
                         <p>粉丝</p>
                     </div>
                  <router-link to="/shoucang" class="floF">
                     <div>
-<<<<<<< HEAD
-                        <p>{{userinfolists.cp}}</p>
-=======
                         <p>2</p>
->>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
                         <p>菜谱</p>
                     </div>
                  </router-link>
                  <router-link to="/shoucang" class="floF">
                     <div>
-<<<<<<< HEAD
-                        <p>{{userinfolists.bj}}</p>
-=======
                         <p>3</p>
->>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
                         <p>笔记</p>
                     </div>
                 </router-link>
@@ -130,32 +115,13 @@ export default {
         console.log('eeeeeeeeeeeeeee')
         console.log(this.$store.state.ulist.userphoto)
       return {
-        activeName: 'first',
-        userinfolists: [{ image: '' }]
+        activeName: 'first'
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
       }
-<<<<<<< HEAD
-    }
-  //   methods: {
-  //     handleClick(tab, event) {
-  //       console.log(tab, event);
-  //     }
-  //   },
-  //   mounted () {
-  //     var uid = this.$route.query.uid
-  //     this.$store.dispatch('loadsuserinfolist', uid)
-  //   },
-  //   computed: {
-  //     userinfolist () {
-  //       return this.$store.active.userinfolists
-  //     }
-  //   },
-  //   watch: {
-  //     userinfolist (newValue) {
-  //       this.userinfolists = newValue[0]
-  //     }
-  //   }
-   }
-=======
     },
     computed: {
        ctUrl(){
@@ -163,7 +129,6 @@ export default {
         }
       }
   }
->>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
 </script>
 <style lang="less" scoped>
 .showMain {
@@ -204,19 +169,9 @@ export default {
 
 .sex {
     margin-top: 8px;
-    i.el-icon-male{
-      font-size: 18px;
-      color: aqua;
-      float: left;
-    }
-    i.el-icon-male{
-      font-size: 18px;
-      float: left;
-      color: pink;
-    }
 }
 .showIn p {
-      margin-top: 11px;
+        margin-top: 11px;
     font-size: 12px;
     line-height: 16px;
     color: #666;

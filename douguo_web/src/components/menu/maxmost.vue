@@ -1,5 +1,5 @@
 <template>
-  <!-- 收藏最多 -->
+  <!-- 综合最佳 -->
   <div>
     <!-- 菜单层 -->
     <div class="navbars">
@@ -21,13 +21,13 @@
       <!-- 内容层 -->
       <div class="LeftInfo fl">
         <ul>
-          <li v-for="(it, k) in ssslist" :key="k">
+          <li v-for="it in indexwoks" :key="it">
             <img :src="it.wimgUrl" alt="">
             <div>
               <h3><router-link to='#'>{{it.works_title}}</router-link></h3>
-              <p class="author">{{it.works_class}}</p>
+              <p class="author">金龙鱼家用原味蛋糕粉,鸡蛋,牛奶,玉米油,细砂糖,柠檬汁,甜奶油：,淡奶油,细砂糖,柠檬汁,抹茶奶油：,淡奶油,细砂糖,抹茶粉,巧克力奶油：,淡奶油,细砂糖,巧克力粉,配料：,芒果 草莓 坚果 麦片</p>
               <p class="time">
-                收藏人数 {{it.works_type}}
+                收藏人数 7598
               </p>
               <p class="linkurl">
                 <router-link to='#'>
@@ -51,7 +51,7 @@
       <el-pagination
       background
       layout="prev, pager, next"
-      :total="1">
+      :total="1000">
       </el-pagination>
     </div>
     <!-- 定位 -->
@@ -76,8 +76,7 @@
     data() {
       return {
         value: 4.7,
-        title: '热菜',
-        ssslist: []
+        title: '热菜'
       }
     },
     components: {
@@ -93,23 +92,13 @@
       this.fu()
     },
     computed: {
-      indexwoks(){
-        const list = []
-        for(var i = 0; i < 9; i++){
-          list.push(this.$store.state.worksList[i])
-        }
-        return list
+    indexwoks(){
+      const list = []
+      for(var i = 0; i < 9; i++){
+        list.push(this.$store.state.worksList[i])
       }
-    },
-    watch: {
-      indexwoks (newval) {
-        for(var i = 0; i < newval.length + 10; i++){
-          var rdm = Math.floor(Math.random() * newval.length)
-          newval.push(newval[rdm])
-          newval.splice(rdm,1)
-        }
-        this.ssslist = newval
-      }
+      return list
     }
+  }
   }
 </script>

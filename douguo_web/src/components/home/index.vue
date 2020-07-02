@@ -54,7 +54,7 @@
           <h3 class="fl">豆果达人</h3> <el-link type='primary'  :underline="false" class="fr">更多 ></el-link>
         </div>
         <ul>
-          <Sage v-for="(item, index) in userorderby" :userinfo="item" :key="index"></Sage>
+          <Sage v-for="(item, index) in 4" :key="index"></Sage>
         </ul>
       </div>
       <!-- 精彩主题文章 -->
@@ -95,18 +95,18 @@
           <h3>作品推荐</h3>
         </div>
         <ul>
-          <li v-for="(item, ik) in menuTitleList" :key="ik">
-            <el-link :underline="false" class="fl"><img :src="item.img1" alt=""></el-link>
+          <li v-for="item in 4" :key="item">
+            <el-link :underline="false" class="fl"><img src="https://cp1.douguo.com/upload/caiku/a/d/4/200_ad2c5b6adefb3663f3c347e609a6f7b4.jpg" alt=""></el-link>
             <div class="fl h-orange">
               <el-link :underline="false" class="athours h-orange">
-                <p>{{item.athour}}</p>
-                <p>对照菜谱做出来的作品<em> {{item.numbers}} </em>个</p>
+                <p>涛涛妈咪的作品</p>
+                <p>对照菜谱做出来的作品<em> 9764 </em>个</p>
               </el-link>
             </div>
             <div class="fr">
-              <el-link :underline="false" class="fl"><img :src="item.img2" alt=""></el-link>
-              <el-link :underline="false" class="fl"><img :src="item.img3" alt=""></el-link>
-              <el-link :underline="false" class="fl"><img :src="item.img4" alt=""></el-link>
+              <el-link :underline="false" class="fl"><img src="https://cp1.douguo.com/upload/caiku/a/d/4/200_ad2c5b6adefb3663f3c347e609a6f7b4.jpg" alt=""></el-link>
+              <el-link :underline="false" class="fl"><img src="https://cp1.douguo.com/upload/caiku/a/d/4/200_ad2c5b6adefb3663f3c347e609a6f7b4.jpg" alt=""></el-link>
+              <el-link :underline="false" class="fl"><img src="https://cp1.douguo.com/upload/caiku/a/d/4/200_ad2c5b6adefb3663f3c347e609a6f7b4.jpg" alt=""></el-link>
             </div>
           </li>
         </ul>
@@ -164,8 +164,7 @@ export default {
   created(){
         this.$store.dispatch('getworkslist')
         this.$store.dispatch('getdggoods')
-        this.$store.dispatch('loadAxiosActiv', '食界大咖秀主题站')
-        this.$store.dispatch('loadAxiosuerby')
+        this.$store.dispatch('loadAxiosActiv')
       },
   data () {
     return {
@@ -184,36 +183,7 @@ export default {
         link_url: '#'
       }],
       btnserch: ['家常菜', '下饭菜', '快手菜', '凉菜', '主食', '素食', '烘焙', '早餐', '小吃', '红烧肉', '可乐鸡翅', '红烧茄子', '南瓜饼', '酸菜鱼'],
-      homegoodsf: [{ fimgurl: '' }],
-      menuTitleList: [{
-        img1: 'https://cp1.douguo.com/upload/caiku/a/d/4/200_ad2c5b6adefb3663f3c347e609a6f7b4.jpg',
-        img2: 'https://cp1.douguo.com/upload/note/9/e/3/200x200_9e956d3f96487a7966c2f01c9c160763.jpeg',
-        img3: 'https://cp1.douguo.com/upload/note/b/2/f/200x200_b2970815de5ff7ede9812b9c8edbc8bf.jpg',
-        img4: 'https://cp1.douguo.com/upload/note/9/c/d/200x200_9c391a1a2e98459a8bb6bde2cc50d6bd.jpg',
-        athour: '涛涛妈咪的作品',
-        numbers: 9766
-      }, {
-        img1: 'https://cp1.douguo.com/upload/caiku/d/7/5/200_d7bb98bbff83c22a3329db17f2d285b5.jpg',
-        img2: 'https://cp1.douguo.com/upload/note/2/b/5/200x200_2b13e9e18828433f92e1f0c00cb48cb5.jpeg',
-        img3: 'https://cp1.douguo.com/upload/dish/0/8/0/200x200_085618040e000d76a43e89f4a0dfd7b0.jpg',
-        img4: 'https://cp1.douguo.com/upload/dish/f/4/6/200x200_f4dc3c3171bf4efd12e69747ef394dd6.jpg',
-        athour: '万万的作品',
-        numbers: 1174
-      },{
-        img1: 'https://cp1.douguo.com/upload/caiku/1/f/3/200_1fdf11740492b20d121833a8ae3e7bd3.jpg',
-        img2: 'https://cp1.douguo.com/upload/dish/a/1/2/200x200_a116145e002c3bd22822ee0346e61812.jpg',
-        img3: 'https://cp1.douguo.com/upload/dish/1/e/c/200x200_1e2070dabf2f7dce41be8aebd24fc6ac.jpg',
-        img4: 'https://cp1.douguo.com/upload/dish/c/2/f/200x200_c22c4b73deadeda4225446c7fe22138f.jpg',
-        athour: 'dUcky的作品',
-        numbers: 1479
-      },{
-        img1: 'https://cp1.douguo.com/upload/caiku/1/b/0/200_1b82b3aaff9a28ede8bb0dc92c3cc120.jpg',
-        img2: 'https://cp1.douguo.com/upload/note/c/4/4/200x200_c4b0ab5d567fdf24c4b67c6bd3cf4974.jpg',
-        img3: 'https://cp1.douguo.com/upload/note/d/9/0/200x200_d92f18b0392a4aa540a18cc81b381880.jpeg',
-        img4: 'https://cp1.douguo.com/upload/note/3/4/2/200x200_34b7e424cba543f9cbf6de352e619912.jpg',
-        athour: '爱烘焙的加菲的作品',
-        numbers: 578
-      }]
+      homegoodsf: [{ fimgurl: '' }]
     }
   },
   computed: {
@@ -234,10 +204,6 @@ export default {
     activeALLs () {
       // 文章获取
       return this.$store.state.active.activeAll
-    },
-    userorderby () {
-      // 豆果达人排行榜
-      return this.$store.state.active.douguodar
     }
   },
   watch: {

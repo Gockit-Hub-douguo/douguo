@@ -24,11 +24,7 @@
         <h2>主题站</h2>
         <ul class="info">
           <li :key="i" v-for="(ite,i) in list" >
-<<<<<<< HEAD
-            <el-link :underline="false" @click="utactive(ite.title)" class="fl"><img :src="ite.url" alt=""></el-link>
-=======
             <router-link class="fl" to='#'><img :src="ite.url" alt=""></router-link>
->>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
             <div class="conterx">
               <h4>{{ite.title}}</h4>
               <p>{{ite.descript}}</p>
@@ -177,8 +173,8 @@
 </style>
 
 <script>
-// import axios from 'axios'
-// import md5 from '@/assets/js/md5.js'
+import axios from 'axios'
+import md5 from '@/assets/js/md5.js'
 export default {
   data () {
     return {
@@ -188,11 +184,6 @@ export default {
   },
   mounted(){
     this.list = this.$store.state.active.newslist
-<<<<<<< HEAD
-    var qid = this.$route.query.id
-    // this.axi(qid)
-    this.$store.dispatch('loadAxiosActiv', qid)
-=======
   },
   methods: {
     // 获取文章
@@ -213,37 +204,23 @@ export default {
         console.log(er)
       })
     }
->>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
   },
   computed: {
     activeALl () {
       return this.$store.state.active.activeAll
-    },
-    // 监听文章状态是否发生了变化
-    astatus () {
-      return this.$store.state.active.sts
     }
   },
   watch: {
     activeALl (newValue) {
       this.activeAll = newValue
-    },
-    // 从新获取数据
-    astatus (newva){
-      var qid = this.$route.query.id
-      this.$store.dispatch('loadAxiosActiv', qid)
     }
+  },
+  created () {
+    this.axi()
   },
   filters: {
     times (val) {
       return val.split('T')[0]
-    }
-  },
-  methods: {
-    // 点击刷新文章主题内容
-    utactive (val) {
-      this.$store.commit('updatests', val)
-      this.$router.push({ path: 'FoodNews', query: { id: val } })
     }
   }
 }

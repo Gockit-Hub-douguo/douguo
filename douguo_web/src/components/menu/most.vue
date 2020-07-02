@@ -1,5 +1,5 @@
 <template>
-  <!-- 收藏最多 -->
+  <!-- 综合最佳 -->
   <div>
     <!-- 菜单层 -->
     <div class="navbars">
@@ -31,7 +31,7 @@
       <el-pagination
       background
       layout="prev, pager, next"
-      :total="1">
+      :total="1000">
       </el-pagination>
     </div>
     <!-- 定位 -->
