@@ -31,9 +31,10 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/3/6/8/200_365f9b914d673b2d1f3a1f1dfa7ca268.jpeg',
         img10: 'https://cp1.douguo.com/upload/caiku/6/e/3/200_6eaf8ce382cb4d82fbb94a7dd8077853.jpeg',
         img11: 'https://f12.baidu.com/it/u=571818017,1429288066&fm=76',
-        img12: 'https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg'
+        img12: 'https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg',
+        name: "青椒肉丝"
       },{
-        img1: 'https://cp1.douguo.com/upload/caiku/d/2/2/690x390_d25b85e2f57b4f7fb53ce4426b1b1e42.jpg',
+        img1: 'https://cp1.douguo.com/upload/caiku/a/9/7/200_a94b5dfce011780fd31d8495970200d7.jpg',
         img2: 'https://tx1.douguo.com/upload/photo/e/d/0/70_u81722772144300144804.jpg',
         img3: 'https://cp1.douguo.com/upload/caiku/2/1/2/200_2111b8188d50748020c42927b6ab0882.jpg',
         img4: 'https://cp1.douguo.com/upload/caiku/d/0/e/200_d04fa63ba6313f6b307339b1aa1cb4ee.jpg',
@@ -44,9 +45,10 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/a/9/7/200_a94b5dfce011780fd31d8495970200d7.jpg',
         img10: 'https://cp1.douguo.com/upload/caiku/a/9/7/200_a94b5dfce011780fd31d8495970200d7.jpg',
         img11: 'https://t10.baidu.com/it/u=386458071,4032904442&fm=76',
-        img12: 'https://cp1.douguo.com/upload/post/0/5/e/05aeea3b60fc913bdd1aca91e8df045e.jpg'
+        img12: 'https://cp1.douguo.com/upload/post/0/5/e/05aeea3b60fc913bdd1aca91e8df045e.jpg',
+        name: "土豆丝"
       },{
-        img1: 'https://cp1.douguo.com/upload/caiku/7/e/6/690x390_7e0e01c55d20865d81c57af61f7ae476.jpg',
+        img1: 'https://cp1.douguo.com/upload/caiku/d/e/1/200_dea4e3d39eb7abf35cb81d96d7d2d0c1.jpg',
         img2: 'https://tx1.douguo.com/upload/photo/2/a/c/70_2a27a882ad48c1a504b18295a975da3c.jpg',
         img3: 'https://cp1.douguo.com/upload/caiku/9/a/c/200_9a9815026a0cdc7b92e4940158cf042c.jpg',
         img4: 'https://cp1.douguo.com/upload/caiku/e/3/3/200_e3c6a0f994032025f11f1d20644a9523.jpg',
@@ -57,7 +59,8 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/d/e/1/200_dea4e3d39eb7abf35cb81d96d7d2d0c1.jpg',
         img10: 'https://f12.baidu.com/it/u=189115805,612119307&fm=76',
         img11: 'https://t11.baidu.com/it/u=3929638924,2339819253&fm=76',
-        img12: 'https://t12.baidu.com/it/u=3451496012,3669517941&fm=76'
+        img12: 'https://t12.baidu.com/it/u=3451496012,3669517941&fm=76',
+        name: "红烧肉"
       },{
         img1: 'https://cp1.douguo.com/upload/caiku/d/c/7/690x390_dc4308a6cdd974b817058a407dfce307.jpeg',
         img2: 'https://tx1.douguo.com/upload/photo/9/5/e/70_95483dcb76a93042ec1db96b3cdd8ade.jpg',
@@ -70,7 +73,8 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/e/2/8/200_e28aced6321095d23f74f05828fca618.jpeg',
         img10: 'https://cp1.douguo.com/upload/caiku/b/9/a/200_b97c662a1777d2d7f5ff373563c7ff0a.jpeg',
         img11: 'https://cp1.douguo.com/upload/caiku/0/6/e/200_0610c8eefb5f7f6f3060a3ba22c2935e.jpeg',
-        img12: 'https://cp1.douguo.com/upload/caiku/8/7/3/200_8742c7e4c06ab5bc11b63e33e7efecf3.jpeg'
+        img12: 'https://cp1.douguo.com/upload/caiku/8/7/3/200_8742c7e4c06ab5bc11b63e33e7efecf3.jpeg',
+        name: "蔬菜"
       },{
         img1: 'https://cp1.douguo.com/upload/caiku/1/0/5/690x390_10100536274fedad7a83004932d4f115.jpg',
         img2: 'https://tx1.douguo.com/upload/photo/8/6/7/70_u51501721908258002124.jpg',
@@ -83,7 +87,8 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/7/1/1/200_713683baa4c256cf7bccc5dac57c8a91.jpg',
         img10: 'https://cp1.douguo.com/upload/caiku/4/d/d/200_4d0c39dde07a59a63de6a7db1dbbc7cd.jpg',
         img11: 'https://cp1.douguo.com/upload/caiku/8/7/4/200_87228987f1c136c0c03476ec9e57c924.jpg',
-        img12: 'https://f10.baidu.com/it/u=86840811,2017178932&fm=76'
+        img12: 'https://f10.baidu.com/it/u=86840811,2017178932&fm=76',
+        name: "腊肉"
       },{
         img1: 'https://cp1.douguo.com/upload/caiku/7/a/a/690x390_7a76721de1a4b1675646fd1a534c320a.jpg',
         img2: 'https://tx1.douguo.com/upload/photo/a/b/7/70_u29376457064900.jpg',
@@ -96,7 +101,8 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/0/2/c/200_02d0605f46b39ce4dd482347bf55a15c.jpg',
         img10: 'https://f12.baidu.com/it/u=257832686,3811667731&fm=76',
         img11: 'https://f12.baidu.com/it/u=8924159,1747348028&fm=76',
-        img12: 'https://f10.baidu.com/it/u=1195304814,1768013753&fm=76'
+        img12: 'https://f10.baidu.com/it/u=1195304814,1768013753&fm=76',
+        name: "肥肠"
       },{
         img1: 'https://cp1.douguo.com/upload/caiku/e/e/f/690x390_ee1d25fb3a205577b260bb1cdd3f4a8f.jpeg',
         img2: 'https://tx1.douguo.com/upload/photo/6/a/9/70_u7976789544409142856.jpeg',
@@ -109,7 +115,8 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/2/0/1/200_2084d50bbf9c2a5852019e2c085462e1.jpeg',
         img10: 'https://cp1.douguo.com/upload/caiku/3/7/2/200_37e597527018564ea3725cccdc944ac2.jpeg',
         img11: 'https://f12.baidu.com/it/u=167891009,2222178836&fm=76',
-        img12: 'https://f12.baidu.com/it/u=189115805,612119307&fm=76'
+        img12: 'https://f12.baidu.com/it/u=189115805,612119307&fm=76',
+        name: "烤肠"
       },{
         img1: 'https://cp1.douguo.com/upload/caiku/0/e/1/690x390_0edcbc89b7ba86213a1d3ccf066d8f91.jpeg',
         img2: 'https://tx1.douguo.com/upload/photo/0/5/3/70_u23031311864462001633.jpeg',
@@ -122,7 +129,8 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/3/6/8/200_365f9b914d673b2d1f3a1f1dfa7ca268.jpeg',
         img10: 'https://cp1.douguo.com/upload/caiku/6/e/3/200_6eaf8ce382cb4d82fbb94a7dd8077853.jpeg',
         img11: 'https://f12.baidu.com/it/u=571818017,1429288066&fm=76',
-        img12: 'https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg'
+        img12: 'https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg',
+        name: "小烤鱼"
       },{
         img1: 'https://cp1.douguo.com/upload/caiku/0/e/1/690x390_0edcbc89b7ba86213a1d3ccf066d8f91.jpeg',
         img2: 'https://tx1.douguo.com/upload/photo/0/5/3/70_u23031311864462001633.jpeg',
@@ -135,7 +143,8 @@ export default new Vuex.Store({
         img9: 'https://cp1.douguo.com/upload/caiku/3/6/8/200_365f9b914d673b2d1f3a1f1dfa7ca268.jpeg',
         img10: 'https://cp1.douguo.com/upload/caiku/6/e/3/200_6eaf8ce382cb4d82fbb94a7dd8077853.jpeg',
         img11: 'https://f12.baidu.com/it/u=571818017,1429288066&fm=76',
-        img12: 'https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg'
+        img12: 'https://tx1.douguo.com/upload/photo/4/9/4/70_4907e51a2d5676bcd89d7b738cedcbb4.jpg',
+        name: "烤茄子"
       }
     ]
   },
