@@ -2,15 +2,15 @@
   <div class="d">
     <div class="Sdetail">
         <div class="detailCont">
-            <div :class="{ hid : item.Shoppingkey != imgid }" class="img fl"  :key="index"  v-for=" (item,index) in drink.list" >
+            <div :class="{ hid : item.Shoppingkey != imgid }" class="img fl"  :key="index+1"  v-for=" (item,index) in drink.list" >
                 <img v-if="item.Shoppingkey === imgid " :src="'http://topyun.qicp.vip/' +item.imgurl" alt="">
             </div>
             <div class="fl text">
                 <p style="color: #C2A661;font-size:14px; margin-bottom:10px;">{{drink.title}}</p>
-                <span :class="{ hid : item.Shoppingkey != imgid }"  :key="index"  v-for=" (item,index) in drink.list">
+                <span :class="{ hid : item.Shoppingkey != imgid }"  :key="index+3"  v-for=" (item,index) in drink.list">
                  <h3 v-if="item.Shoppingkey === imgid " style="font-size:26px; margin-bottom:10px;">{{item.name}}</h3>
                 </span>
-                <span :class="{ hid : item.Shoppingkey != imgid }"  :key="index"  v-for=" (item,index) in drink.list">
+                <span :class="{ hid : item.Shoppingkey != imgid }"  :key="index+2"  v-for=" (item,index) in drink.list">
                   <p v-if="item.Shoppingkey === imgid " style="font-size:16px">{{item.preset}}</p>
                 </span>
             </div>
@@ -20,7 +20,7 @@
             <span @click="bannerbtn(0)" class=" swiper-left"><i class="el-icon-arrow-left"></i></span>
             <div ref="container" style="overflow: hidden; width: 925px;">
                 <ul class="guessList" :style="{width:slidewidth,transform:'translateX('+translate+'px)',transition: 'transform 303ms ease 0s'}">
-                  <li :key="index" v-for="(item,index) in list">
+                  <li :key="index+4" v-for="(item,index) in list">
                       <a :style= "{background:'url('+item.url+') center/contain no-repeat' }"></a>
                       <p>{{item.title}}</p>
                   </li>

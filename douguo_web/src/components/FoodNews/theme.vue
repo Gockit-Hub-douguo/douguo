@@ -8,13 +8,13 @@
     <div class="clearc">
       <div class="conter-left fl">
         <ul>
-          <li v-for="it in 7" :key="it" class="fl" :class="{mr: it % 2 != 0}">
+          <li v-for="(it,index) in list" :key="index" class="fl" :class="{mr: index % 2 == 0}">
             <router-link to='#'>
               <div class="topbody">
-                <img src="https://cp1.douguo.com/upload/post/1357368720.png" alt="" class="fl">
+                <img :src="it.url" alt="" class="fl">
                 <div class="conterx">
-                  <h4>生活小窍门</h4>
-                  <p>分享生活智慧的结晶</p>
+                  <h4>{{it.title}}</h4>
+                  <p>{{it.descript}}</p>
                 </div>
               </div>
               <div class="pageNum">
@@ -111,6 +111,14 @@
 <script>
 import adsense from './slidergg'
 export default {
+  data () {
+    return {
+      list: []
+    }
+  },
+  mounted () {
+    this.list = this.$store.state.active.newslist
+  },
   components: {
     adsense
   }
