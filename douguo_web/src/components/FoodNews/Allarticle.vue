@@ -22,12 +22,12 @@
       </div>
       <div class="Rightinfo">
         <h2>主题站</h2>
-        <ul>
-          <li v-for="itm in 6" :key="itm">
-            <router-link class="fl" to='#'><img src="https://cp1.douguo.com/upload/post/1357368720.png" alt=""></router-link>
+        <ul class="info">
+          <li :key="i" v-for="(ite,i) in list" >
+            <router-link class="fl" to='#'><img :src="ite.url" alt=""></router-link>
             <div class="conterx">
-              <h4>生活小窍门</h4>
-              <p>分享生活智慧的结晶</p>
+              <h4>{{ite.title}}</h4>
+              <p>{{ite.descript}}</p>
             </div>
           </li>
         </ul>
@@ -59,6 +59,8 @@
     </el-breadcrumb>
   </div>
 </template>
+
+
 
 <style lang="less" scoped>
 @import '~css/public_Css.less';
@@ -176,8 +178,12 @@ import md5 from '@/assets/js/md5.js'
 export default {
   data () {
     return {
-      activeAll: []
+      activeAll: [],
+      list: []
     }
+  },
+  mounted(){
+    this.list = this.$store.state.active.newslist
   },
   methods: {
     // 获取文章
