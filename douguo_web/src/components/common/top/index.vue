@@ -28,7 +28,7 @@
                         <div class="lym-lookAll"><router-link to="/fenlei">查看全部分类<i class="el-icon-arrow-right"></i></router-link></div>
                     </div>
                 </li>
-                <li><router-link to="/FoodNews">饮食新闻</router-link></li>
+                <li><router-link :to="{ path: '/FoodNews', query:{id: '食界大咖秀主题站'}}">饮食新闻</router-link></li>
                 <li>
                     <router-link to="/start" class="lym-Starbucks">星巴克饮品<i class="el-icon-arrow-down"></i></router-link>
                     <div class="lym-menu">

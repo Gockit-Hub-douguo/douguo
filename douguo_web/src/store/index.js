@@ -43,7 +43,7 @@ export default new Vuex.Store({
         img11: 'https://t10.baidu.com/it/u=386458071,4032904442&fm=76',
         img12: 'https://cp1.douguo.com/upload/post/0/5/e/05aeea3b60fc913bdd1aca91e8df045e.jpg'
       },{
-        img1: 'https://cp1.douguo.com/upload/caiku/7/e/6/690x390_7e0e01c55d20865d81c57af61f7ae476.jpg',
+        img1: 'https://cp1.douguo.com/upload/caiku/5/d/a/690x390_5d7d98fc817c55c18f959585ea4e55fa.JPG',
         img2: 'https://tx1.douguo.com/upload/photo/2/a/c/70_2a27a882ad48c1a504b18295a975da3c.jpg',
         img3: 'https://cp1.douguo.com/upload/caiku/9/a/c/200_9a9815026a0cdc7b92e4940158cf042c.jpg',
         img4: 'https://cp1.douguo.com/upload/caiku/e/3/3/200_e3c6a0f994032025f11f1d20644a9523.jpg',

@@ -10,15 +10,15 @@
     <div class="userinfo">
       <h3>"{{title}}"的相关用户"</h3>
       <ul>
-        <li v-for="item in 20" :key="item" class="fl">
+        <li v-for="(item, k) in userorderby" :key="k" class="fl">
           <div class="userphoto">
-            <img src="https://tx1.douguo.com/upload/photo/a/0/4/70_u88036793173233171953.jpeg" alt="">
-            <btn></btn>
+            <img :src="item.userimg" alt="">
+            <btn :userid='item.userkey'></btn>
           </div>
           <div class="follow">
-            <i>菜菜君</i>
+            <i>{{item.userasname}}</i>
             <p>普通用户</p>
-            <p class="fsinfo"><i>粉丝31076</i><i>菜谱40</i></p>
+            <p class="fsinfo"><i>粉丝{{item.fans}}</i><i>菜谱40</i></p>
           </div>
         </li>
       </ul>
@@ -41,7 +41,7 @@
   .follow{
     &>i{
       display: block;
-      width: 137px;
+      width: 195px;
       font-size: 15px;
       font-style: normal;
       color: #000;
@@ -116,6 +116,12 @@ export default {
       title: '热菜'
     }
   },
+  computed: {
+    userorderby () {
+      // 豆果达人
+      return this.$store.state.active.douguodar
+    }
+  },
   methods: {
     fu () {
       this.title = window.localStorage.getItem('menuName')
@@ -123,6 +129,7 @@ export default {
   },
   mounted () {
     this.fu()
+    this.$store.dispatch('loadAxiosuerby', 0)
   }
 }
 </script>

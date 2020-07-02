@@ -22,12 +22,12 @@
       </div>
       <div class="Rightinfo">
         <h2>主题站</h2>
-        <ul>
-          <li v-for="itm in 6" :key="itm">
-            <router-link class="fl" to='#'><img src="https://cp1.douguo.com/upload/post/1357368720.png" alt=""></router-link>
+        <ul class="info">
+          <li :key="i" v-for="(ite,i) in list" >
+            <el-link :underline="false" @click="utactive(ite.title)" class="fl"><img :src="ite.url" alt=""></el-link>
             <div class="conterx">
-              <h4>生活小窍门</h4>
-              <p>分享生活智慧的结晶</p>
+              <h4>{{ite.title}}</h4>
+              <p>{{ite.descript}}</p>
             </div>
           </li>
         </ul>
@@ -59,6 +59,8 @@
     </el-breadcrumb>
   </div>
 </template>
+
+
 
 <style lang="less" scoped>
 @import '~css/public_Css.less';
@@ -171,50 +173,50 @@
 </style>
 
 <script>
-import axios from 'axios'
-import md5 from '@/assets/js/md5.js'
+// import axios from 'axios'
+// import md5 from '@/assets/js/md5.js'
 export default {
   data () {
     return {
-      activeAll: []
+      activeAll: [],
+      list: []
     }
   },
-  methods: {
-    // 获取文章
-    axi () {
-      var timegtime = new Date().getTime()
-      var publicwords = md5((timegtime + 1000) * 2)
-      axios({
-        url: 'http://topyun.qicp.vip/getarticle',
-        method: 'get',
-        params: {
-          uid: '1',
-          publicwords,
-          timegtime
-        }
-      }).then((rtn) =>{
-        this.$store.commit('axupload', rtn.data.list)
-      }).catch(er => {
-        console.log(er)
-      })
-    }
+  mounted(){
+    this.list = this.$store.state.active.newslist
+    var qid = this.$route.query.id
+    // this.axi(qid)
+    this.$store.dispatch('loadAxiosActiv', qid)
   },
   computed: {
     activeALl () {
       return this.$store.state.active.activeAll
+    },
+    // 监听文章状态是否发生了变化
+    astatus () {
+      return this.$store.state.active.sts
     }
   },
   watch: {
     activeALl (newValue) {
       this.activeAll = newValue
+    },
+    // 从新获取数据
+    astatus (newva){
+      var qid = this.$route.query.id
+      this.$store.dispatch('loadAxiosActiv', qid)
     }
-  },
-  created () {
-    this.axi()
   },
   filters: {
     times (val) {
       return val.split('T')[0]
+    }
+  },
+  methods: {
+    // 点击刷新文章主题内容
+    utactive (val) {
+      this.$store.commit('updatests', val)
+      this.$router.push({ path: 'FoodNews', query: { id: val } })
     }
   }
 }
