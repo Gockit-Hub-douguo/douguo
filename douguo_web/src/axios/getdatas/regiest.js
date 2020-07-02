@@ -21,14 +21,27 @@ function userupload(options){
             type: 'post', // 访问方式
             data: options.data
         }).then((data)=>{
-            resolve(data.data.goods)
+            resolve(data)
         }).catch((err)=>{
             reject(err)
         })
     })
 }
 
+//
+function getseesionu(options){
+    return new Promise((resolve,reject)=>{
+        query({
+            url: 'api/getsessioninfo' // 访问地址 api是代理服务地址 api = http://192.168.85.248:3000/  
+        }).then((data)=>{
+            resolve(data.data.lists)
+        }).catch((err)=>{
+            reject(err)
+        })
+    })
+}
 module.exports = {
     regist,
-    userupload
+    userupload,
+    getseesionu
 }

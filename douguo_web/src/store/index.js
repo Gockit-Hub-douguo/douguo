@@ -3,12 +3,15 @@ import Vuex from 'vuex'
 import { getgoodslist } from 'ax/goodsdeal.js'
 import { getworkslist } from 'ax/jingxuan.js'
 import { getgoodscomtianer } from 'ax/getgoodscomtianer.js'
+import { getseesionu } from 'ax/regiest.js'
 import active from './active'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    ulist: [],
+    phone: '',
     a: 1,
     id: '',
     data: {},
@@ -137,6 +140,12 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    changephone(state,dat){
+      state.phone = dat
+    },
+    changeulist(state,id){
+      state.ulist = id
+    },
     changeindex(state,id){
       state.id = id
       console.log(state.id)
@@ -166,6 +175,13 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    getsession({ commit }){
+      getseesionu().then((res)=>{
+        console.log(res[0].phonenumber)
+        commit('changephone',res[0].phonenumber)
+        commit('changeulist',res[0])
+      })
+    },
     sgetgoodscomtianer(context){
       var id = context.state.id
       console.log(id)
