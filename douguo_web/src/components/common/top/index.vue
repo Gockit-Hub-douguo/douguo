@@ -100,13 +100,15 @@ import axios from 'axios'
 // import { api } from '../apiConfig'
 import md5 from '@/assets/js/md5.js'
 export default {
+  created(){
+    this.$store.dispatch('getsession')
+  },
   data () {
     return {
       select: '',
       restaurants: [],
       state: '',
       keywords: 0,
-       circleUrl: "http://topyun.qicp.vip/VP_2020620175538.jpg",
       menulist: [
         {
           title: '常见菜式',
@@ -159,15 +161,15 @@ export default {
     },
     loadAll () {
       return [
-        { xuhao: '1. ', value: '减肥餐' },
-        { xuhao: '2. ', value: '家常菜' },
-        { xuhao: '3. ', value: '南瓜' },
-        { xuhao: '4. ', value: '月子餐' },
-        { xuhao: '5. ', value: '饼干' },
-        { xuhao: '6. ', value: '宵夜' },
-        { xuhao: '7. ', value: '土豆' },
-        { xuhao: '8. ', value: '快手菜' },
-        { xuhao: '9. ', value: '早餐' }
+        { xuhao: '1. ', value: '韩国' },
+        { xuhao: '2. ', value: '烘焙' },
+        { xuhao: '3. ', value: '热菜' },
+        { xuhao: '4. ', value: '陕西小吃' },
+        { xuhao: '5. ', value: '湘菜' },
+        { xuhao: '6. ', value: '粤菜' },
+        { xuhao: '7. ', value: '深度咖啡豆' },
+        { xuhao: '8. ', value: '湘菜' },
+        { xuhao: '9. ', value: '海鲜' }
       ]
     },
     handleSelect (item) {
@@ -239,6 +241,12 @@ export default {
   mounted () {
     this.restaurants = this.loadAll()
     this.keywords = window.localStorage.getItem('user') || 0
+  },
+  // 获取头像
+  computed: {
+    circleUrl(){
+      return this.$store.state.ulist.userphoto
+    }
   }
 }
 </script>
@@ -460,7 +468,7 @@ export default {
               .person-list{
                 position: absolute;
                 top: 46px;
-                right: -5px;
+                right: -34px;
                 background: #fff;
                 width: 108px;
                 border-radius: 5px;

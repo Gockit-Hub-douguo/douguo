@@ -22,32 +22,7 @@ export default {
   data () {
     return {
       menu: '',
-      drink: '',
-      list: [
-        {
-          name: '咖啡融合冰激凌',
-          list1: [
-            { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' },
-            { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' },
-            { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' },
-            { url: 'https://www.starbucks.com.cn/images/products/caffe-americano.jpg', title: '美式咖啡' }
-          ]
-        }, {
-          name: '星巴克冷萃咖啡系列',
-          list1: [
-            { url: 'https://www.starbucks.com.cn/images/products/cold-brew.jpg', title: '美式咖啡' },
-            { url: 'https://www.starbucks.com.cn/images/products/cold-foam-cold-brew.jpg', title: '美式咖啡' },
-            { url: 'https://www.starbucks.com.cn/images/products/vanilla-flavor-sweet-cream-cold-brew.jpg', title: '美式咖啡' }
-          ]
-        }, {
-          name: '烘焙',
-          list1: [
-            { url: 'https://www.starbucks.com.cn/images/products/american-style-pancakes.jpg', title: '美式烘焙' },
-            { url: 'https://www.starbucks.com.cn/images/products/blueberry-muffin.jpg', title: '蓝莓麦芬' },
-            { url: 'https://www.starbucks.com.cn/images/products/hazelnut-croissant.jpg', title: '层层榛子果仁酥' }
-          ]
-        }
-      ]
+      drink: ''
     }
   },
    computed: {

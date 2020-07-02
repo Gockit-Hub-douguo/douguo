@@ -28,7 +28,7 @@
                               <el-input class="email-input" placeholder="请输入密码" v-model="formLabelAlign.input" show-password></el-input>
                           </el-form-item>
                       </el-form>
-                          <button class="email-button">确定</button>
+                          <button class="email-button" @click="email">确定</button>
                   </div>
              </div>
           </div>
@@ -40,6 +40,7 @@
 export default {
   name: 'App',
   data () {
+      console.log(this.data)
     return {
       labelPosition: 'right',
       formLabelAlign: {
@@ -60,6 +61,9 @@ export default {
  },
  onRefresh(){
   this.msg = ''
+ },
+ email() {
+     alert('更改成功')
  }
  }
  }

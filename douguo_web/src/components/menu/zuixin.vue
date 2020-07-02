@@ -12,7 +12,7 @@
         <div class="menu-list">
             <ul>
                 <li :key="key" v-for="(item, key) in indexwoks" class="item">
-                    <router-link class="cover" to="">
+                    <router-link class="cover" :to="{path:'/caipinxianqi',query:{id:key}}">
                         <img class="wb100" :src="item.wimgUrl" alt="">
                         <div class="menuinfo absolute">
                             <p class="name text-lips">备战团圆饭 美味新一年</p>

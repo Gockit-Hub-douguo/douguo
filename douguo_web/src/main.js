@@ -11,6 +11,7 @@ import SlideVerify from 'vue-monoplasty-slide-verify'
 import { api1 } from '../api'
 import { api } from '../apiConfig'
 import axios from 'axios'
+import mocks from 'mockjs'
 // import { from } from 'core-js/fn/array'
 axios.defaults.baseURL = api1
 axios.defaults.baseURL = api
@@ -18,6 +19,8 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(elenmentUI)
 Vue.use(SlideVerify)
+Vue.use(mocks)
+
 new Vue({
   router,
   store,

@@ -2,7 +2,11 @@
     <div class="showMain">
         <div class="shows">
             <div class="show-img">
+<<<<<<< HEAD
                 <img :src="userinfolists.userimg"/>
+=======
+                <img :src="ctUrl"/>
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
             </div>
             <div class="showIn">
                 <a class="showname">{{userinfolists.userasname}}</a>
@@ -19,6 +23,7 @@
                         <p>{{userinfolists.gz}}</p>
                         <p>关注</p>
                     </div>
+<<<<<<< HEAD
                      <div class="floF">
                         <p>{{userinfolists.fans}}</p>
                         <p>粉丝</p>
@@ -32,16 +37,76 @@
                  <router-link to="/shoucang" class="floF">
                     <div>
                         <p>{{userinfolists.bj}}</p>
+=======
+                    </router-link>
+                     <router-link to="/guanzhu" class="floF">
+                     <div>
+                        <p>3</p>
+                        <p>粉丝</p>
+                    </div>
+                     </router-link>
+                    <div class="floF">
+                        <p>2</p>
+                        <p>菜谱</p>
+                    </div>
+                    <div class="floF">
+                        <p>3</p>
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
                         <p>笔记</p>
                     </div>
                 </router-link>
             </div>
          </div>
+<<<<<<< HEAD
     </div>
          <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="关注我的人" name="first"></el-tab-pane>
             <el-tab-pane label="我关注的人" name="second">配置管理</el-tab-pane>
         </el-tabs>
+=======
+         <div class="acter">
+            <el-tabs v-model="activeName" @tab-click="handleClick">
+                <el-tab-pane label="概览" name="first">
+                    <div class="box">暂无数据~</div>
+                </el-tab-pane>
+                <el-tab-pane label="菜谱" name="second">
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/9/d/750_c92b6ac8bace782da0cf4ed9c302705d.jpg">
+                        <div class="act-t">【雪梨三吃】3个方法吃对梨，春天润肺最给力！</div>
+                    </div>
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/7/c/750_c7f9e1791ba6bc3d942ff35523efc2bc.jpg">
+                        <div class="act-t">【雪媚娘】这个草莓味包子，甜过软妹子！</div>
+                    </div>
+                     <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/9/d/750_c92b6ac8bace782da0cf4ed9c302705d.jpg">
+                        <div class="act-t">【雪梨三吃】3个方法吃对梨，春天润肺最给力！</div>
+                    </div>
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/7/c/750_c7f9e1791ba6bc3d942ff35523efc2bc.jpg">
+                        <div class="act-t">【雪媚娘】这个草莓味包子，甜过软妹子！</div>
+                    </div>
+                     <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/9/d/750_c92b6ac8bace782da0cf4ed9c302705d.jpg">
+                        <div class="act-t">【雪梨三吃】3个方法吃对梨，春天润肺最给力！</div>
+                    </div>
+                    <div class="actr-img">
+                        <img src="https://cp1.douguo.com/upload/note/c/7/c/750_c7f9e1791ba6bc3d942ff35523efc2bc.jpg">
+                        <div class="act-t">【雪媚娘】这个草莓味包子，甜过软妹子！</div>
+                    </div>
+                </el-tab-pane>
+                <el-tab-pane label="菜单" name="third">
+                    <div class="box">暂无数据~</div></el-tab-pane>
+                <el-tab-pane label="笔记" name="fourth">
+                    <div class="box">暂无数据~</div></el-tab-pane>
+                <el-tab-pane label="收藏" name="five">
+                    <div class="box">暂无数据~</div></el-tab-pane>
+                <el-tab-pane label="美食日记" name="six">
+                    <div class="box">暂无数据~</div></el-tab-pane>
+            </el-tabs>
+         </div>
+         <div style="margin-top:20px;">你的当前位置: 豆果美食> 个人中心 </div>
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
     </div>
 </template>
 
@@ -58,6 +123,7 @@ export default {
         console.log(tab, event);
       }
     },
+<<<<<<< HEAD
     mounted () {
       var uid = this.$route.query.uid
       this.$store.dispatch('loadsuserinfolist', uid)
@@ -73,6 +139,14 @@ export default {
       }
     }
   }
+=======
+    computed: {
+       ctUrl(){
+            return this.$store.state.ulist.userphoto
+        }
+      }
+  };
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
 </script>
 <style lang="less" scoped>
 .showMain {
@@ -161,4 +235,34 @@ export default {
     text-decoration: none;
     }
 }
+<<<<<<< HEAD
 </style>
+=======
+.acter {
+    margin-top: 30px;
+}
+.box {
+    height: 330px;
+    line-height: 330px;
+    text-align: center;
+}
+.actr-img {
+    width: 200px;
+    overflow: hidden;
+    float: left;
+    margin: 20px 20px;
+}
+.actr-img img {
+    width: 200px;
+    height: 200px;
+}
+.act-t {
+    height: 20px;
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+} 
+</style>
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3

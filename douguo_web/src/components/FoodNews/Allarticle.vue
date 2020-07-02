@@ -24,7 +24,11 @@
         <h2>主题站</h2>
         <ul class="info">
           <li :key="i" v-for="(ite,i) in list" >
+<<<<<<< HEAD
             <el-link :underline="false" @click="utactive(ite.title)" class="fl"><img :src="ite.url" alt=""></el-link>
+=======
+            <router-link class="fl" to='#'><img :src="ite.url" alt=""></router-link>
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
             <div class="conterx">
               <h4>{{ite.title}}</h4>
               <p>{{ite.descript}}</p>
@@ -184,9 +188,32 @@ export default {
   },
   mounted(){
     this.list = this.$store.state.active.newslist
+<<<<<<< HEAD
     var qid = this.$route.query.id
     // this.axi(qid)
     this.$store.dispatch('loadAxiosActiv', qid)
+=======
+  },
+  methods: {
+    // 获取文章
+    axi () {
+      var timegtime = new Date().getTime()
+      var publicwords = md5((timegtime + 1000) * 2)
+      axios({
+        url: 'http://topyun.qicp.vip/getarticle',
+        method: 'get',
+        params: {
+          uid: '1',
+          publicwords,
+          timegtime
+        }
+      }).then((rtn) =>{
+        this.$store.commit('axupload', rtn.data.list)
+      }).catch(er => {
+        console.log(er)
+      })
+    }
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
   },
   computed: {
     activeALl () {

@@ -13,10 +13,22 @@
             <el-button type="warning">添加</el-button>
         </div>
         <div class="yth-caidanbj">
-          <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
-            <i class="el-icon-plus avatar-uploader-icon yth-caidanbj-tu"></i>
-            <div class="yth-caidanbj-clor">添加菜单背景图<span class="yth-caidanbj-clor-a">(可选)</span></div>
+          <el-upload class="avatar-uploader" action="#" :auto-upload= "false" list-type="picture-card">
+            <i slot="default" class="el-icon-plus avatar-uploader-icon yth-caidanbj-tu"></i> 
+              添加菜单背景图
+              <span class="yth-caidanbj-clor-a">(可选)</span>
+            <div slot="file" slot-scope="{file}" class="yth-caidanbj-clor">
+              
+              <span class="el-upload-list__item-preview">
+                <span class="el-upload-list__item-preview" @click= "handlePictureCardpreview(file)">
+                  <img class="el-upload-list__item-thumbnail" :src= "file.url">
+                </span>
+              </span>
+            </div>
           </el-upload>
+          <el-dialog :visible.sync= "dialogVisible">
+            <img width="100%" :src= "dialogImageUrl" >
+          </el-dialog>
         </div>
         <div class="yth-yizhengm">
           <div class="yth-yzm">验证码:</div>
@@ -32,8 +44,15 @@
 export default {
   data() {
     return {
-      textarea: '',
-      input1: ''
+      dialogImageUrl: '',
+      dialogVisible: false,
+      disabled: false
+    };
+  },
+  mounted: {
+    handlePictureCardpreview(file) {
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
     }
   }
 }
@@ -58,7 +77,7 @@ export default {
     .padding(0, 0, 0, 20px);
     line-height: 42px;
     .font-size(15px);
-  }
+  };
   /deep/.yth-cuangj-shuru textarea {
     .margin(20px, 0, 0, 0);
     .padding(20px, 0, 0, 20px);

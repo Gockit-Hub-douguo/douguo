@@ -1,12 +1,24 @@
 <template>
   <div class="yth-fabu">
     <div class="yth-app">
-      <div class="yth-top">已保存到云端</div>
-      <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/">
-        <i class="el-icon-plus avatar-uploader-icon yth-top-tu"></i>
-        <div>添加菜谱成品图</div>
-        <div>(建议尺寸1380*1024，支持上传图片格式jpg, jpeg, png, gif, webp)</div>
+      <el-upload  
+        class="avatar-uploader" 
+        action="#" 
+        :auto-upload= "false" 
+        list-type="picture-card"
+      >
+        <i style="line-height:200px;" class="el-icon-plus avatar-uploader-icon yth-top-tu"></i>
+        <div slot="file" slot-scope="{file}">
+          <span class="el-upload-list__item-preview">
+            <span class="el-upload-list__item-preview" @click= "handlePictureCardpreview(file)">
+              <img class="el-upload-list__item-thumbnail" :src= "file.url">
+            </span>
+          </span>
+          </div>
       </el-upload>
+      <el-dialog :visible.sync= "dialogVisible">
+        <img width="100%" :src= "dialogImageUrl" >
+      </el-dialog>
       <input class="input" placeholder="菜谱名称"/>
       <div class="yth-select">
           <el-select v-model="value1" placeholder="烹饪难度">
@@ -50,15 +62,30 @@
           <span class="yth-buzhou">（支持上传图片格式有jpg、jpeg、png、gif、webp）</span>
       </div>
       <div class=" yth-qingdan-a">
-          <el-button size="small" type="primary " style="line-height:0" class="yth-shangchuan yth-qingdan">批量上传</el-button>
-          <span class="yth-buzhou">按住Ctrl键可多选，为保证您的使用体验，请单次上传图片不要超过6张</span>
+          <el-button size="small" type="primary " style="line-height:0; width:90px; height:40px;" class="yth-shangchuan yth-qingdan" @click='j++'>批量上传</el-button>
+          <span class="yth-buzhou" >按住Ctrl键可多选，为保证您的使用体验，请单次上传图片不要超过6张</span>
       </div>
         <div  v-for="item in j" :key="item" style="width:690px; overflow: hidden; ">
           <div class="yth-buzou">
-            <el-upload class="avatar-uploader" action="https://jsonplaceholder.typicode.com/posts/">
-              <i class="el-icon-plus avatar-uploader-icon yth-buzou-tu"></i>
+            <el-upload 
+              class="avatar-uploader"  
+              action="#" 
+              :auto-upload= "false" 
+              list-type="picture-card"
+            >
+              <i style="line-height:110px;" class="el-icon-plus avatar-uploader-icon yth-buzou-tu"></i>
               <div>添加步骤图</div>
+              <div slot="file" slot-scope="{file}">
+                <span class="el-upload-list__item-preview">
+                  <span class="el-upload-list__item-preview" @click= "handlePictureCardpreview(file)">
+                    <img class="el-upload-list__item-thumbnail" :src= "file.url">
+                  </span>
+                </span>
+              </div>
             </el-upload>
+            <el-dialog :visible.sync= "dialogVisible">
+              <img width="100%" :src= "dialogImageUrl" >
+            </el-dialog>
           </div>
           <el-input class="yth-buzou-shuru" type="textarea" v-model="textarea"></el-input>
           <div class="el-icon-top yth-buzou-a"></div>
@@ -70,7 +97,7 @@
       <div class="yth-xts">
         <div style="margin-top:20px; margin-bottom:20px">小贴士</div>
         <el-input class="yth-xts-shuru" type="textarea" v-model="textarea"></el-input>
-        <el-checkbox class="yth-xts-du" v-model="checked">独家菜谱(次菜谱仅在豆果美食发布)</el-checkbox>
+        <el-radio class="yth-xts-du" v-model="radio" >独家菜谱(次菜谱仅在豆果美食发布)</el-radio>
         <div class="yth-hengx"></div>
       </div>
       <div class="yth-cuangj">
@@ -92,8 +119,12 @@
 export default {
   data () {
     return {
+      dialogImageUrl: '',
+      dialogVisible: false,
+      disabled: false,
       i: 1,
       j: 1,
+      radio: '1',
       options: [{
         value: '选项1',
         label1: '烹饪难度',
@@ -116,6 +147,12 @@ export default {
       value1: [],
       value2: [],
       checked: true
+    };
+  },
+  mounted: {
+    handlePictureCardpreview(file) {
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
     }
   },
   methods: {
@@ -163,12 +200,6 @@ export default {
     color: #fff;
   }
   .avatar-uploader {
-    .size(690px, 390px);
-    background: #eee;
-    .margin(20px, 0, 0, 0);
-    padding-top: 160px;
-    text-align: center;
-    color:#999;
     .yth-top-tu{
      .font-size(80px);
     }
@@ -394,5 +425,14 @@ export default {
   background: #ffffff;
   color: #FFB31A;
   border:1px solid #FFB31A;
+}
+/deep/.el-upload--picture-card  {
+  width:210px;
+  height:200px;
+  background: #cccccc;
+}
+/deep/.el-upload-list--picture-card .el-upload-list__item {
+  width:210px;
+  height:210px;
 }
 </style>

@@ -5,8 +5,23 @@
             <div class="remind">暂无数据</div>
         </el-tab-pane>
         <el-tab-pane label="收藏及喜欢" name="second"><div class="remind">暂无数据</div></el-tab-pane>
-        <el-tab-pane label="关注提醒" name="third"><div class="remind">暂无数据</div></el-tab-pane>
-        <el-tab-pane label="官方通知" name="fourth"><div class="remind">暂无数据</div></el-tab-pane>
+        <el-tab-pane label="关注提醒" name="third">
+          <div class="thirdd">
+            <div>用户“yn高小疯-亲子烘焙组”关注了你!</div>
+            <span style="margin-top:20px;">2020.1.1 14：00</span>
+          </div>
+          <div class="thirdd">
+            <div>用户“回忆回不去ivtysvq”关注了你!</div>
+            <span style="margin-top:20px;">2020.1.1 14：00</span>
+          </div>
+           <div class="thirdd">
+            <div>用户“元宵juovUti”关注了你!</div>
+            <span style="margin-top:20px;">2020.1.1 14：00</span>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="官方通知" name="fourth">
+          <div class="guanfang">为了回报新老顾客朋友，本店新推出各种饮品，欢迎大家前来品尝！</div>
+        </el-tab-pane>
       </el-tabs>
     </div>
 </template>
@@ -27,13 +42,32 @@ el-tabs el-tab-pane:hover {
     text-align: center;
     line-height: 400px;
 }
+.guanfang {
+  width: 300px;
+  height: 300px;
+  font-weight: 600;
+  color:#666;
+  text-align: center;
+  font-size: 18px;
+  line-height: 50px;
+  margin-top: 30px;
+  margin-left: 262px;
+}
+.thirdd {
+height: 60px;
+line-height: 30px;
+margin: 20px;
+font-size: 14px;
+padding-bottom: 20px;
+border-bottom: 1px solid #ccc;
+}
 </style>
 
 <script>
   export default {
     data() {
       return {
-        activeName: 'second'
+        activeName: 'third'
       };
     },
     methods: {

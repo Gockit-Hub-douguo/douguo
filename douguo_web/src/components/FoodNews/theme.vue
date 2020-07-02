@@ -9,7 +9,11 @@
       <div class="conter-left fl">
         <ul>
           <li v-for="(it,index) in list" :key="index" class="fl" :class="{mr: index % 2 == 0}">
+<<<<<<< HEAD
             <router-link :to='{path: "/FoodNews", query:{id:it.title}}'>
+=======
+            <router-link to='#'>
+>>>>>>> 8bd8acbd3c00ff7f31516691929b0a0a541e60b3
               <div class="topbody">
                 <img :src="it.url" alt="" class="fl">
                 <div class="conterx">
